@@ -222,8 +222,8 @@ Observed with the installed tool: a plain run and a run with tools worked in a n
 | CLD-2.7 | refuse a request whose working folder or additional folder does not exist, since the tool accepts a missing folder silently | DRV-2.2 | New | `run.validation`, `C40` |
 | CLD-2.8 | write only complete JSON objects, one per line, to the tool | DRV-2.3 | New | `run.images`, `run.protocol` |
 | CLD-2.9 | start a fresh conversation under a new random session identifier and never reuse one | DRV-2.12 | Kept | `C10`, `C14` |
-| CLD-2.10 | resume a session only when its file is in the Subscription's home and no other run in progress uses it, and rebuild otherwise | DRV-2.12 | Changed | `C14`, `continuity.concurrent`; live verification pending renewed test-anthropic sign-in |
-| CLD-2.11 | rebuild by writing a session file from the request's history, with its tool calls as tool-use and tool-result blocks and its images as image blocks, and fall back to a fresh session with the earlier messages as one labelled text when the tool does not accept the file | DRV-2.11 | Changed | `C14`, `continuity.session`, `probe.continuity` |
+| CLD-2.10 | resume a session only when its file is in the Subscription's home and no other run in progress uses it, and rebuild otherwise | DRV-2.12 | Changed | `C14`, `continuity.concurrent`, `live.continuity` |
+| CLD-2.11 | rebuild by writing a session file from the request's history, with its tool calls as tool-use and tool-result blocks and its images as image blocks, and fall back to a fresh session with the earlier messages as one labelled text when the tool does not accept the file | DRV-2.11 | Changed | `C14`, `continuity.session`, `probe.continuity`, `live.continuity` |
 | CLD-2.12 | derive the session folder from the working folder's real path by replacing every character that is not a letter or a digit with `-` | DRV-2.11 | Changed | `continuity.session`, `continuity.long-folder`, `probe.continuity` |
 | CLD-2.13 | map the tool's records to events by the table above | DRV-2.3 | Changed | `run.protocol`, `C10`, `C11`, `C12`, `C13`, `C42` (fresh records); questions and background tasks pending SYL-84 |
 | CLD-2.14 | emit `text`, `thinking` and `tool_started` from the tool's whole-block records | DRV-2.4 | Changed | `C10`, `C11`, `run.protocol` |
@@ -237,7 +237,7 @@ Observed with the installed tool: a plain run and a run with tools worked in a n
 | CLD-2.22 | run a request without tools with `--tools ""`, and without a working folder also with `--no-session-persistence` in an empty folder of its own, removing a session file it wrote for such a run when the run ends | DRV-2.20 | Changed | `probe.run-settings`, `C19`, `live.run`, `C14` |
 | CLD-2.23 | send images as image blocks of the user record, and of the earlier user messages in a rebuilt session | DRV-2.23 | Kept | `run.validation`, `run.images`, `C14`, `continuity.session` |
 | CLD-2.24 | write a rebuilt session file with the keys, the order of lines, the made-up call identifiers and the result texts stated above, and use the text form of DRV-2 where no file can be written or the tool refuses it | DRV-2.36 | New | `continuity.session`, `continuity.results`, `continuity.unwritable-session`, `C14`, `probe.continuity` |
-| CLD-2.25 | pass `--system-prompt-snapshot off` on every run, and continue a saved conversation also when the request's system prompt is not the one it was last run with | DRV-2.1 | New | `C14`, `probe.run-settings`; live verification pending renewed test-anthropic sign-in |
+| CLD-2.25 | pass `--system-prompt-snapshot off` on every run, and continue a saved conversation also when the request's system prompt is not the one it was last run with | DRV-2.1 | New | `C14`, `probe.run-settings`, `live.continuity` |
 
 CLD-2.2 switched off the settings of the working folder and the account's MCP servers. It was withdrawn on 6 October 2026 with DRV-D26, and its number is not used again.
 
