@@ -9,9 +9,9 @@ Conventions (shape of a specification, requirement identifiers, origin, checks, 
 
 | Spec | Title | Refines | Status |
 |---|---|---|---|
-| [CLD-0](00-overview-and-legacy-map.md) | Overview and legacy map | DRV-0 | accepted |
-| [CLD-1](01-subscriptions.md) | Subscriptions | DRV-1 | accepted |
-| [CLD-2](02-inference.md) | Inference | DRV-2 | accepted |
+| [CLD-0](00-overview-and-legacy-map.md) | Overview and legacy map | DRV-0 | implemented |
+| [CLD-1](01-subscriptions.md) | Subscriptions | DRV-1 | implemented |
+| [CLD-2](02-inference.md) | Inference | DRV-2 | implemented |
 | [CLD-3](03-tools-and-permissions.md) | Tools and permissions | DRV-3 | implemented |
 | [CLD-4](04-errors-and-limits.md) | Errors and limits | DRV-4 | implemented |
 

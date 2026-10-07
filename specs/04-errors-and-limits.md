@@ -158,6 +158,10 @@ arbol:drivers/claude/arbol_driver_claude/rate_limit.py#extract_recovery_seconds
 arbol:drivers/claude/arbol_driver_claude/server.py#_claude_version
 -->
 
+## SYL-87 verification, 7 October 2026
+
+All 38 shared conformance scenarios pass, with C5 checking an actual run, C7 covering output/state/argument redaction and C32 covering the command line and development checks. The Driver passes 81 automated tests and the suite passes 10 runner tests under Node 24.21. The compiled `dev probe` passes against installed Claude 2.1.289 without a prompt, including the existing test login; shapes-only evidence is `research/dev-probe-2026-10-07.json`. The compiled `dev build-check` passes with one tools-off Haiku message on `test-anthropic`, recorded in `research/dev-build-check-2026-10-07.json`. The six-turn live command is checked by `dev.live-check` against the stand-in and refuses missing, signed-out or exhausted accounts in `dev.gates` and C32. Its fresh six-turn vendor run was not requested; earlier task live records remain the evidence for the tool, question, background, continuity and stop behaviors. Anthropic preflight uses the timestamped cached usage, by CLD-D2. A first build-check attempt failed before inference because the clean child PATH omitted the discovered tool folder; that was fixed before the passing record. Numbered Builds remain SYL-76/SYL-93.
+
 ## Decisions
 
 | ID | Question | Proposed default | Outcome |

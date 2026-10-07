@@ -1,7 +1,7 @@
 ---
 role: authored
 spec: CLD-1
-status: accepted
+status: implemented
 ---
 # Claude Driver · 01 Subscriptions
 
@@ -168,10 +168,10 @@ arbol:daemons/core/arbol_core/provider_models.py#fetch_zai_models
 
 | ID | The Claude Driver must… | Refines | Origin | Verified by |
 |---|---|---|---|---|
-| CLD-1.1 | offer the families `anthropic` (vendor login) and `zai` (key) with the settings listed above, with one Subscription of each from the start, named `anthropic` and `zai`, and `anthropic` as the default unless the settings file names another | DRV-1.1 | Kept | `subscriptions.local`, `subscriptions.create`, `C1`; default inference pending SYL-80 |
-| CLD-1.2 | set `CLAUDE_CONFIG_DIR` to the Subscription's home for every child process of that Subscription | DRV-1.2 | Changed | `subscriptions.environment`, `C39`, `probe.subscriptions`, `live.subscriptions`; run children pending SYL-80 |
-| CLD-1.3 | build each child's environment from an allow-list; no inherited `ANTHROPIC_*`, `CLAUDE_*` or `CLAUDECODE` variable reaches the tool | DRV-0.5 | Changed | `subscriptions.environment`, `base.environment`, `C8`; run children pending SYL-80 |
-| CLD-1.4 | apply a `zai` account as gateway address, key, model names and allowed tuning variables in the child's environment, with the key read from its source (DRV-0.14) when the child is started | DRV-0.3 | Kept | `subscriptions.environment`, `subscriptions.secret-source`, `C2`, `C7`; run children pending SYL-80 |
+| CLD-1.1 | offer the families `anthropic` (vendor login) and `zai` (key) with the settings listed above, with one Subscription of each from the start, named `anthropic` and `zai`, and `anthropic` as the default unless the settings file names another | DRV-1.1 | Kept | `subscriptions.local`, `subscriptions.create`, `C1`, `C10` |
+| CLD-1.2 | set `CLAUDE_CONFIG_DIR` to the Subscription's home for every child process of that Subscription | DRV-1.2 | Changed | `subscriptions.environment`, `C39`, `C8`, `C10`, `probe.subscriptions`, `live.subscriptions` |
+| CLD-1.3 | build each child's environment from an allow-list; no inherited `ANTHROPIC_*`, `CLAUDE_*` or `CLAUDECODE` variable reaches the tool | DRV-0.5 | Changed | `subscriptions.environment`, `base.environment`, `C8` |
+| CLD-1.4 | apply a `zai` account as gateway address, key, model names and allowed tuning variables in the child's environment, with the key read from its source (DRV-0.14) when the child is started | DRV-0.3 | Kept | `subscriptions.environment`, `subscriptions.secret-source`, `C2`, `C7`, `run.zai` |
 | CLD-1.5 | accept a `baseUrl` only if it is an http or https address | DRV-0.16 | Kept | `subscriptions.settings` |
 | CLD-1.6 | accept in `toolEnvironment` only variable names on its allow-list, and never one that selects an account or an address | DRV-0.5 | New | `subscriptions.settings`, `subscriptions.environment` |
 | CLD-1.7 | read no settings file from the Leather Bag's own tool configuration when a child is started | DRV-0.4 | Changed | `C8`, `probe.subscriptions`, `live.subscriptions` (owner configuration unchanged) |
@@ -229,6 +229,10 @@ arbol:product-spec/05-intelligence-providers.md#Known problems and lessons
 arbol:daemons/shared/arbol_shared/subscription_oauth.py#_default_opener
 arbol:daemons/shared/arbol_shared/claude_cli.py#alias_args
 -->
+
+## SYL-87 verification, 7 October 2026
+
+All 38 shared conformance scenarios pass, with C5 checking an actual run, C7 covering output/state/argument redaction and C32 covering the command line and development checks. The Driver passes 81 automated tests and the suite passes 10 runner tests under Node 24.21. The compiled `dev probe` passes against installed Claude 2.1.289 without a prompt, including the existing test login; shapes-only evidence is `research/dev-probe-2026-10-07.json`. The compiled `dev build-check` passes with one tools-off Haiku message on `test-anthropic`, recorded in `research/dev-build-check-2026-10-07.json`. The six-turn live command is checked by `dev.live-check` against the stand-in and refuses missing, signed-out or exhausted accounts in `dev.gates` and C32. Its fresh six-turn vendor run was not requested; earlier task live records remain the evidence for the tool, question, background, continuity and stop behaviors. Anthropic preflight uses the timestamped cached usage, by CLD-D2. A first build-check attempt failed before inference because the clean child PATH omitted the discovered tool folder; that was fixed before the passing record. Numbered Builds remain SYL-76/SYL-93.
 
 ## Decisions
 

@@ -1,7 +1,7 @@
 ---
 role: authored
 spec: CLD-0
-status: accepted
+status: implemented
 sources:
   - arbol-claude-driver:research/v1-driver-inventory.md
 ---
@@ -29,17 +29,22 @@ Not covered: behaviour in detail. Each row of the legacy map names the specifica
 |---|---|---|---|---|
 | CLD-0.1 | find the `claude` executable from `toolPath` in its settings file or else on the search path, read its version by running it, and report both | DRV-0.6 | Changed | `base.info`, `base.tool-cache`, `probe.base-info` |
 | CLD-0.2 | refuse to run with a tool older than the oldest supported version, naming both versions | DRV-0.6 | New | `base.tool-old` |
-| CLD-0.3 | need nothing but the tool, its state directory and the Keychain to start: no database, no other Arbol service, no file from an Artifact Corpus | DRV-0.8 | Changed | `base.info` (base invocation); contract for subscriptions and runs pending |
+| CLD-0.3 | need nothing but the tool, its state directory and the Keychain to start: no database, no other Arbol service, no file from an Artifact Corpus | DRV-0.8 | Changed | `base.info`, `C1`, `C10`, `C32` |
 | CLD-0.4 | take the system prompt as text in the request and add nothing to it | DRV-0.2 | Changed | `run.request`, `C10` |
 | CLD-0.5 | confine the effect of a malformed message from the tool to the run it arrived in | DRV-0.7 | Changed | `run.protocol`, `C18` |
 
 Check names beginning with `base.` or `state.` select the tests with that literal name prefix in this Driver's Node.js test runner (`--test-name-pattern`). `probe.base-info` is the separate no-prompt check in `test/probe-info.mjs`, recorded in `research/base-info-2026-10-06.json`. Shared-contract rows name Claude evidence separately and leave Codex and later scenarios pending.
+
+## SYL-87 verification, 7 October 2026
+
+All 38 shared conformance scenarios pass, with C5 checking an actual run, C7 covering output/state/argument redaction and C32 covering the command line and development checks. The Driver passes 81 automated tests and the suite passes 10 runner tests under Node 24.21. The compiled `dev probe` passes against installed Claude 2.1.289 without a prompt, including the existing test login; shapes-only evidence is `research/dev-probe-2026-10-07.json`. The compiled `dev build-check` passes with one tools-off Haiku message on `test-anthropic`, recorded in `research/dev-build-check-2026-10-07.json`. The six-turn live command is checked by `dev.live-check` against the stand-in and refuses missing, signed-out or exhausted accounts in `dev.gates` and C32. Its fresh six-turn vendor run was not requested; earlier task live records remain the evidence for the tool, question, background, continuity and stop behaviors. Anthropic preflight uses the timestamped cached usage, by CLD-D2. A first build-check attempt failed before inference because the clean child PATH omitted the discovered tool folder; that was fixed before the passing record. Numbered Builds remain SYL-76/SYL-93.
 
 ## Decisions
 
 | ID | Question | Proposed default | Outcome |
 |---|---|---|---|
 | CLD-D13 | How is the base developed and checked? | Compile strict TypeScript ESM with `tsc`; use the Node.js test runner. The package has one executable, and no public library exports. During the staged implementation, recognised operations whose task has not been implemented return `unsupported`; unknown commands and options return `invalid_input` | Decided 6 October 2026 during SYL-75, a technical choice |
+| CLD-D15 | How are the checks carried by the executable? | Compiled TypeScript modules behind the three dev commands, without a build-time dependency on the source test harness. The package explicitly includes bin/, dist/src/ and the four JSON protocol records read by its stand-ins; the extracted package passes the suite without source files or node_modules. Probe records are shapes-only JSON in research/ under the selected Driver state directory, so a read-only Build can be checked and the suite writes only to its isolated home; implementation evidence is also copied to the Driver's Artifact Corpus research folder, with an actual tool version and UTC date. Probes use disposable config homes, and optionally the existing test-anthropic home for a no-prompt status/catalog check; they never send a user record. They cover version, auth/browser handoff, initialization, applied settings, session acceptance, interrupt, skill/MCP loading, and argument errors. Historical raw failed-request and live records remain evidence; they are not replayed as quota-free probes. The live command uses six small Haiku messages for plain output/usage, tools/questions, background attribution, conversation continuation (two), and stopping. Build-check uses exactly one Haiku message with tools off. Before each real message, require test-anthropic signed in and check its last usage report; this is cached by the accepted CLD-D2 and its time is reported. Report attempts, token totals, usage before/after and percentage changes, also on failure. | Decided 7 October 2026 during SYL-87, a technical choice |
 | CLD-D14 | Does `info` need a supported tool? | No. It succeeds with `supported: false` for a missing or older tool, so callers can inspect the installation. Operations that need the tool use the typed refusal of DRV-4.14. A version probe uses an empty temporary config home inside the state directory and a clean environment, and removes that home afterward | Decided 6 October 2026 during SYL-75, a technical choice |
 
 ## Legacy map

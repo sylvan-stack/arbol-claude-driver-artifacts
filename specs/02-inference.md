@@ -1,7 +1,7 @@
 ---
 role: authored
 spec: CLD-2
-status: accepted
+status: implemented
 ---
 # Claude Driver · 02 Inference
 
@@ -225,13 +225,13 @@ Observed with the installed tool: a plain run and a run with tools worked in a n
 | CLD-2.10 | resume a session only when its file is in the Subscription's home and no other run in progress uses it, and rebuild otherwise | DRV-2.12 | Changed | `C14`, `continuity.concurrent`, `live.continuity` |
 | CLD-2.11 | rebuild by writing a session file from the request's history, with its tool calls as tool-use and tool-result blocks and its images as image blocks, and fall back to a fresh session with the earlier messages as one labelled text when the tool does not accept the file | DRV-2.11 | Changed | `C14`, `continuity.session`, `probe.continuity`, `live.continuity` |
 | CLD-2.12 | derive the session folder from the working folder's real path by replacing every character that is not a letter or a digit with `-` | DRV-2.11 | Changed | `continuity.session`, `continuity.long-folder`, `probe.continuity` |
-| CLD-2.13 | map the tool's records to events by the table above | DRV-2.3 | Changed | `run.protocol`, `C10`, `C11`, `C12`, `C13`, `C42` (fresh records); questions and background tasks pending SYL-84 |
+| CLD-2.13 | map the tool's records to events by the table above | DRV-2.3 | Changed | `run.protocol`, `C10`, `C11`, `C12`, `C13`, `C25`, `C35`, `C36`, `C42` |
 | CLD-2.14 | emit `text`, `thinking` and `tool_started` from the tool's whole-block records | DRV-2.4 | Changed | `C10`, `C11`, `run.protocol` |
 | CLD-2.15 | decide `completed` or `failed` by the error flag of the `result` record, never by its subtype or its wording | DRV-2.7 | Changed | `C12`, `live.run` (completed results); failure envelopes recorded in `tool-probes-2026-10-05.md` |
 | CLD-2.16 | answer a control request of an unknown kind with an error | DRV-2.3 | Changed | `run.protocol` |
 | CLD-2.17 | fail only the run in which a record it cannot use arrived | CLD-0.5 | Changed | `C18`, `run.protocol` |
 | CLD-2.18 | take final usage from the `result` records, the token counts added up over them and the cost from the last one, and report cost only when the tool states it at list prices | DRV-2.15 | Changed | `run.usage`, `run.zai`, `C13`, `live.run` |
-| CLD-2.19 | close the tool's input after the `result` record that leaves no background task, and end the tool by signal when it has not exited after 2 seconds | DRV-2.19 | Changed | `C17` (normal and hanging exit); background completion pending SYL-84 |
+| CLD-2.19 | close the tool's input after the `result` record that leaves no background task, and end the tool by signal when it has not exited after 2 seconds | DRV-2.19 | Changed | `C17`, `C35` |
 | CLD-2.20 | stop a run with the `interrupt` control request, and never by closing the input | DRV-2.16 | Changed | `C15`, `C33`, `probe.stopping`, `live.stopping` |
 | CLD-2.21 | give the tool, through `CLAUDE_CODE_SHELL`, a shell of the Driver's own making that notes every shell call, and after the tool has exited end every process still in the process group of a noted call, leaving alone a group whose number a later process has taken | DRV-2.19 | Changed | `C17`, `C38`, `stop.shell-ledger`, `stop.group-identity`, `live.stopping` |
 | CLD-2.22 | run a request without tools with `--tools ""`, and without a working folder also with `--no-session-persistence` in an empty folder of its own, removing a session file it wrote for such a run when the run ends | DRV-2.20 | Changed | `probe.run-settings`, `C19`, `live.run`, `C14` |
@@ -266,6 +266,10 @@ arbol:drivers/claude/arbol_driver_claude/rate_limit.py#is_rate_limit_signal
 arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
 arbol:product-spec/03-turn-execution.md#Known problems and lessons
 -->
+
+## SYL-87 verification, 7 October 2026
+
+All 38 shared conformance scenarios pass, with C5 checking an actual run, C7 covering output/state/argument redaction and C32 covering the command line and development checks. The Driver passes 81 automated tests and the suite passes 10 runner tests under Node 24.21. The compiled `dev probe` passes against installed Claude 2.1.289 without a prompt, including the existing test login; shapes-only evidence is `research/dev-probe-2026-10-07.json`. The compiled `dev build-check` passes with one tools-off Haiku message on `test-anthropic`, recorded in `research/dev-build-check-2026-10-07.json`. The six-turn live command is checked by `dev.live-check` against the stand-in and refuses missing, signed-out or exhausted accounts in `dev.gates` and C32. Its fresh six-turn vendor run was not requested; earlier task live records remain the evidence for the tool, question, background, continuity and stop behaviors. Anthropic preflight uses the timestamped cached usage, by CLD-D2. A first build-check attempt failed before inference because the clean child PATH omitted the discovered tool folder; that was fixed before the passing record. Numbered Builds remain SYL-76/SYL-93.
 
 ## Decisions
 
