@@ -13,6 +13,6 @@ Conventions (shape of a specification, requirement identifiers, origin, checks, 
 | [CLD-1](01-subscriptions.md) | Subscriptions | DRV-1 | accepted |
 | [CLD-2](02-inference.md) | Inference | DRV-2 | accepted |
 | [CLD-3](03-tools-and-permissions.md) | Tools and permissions | DRV-3 | implemented |
-| [CLD-4](04-errors-and-limits.md) | Errors and limits | DRV-4 | accepted |
+| [CLD-4](04-errors-and-limits.md) | Errors and limits | DRV-4 | implemented |
 
 Evidence the specifications rest on is in `research/`: the [inventory of the version 1 Driver](../research/v1-driver-inventory.md) and the [record of probes against the installed tool](../research/tool-probes-2026-10-05.md).

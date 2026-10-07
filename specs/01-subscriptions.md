@@ -181,11 +181,11 @@ arbol:daemons/core/arbol_core/provider_models.py#fetch_zai_models
 | CLD-1.11 | never attempt to renew a `zai` key; a rejection moves the Subscription to `needs_attention` with the remedy "replace the key" | DRV-1.7 | Kept | `C4`, `C41` |
 | CLD-1.12 | check an `anthropic` Subscription with `claude auth status --json` and a `zai` Subscription with the quota address; neither spends inference quota | DRV-1.14 | Kept | `C4`, `probe.subscriptions`, `live.subscriptions` |
 | CLD-1.13 | turn z.ai's quota answer into a usage report by the rules in the Usage table | DRV-1.17 | Kept | `subscriptions.quota`, `C41` |
-| CLD-1.14 | build the `anthropic` usage report from the limit information the tool writes during a run, keep the latest with the Subscription, and answer `unsupported` while there is none | DRV-1.17 | Changed | `subscriptions.update`, `C41` (cached usage and unsupported before a run); reading limit events pending SYL-80 |
+| CLD-1.14 | build the `anthropic` usage report from the limit information the tool writes during a run, keep the latest with the Subscription, and answer `unsupported` while there is none | DRV-1.17 | Changed | `subscriptions.update`, `C41`, `errors.usage`, `C30`, `live.errors-usage` |
 | CLD-1.15 | take the `anthropic` catalog from the tool's `initialize` answer, without a prompt and without a request to the vendor's model interface | DRV-1.20 | Changed | `probe.subscriptions`, `live.subscriptions`, `C41` |
 | CLD-1.16 | take the `zai` catalog from z.ai and fall back only to its built-in z.ai list | DRV-1.19 | Kept | `C41` |
 | CLD-1.17 | provide a one-time import command, `subscriptions import <id> --from <file>`, that reads a `claude` settings file, writes its gateway address, model names and allowed tuning variables into the `zai` entry of the Driver's settings file, stores its key in the Keychain through the standard input of the `security` program, prints no value from it and leaves the `claude` file unchanged | DRV-0.4 | New | `subscriptions.import` (synthetic file and key only) |
-| CLD-1.18 | leave the renewal of an `anthropic` login to the tool, and ask for a new sign-in only when the tool reports that it is not logged in or the vendor has rejected the login | DRV-1.7 | New | `C4`, `C7`, `live.subscriptions`; rejection during runs pending SYL-80 |
+| CLD-1.18 | leave the renewal of an `anthropic` login to the tool, and ask for a new sign-in only when the tool reports that it is not logged in or the vendor has rejected the login | DRV-1.7 | New | `C4`, `C7`, `C28`, `live.subscriptions`, `probe.errors` |
 
 ## Probes recorded
 
