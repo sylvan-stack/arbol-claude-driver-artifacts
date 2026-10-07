@@ -125,17 +125,17 @@ arbol:drivers/claude/arbol_driver_claude/server.py#_claude_version
 
 | ID | The Claude Driver must… | Refines | Origin | Verified by |
 |---|---|---|---|---|
-| CLD-4.1 | decide the error code of a failed run by the mapping table, first matching row | DRV-4.4 | Changed | `errors.precedence`, `C26` |
-| CLD-4.2 | use the wording lists only when the tool states no error code and no status, and mark the error as decided by wording | DRV-4.4 | Changed | `errors.precedence`, `C26` |
-| CLD-4.3 | read seconds and minutes with the number; without a unit assume seconds only after "retry after" | DRV-4.5 | Changed | `errors.wait`, `C27` |
-| CLD-4.4 | emit a `notice` for every `api_retry` record | DRV-4.12 | New | `C28`, `probe.errors` |
-| CLD-4.5 | stop the run at the first `api_retry` record with status 401 or 403 and finish it as `credential_rejected` | DRV-4.8 | New | `C28`, `probe.errors` |
-| CLD-4.6 | limit the tool's retries to three | DRV-4.12 | New | `probe.errors` |
-| CLD-4.7 | build the usage report of an `anthropic` Subscription from the latest `rate_limit_event` of a run by the table above | DRV-4.13 | Changed | `errors.usage`, `C30`, `live.errors-usage` |
-| CLD-4.8 | take the wait of a `rate_limited` error from the text, else from the reset of the limiting window, else give none | DRV-4.5 | Changed | `errors.wait`, `C27` |
-| CLD-4.9 | treat every record on standard output as a sign of life | DRV-4.9 | New | `errors.clocks`, `C29` |
-| CLD-4.10 | give the exit status and at most 1 KiB of standard error with `tool_failed` and `tool_unsupported` | DRV-4.2 | Kept | `errors.diagnostics`, `C26` |
-| CLD-4.11 | read the tool's version by running it, and refuse to use a version below the oldest supported one | DRV-4.14 | Changed | `base.tool-cache`, `base.tool-old`, `probe.base-info` |
+| CLD-4.1 | decide the error code of a failed run by the mapping table, first matching row | DRV-4.4 | Changed | Python: `C26`, `test_runtime.ProtocolTests.test_error_fields_override_wording_and_usage_never_double_counts`; historical TypeScript/probes: `errors.precedence`, `C26` |
+| CLD-4.2 | use the wording lists only when the tool states no error code and no status, and mark the error as decided by wording | DRV-4.4 | Changed | Python: `C26`, `test_runtime.ProtocolTests.test_error_fields_override_wording_and_usage_never_double_counts`; historical TypeScript/probes: `errors.precedence`, `C26` |
+| CLD-4.3 | read seconds and minutes with the number; without a unit assume seconds only after "retry after" | DRV-4.5 | Changed | Python: `C27`; historical TypeScript/probes: `errors.wait`, `C27` |
+| CLD-4.4 | emit a `notice` for every `api_retry` record | DRV-4.12 | New | Python: `C28`; historical TypeScript/probes: `C28`, `probe.errors` |
+| CLD-4.5 | stop the run at the first `api_retry` record with status 401 or 403 and finish it as `credential_rejected` | DRV-4.8 | New | Python: `C28`; historical TypeScript/probes: `C28`, `probe.errors` |
+| CLD-4.6 | limit the tool's retries to three | DRV-4.12 | New | Python: `C28`; historical TypeScript/probes: `probe.errors` |
+| CLD-4.7 | build the usage report of an `anthropic` Subscription from the latest `rate_limit_event` of a run by the table above | DRV-4.13 | Changed | Python: `C30`, `test_runtime.StateTests.test_subscriptions_late_check_and_usage_cannot_overwrite_newer_state`; historical TypeScript/probes: `errors.usage`, `C30`, `live.errors-usage` |
+| CLD-4.8 | take the wait of a `rate_limited` error from the text, else from the reset of the limiting window, else give none | DRV-4.5 | Changed | Python: `C27`; historical TypeScript/probes: `errors.wait`, `C27` |
+| CLD-4.9 | treat every record on standard output as a sign of life | DRV-4.9 | New | Python: `C29`; historical TypeScript/probes: `errors.clocks`, `C29` |
+| CLD-4.10 | give the exit status and at most 1 KiB of standard error with `tool_failed` and `tool_unsupported` | DRV-4.2 | Kept | Python: `C26`, `test_runtime.CompatibilityTests.test_failure_closed_codes_retryability_redaction_and_truncation`; historical TypeScript/probes: `errors.diagnostics`, `C26` |
+| CLD-4.11 | read the tool's version by running it, and refuse to use a version below the oldest supported one | DRV-4.14 | Changed | Python: `C31`, `C32`, `test_runtime.CompatibilityTests.test_command_frame_rejects_unknowns_and_preserves_literal_prompt`; historical TypeScript/probes: `base.tool-cache`, `base.tool-old`, `probe.base-info` |
 
 ## Not established
 
@@ -158,9 +158,19 @@ arbol:drivers/claude/arbol_driver_claude/rate_limit.py#extract_recovery_seconds
 arbol:drivers/claude/arbol_driver_claude/server.py#_claude_version
 -->
 
-## SYL-87 verification, 7 October 2026
+## Historical TypeScript verification — SYL-87, 7 October 2026
 
 All 38 shared conformance scenarios pass, with C5 checking an actual run, C7 covering output/state/argument redaction and C32 covering the command line and development checks. The Driver passes 81 automated tests and the suite passes 10 runner tests under Node 24.21. The compiled `dev probe` passes against installed Claude 2.1.289 without a prompt, including the existing test login; shapes-only evidence is `research/dev-probe-2026-10-07.json`. The compiled `dev build-check` passes with one tools-off Haiku message on `test-anthropic`, recorded in `research/dev-build-check-2026-10-07.json`. The six-turn live command is checked by `dev.live-check` against the stand-in and refuses missing, signed-out or exhausted accounts in `dev.gates` and C32. Its fresh six-turn vendor run was not requested; earlier task live records remain the evidence for the tool, question, background, continuity and stop behaviors. Anthropic preflight uses the timestamped cached usage, by CLD-D2. A first build-check attempt failed before inference because the clean child PATH omitted the discovered tool folder; that was fixed before the passing record. Numbered Builds remain SYL-76/SYL-93.
+
+## SYL-95 Python migration verification, 7 October 2026
+
+The implementation uses the pinned CPython 3.14.8 standalone runtime and Python standard-library transports. Package version 1.0.0, contract 1, format 1, CLI behavior, recorded fixture bytes and prior account/chat state remain compatible. The verified source commit is `f30d647a8fbb878d57eb89ba0cdf1e2afa734e15`. Source validation passes 35 Python unittest tests, strict mypy and Ruff; all 38 unchanged shared scenarios pass. The final artifact also passes its copied tests from a relocated folder whose path contains spaces. Exact source and Build provenance, runtime pin, packaged files and checksums are in [package-manifest.json](../research/python-migration-2026-10-07/package-manifest.json). The verification index and adjacent source/packaged test reports are in [verification.json](../research/python-migration-2026-10-07/verification.json). Historical TypeScript test identifiers and vendor observations are retained below and in the requirement table, with their original dates and scope.
+
+The 12 mixed TypeScript/Python checks are recorded in [compatibility.json](../research/python-migration-2026-10-07/compatibility.json); they exercise both directions of state reuse, concurrent creation, native history continuation and peer stopping. The independent settings comparison is [migration.claude-settings-compatibility.json](../research/python-migration-2026-10-07/migration.claude-settings-compatibility.json). Actual vendor checks without inference are recorded in [no-prompt-probes.json](../research/python-migration-2026-10-07/no-prompt-probes.json), and the production Build5 gates are recorded in [numbered-build-5.txt](../research/python-migration-2026-10-07/numbered-build-5.txt).
+
+Current error, retry and clock coverage includes shared C26–C31 and C41. C28 verifies the three-retry environment setting and interruption before a second rejected-credential retry; C29 checks stdout heartbeats, start/idle/total limits and waiting work; C30 checks the latest cached limit report. Named Python tests independently check field precedence, nonduplicated final token totals, diagnostics redaction/truncation and stale-response protection. Failure reports retain observed token and list-cost totals even when stream parsing or cleanup fails. Real reached-limit, overload and context-exceeded envelopes remain unobserved, as stated under Not established.
+
+The packaged no-prompt probe and account/catalog/usage checks use the existing test account and preserve owner configuration. The working production Build5 gate sent one Haiku message with tools disabled through dev build-check; its outcome, tool version, spending and the preceding Build records are preserved in the final verification evidence. The migration used two inference requests in total, one in Build4 and one in Build5. Deliberately failed Build6 spent no inference quota and left Build5 as the default. No new real vendor rate-limit, overload or oversized-context failure was intentionally produced. The six-message live command remains opt-in.
 
 ## Decisions
 

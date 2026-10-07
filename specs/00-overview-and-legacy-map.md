@@ -27,11 +27,11 @@ Not covered: behaviour in detail. Each row of the legacy map names the specifica
 
 | ID | The Claude Driver must… | Refines | Origin | Verified by |
 |---|---|---|---|---|
-| CLD-0.1 | find the `claude` executable from `toolPath` in its settings file or else on the search path, read its version by running it, and report both | DRV-0.6 | Changed | `base.info`, `base.tool-cache`, `probe.base-info` |
-| CLD-0.2 | refuse to run with a tool older than the oldest supported version, naming both versions | DRV-0.6 | New | `base.tool-old` |
-| CLD-0.3 | need nothing but the tool, its state directory and the Keychain to start: no database, no other Arbol service, no file from an Artifact Corpus | DRV-0.8 | Changed | `base.info`, `C1`, `C10`, `C32` |
-| CLD-0.4 | take the system prompt as text in the request and add nothing to it | DRV-0.2 | Changed | `run.request`, `C10` |
-| CLD-0.5 | confine the effect of a malformed message from the tool to the run it arrived in | DRV-0.7 | Changed | `run.protocol`, `C18` |
+| CLD-0.1 | find the `claude` executable from `toolPath` in its settings file or else on the search path, read its version by running it, and report both | DRV-0.6 | Changed | SYL-95 Python: `C31`, `test_runtime.CompatibilityTests`, `test_runtime.TransportTests`; prior verification: `base.info`, `base.tool-cache`, `probe.base-info` |
+| CLD-0.2 | refuse to run with a tool older than the oldest supported version, naming both versions | DRV-0.6 | New | SYL-95 Python: `C31`, `test_runtime.CompatibilityTests`, `test_runtime.TransportTests`; prior verification: `base.tool-old` |
+| CLD-0.3 | need nothing but the tool, its state directory and the Keychain to start: no database, no other Arbol service, no file from an Artifact Corpus | DRV-0.8 | Changed | SYL-95 Python: `C6`, `test_runtime.CompatibilityTests`, `test_runtime.TransportTests`; prior verification: `base.info`, `C1`, `C10`, `C32` |
+| CLD-0.4 | take the system prompt as text in the request and add nothing to it | DRV-0.2 | Changed | SYL-95 Python: `C10`, `test_runtime.CompatibilityTests`, `test_runtime.TransportTests`; prior verification: `run.request`, `C10` |
+| CLD-0.5 | confine the effect of a malformed message from the tool to the run it arrived in | DRV-0.7 | Changed | SYL-95 Python: `C25`, `test_runtime.CompatibilityTests`, `test_runtime.TransportTests`; prior verification: `run.protocol`, `C18` |
 
 Historical check names beginning with `base.` or `state.` select the original Node.js tests; SYL-95 maps implemented requirements to Python `unittest` checks and preserves the historical records. `probe.base-info` is the separate no-prompt check in `test/probe-info.mjs`, recorded in `research/base-info-2026-10-06.json`. Shared-contract rows name the complete Claude conformance evidence separately and leave Codex pending.
 
@@ -44,6 +44,10 @@ All 38 shared conformance scenarios pass, with C5 checking an actual run, C7 cov
 The first numbered Build, `arbol-claude-driver@1`, package `1.0.0`, was built from a fresh clean local checkout of commit `e1071cb`. Its three declared checks passed: `build.unit` (81 tests), `build.contract` (all 38 shared scenarios) and `dev.build-check` (one real Haiku message on test-anthropic with Claude 2.1.289). The checks used the Build's own executable and modules without source files or node_modules in that Build. `build.clean-working`, `build.checks`, `build.launcher-default` and `build.launcher-named` verify its record, default selection and the PATH command with and without `-v 1`. The package version and build number came from its own record. Owner configuration, credentials, skills and MCP settings were unchanged; session logs are outside that configuration comparison.
 
 `build.failed-check` then built number `2` from the same checkout with a deliberately invalid Driver command as its first check. Its record and log remain `failed`, the launcher refuses it, and Build `1` stays the default. The failed check stopped before another real message. No check failed unexpectedly or was skipped. Evidence is `research/first-working-build-2026-10-07.json` and the Driver repository's `test/numbered-build-1-2026-10-07.txt` and `test/numbered-build-2-2026-10-07.txt`; `test/verify-build.mjs` reproduces this on demand with one real message. The signed-in test state was selected explicitly with ARBOL_BUILD_TEST_STATE_DIR; no credential was copied or migrated.
+
+## Python migration verification, 7 October 2026
+
+SYL-95 verification is recorded in the requirement-level `~/Artifacts/arbol/driver-contract/python-migration-coverage-2026-10-07.json` and the Driver records `research/python-migration-2026-10-07/verification.json`. Python check names identify the copied standard-library unittest suites and the unchanged shared scenarios. Prior Driver unit/probe/live names refer to historical TypeScript evidence; unchanged shared build-tool and runner names remain active. Claude passes the complete 38-scenario suite; Codex passes its five original scoped groups (29 scenario invocations, with the same exclusions), and remains a development candidate. No historical live result is treated as fresh Python evidence, and previously unobserved vendor failures stay unobserved.
 
 ## Decisions
 
