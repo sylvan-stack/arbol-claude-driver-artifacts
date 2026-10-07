@@ -33,7 +33,7 @@ Not covered: behaviour in detail. Each row of the legacy map names the specifica
 | CLD-0.4 | take the system prompt as text in the request and add nothing to it | DRV-0.2 | Changed | `run.request`, `C10` |
 | CLD-0.5 | confine the effect of a malformed message from the tool to the run it arrived in | DRV-0.7 | Changed | `run.protocol`, `C18` |
 
-Check names beginning with `base.` or `state.` select the tests with that literal name prefix in this Driver's Node.js test runner (`--test-name-pattern`). `probe.base-info` is the separate no-prompt check in `test/probe-info.mjs`, recorded in `research/base-info-2026-10-06.json`. Shared-contract rows name Claude evidence separately and leave Codex and later scenarios pending.
+Check names beginning with `base.` or `state.` select the tests with that literal name prefix in this Driver's Node.js test runner (`--test-name-pattern`). `probe.base-info` is the separate no-prompt check in `test/probe-info.mjs`, recorded in `research/base-info-2026-10-06.json`. Shared-contract rows name the complete Claude conformance evidence separately and leave Codex pending.
 
 ## SYL-87 verification, 7 October 2026
 
