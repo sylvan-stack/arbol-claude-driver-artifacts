@@ -32,9 +32,9 @@ Observed with the installed tool: a new home offers 22 tools by default: `Task`,
 
 Observed in version 1: `--disallowedTools NotebookEdit,WebFetch,WebSearch,Task,TodoWrite` and no list of allowed tools. `TodoWrite` no longer exists.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._build_argv_native
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._build_argv_native`
 
 ### Nothing is switched off but memory
 
@@ -74,9 +74,9 @@ Observed with the installed tool under `bypassPermissions`, with the stream name
 
 Observed in version 1: always the tool's ordinary mode, with the stream as the place for questions.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/protocol.py#build_argv
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/protocol.py#build_argv`
 
 ### A request for permission that arrives nonetheless
 
@@ -104,9 +104,9 @@ Observed with the installed tool on 6 October 2026, one real run under `bypassPe
 
 Observed in version 1: the same path; `answers` was copied into the input on allow.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner.feed_permission
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner.feed_permission`
 
 ### Calls the tool refuses by itself
 

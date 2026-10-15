@@ -52,11 +52,11 @@ Observed on 6 October 2026, real runs on one conversation: started as shipped, t
 
 Observed in version 1: the same stream arguments without `-p`; `--permission-mode default` and `--permission-prompt-tool stdio`; five tools disallowed by name, one of which no longer exists; auto memory off; the same two time limits. No `--strict-mcp-config`, and no check of what the tool applied.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/protocol.py#build_argv
-arbol:drivers/claude/arbol_driver_claude/turn.py#_env_overrides_for
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/protocol.py#build_argv`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#_env_overrides_for`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native`
 
 ### Sessions and continuity
 
@@ -76,11 +76,11 @@ Observed with the installed tool: a second process started with `--resume` knew 
 
 Observed in version 1: a first message got a new random identifier each time. Before every follow-up the session file was overwritten with one rebuilt from Arbol's history, text only, and resumed under the chat's identifier, so whatever the tool had recorded of its own tool calls was lost. The folder name was derived by replacing only `/` and spaces, which the installed tool no longer matches for other characters.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/jsonl.py#history_to_jsonl_lines
-arbol:drivers/claude/arbol_driver_claude/jsonl.py#encode_cwd
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/jsonl.py#history_to_jsonl_lines`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/jsonl.py#encode_cwd`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native`
 
 ### Building a session from a history
 
@@ -153,10 +153,10 @@ Observed with the installed tool: a failed run is marked by the error flag of th
 
 Observed in version 1: a tool call was emitted when its block closed, with the input rebuilt from the pieces of the stream. Whole blocks were used only when no piece had been seen in the turn, which dropped later text that arrived whole. Control requests of other kinds were ignored, and one malformed question disabled the Driver for every chat until restart.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._handle_stream_record
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._handle_stream_record`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native`
 
 ### Usage
 
@@ -168,10 +168,10 @@ Observed with the installed tool: the `assistant` records carry placeholder toke
 
 Observed in version 1: usage was taken from the `result` record with the same arithmetic for input. Counts from intermediate `assistant` records filled gaps and could count the same tokens twice.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/protocol.py#extract_usage
-arbol:drivers/claude/arbol_driver_claude/protocol.py#assistant_usage
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/protocol.py#extract_usage`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/protocol.py#assistant_usage`
 
 ### Ending and stopping a run
 
@@ -199,10 +199,10 @@ Observed on 6 October 2026, real runs: every shell call was the leader of a sess
 
 Observed in version 1: stop ended the processes without asking the tool. The tool ran under a launch job of its own so that every process it had started could be found and ended.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner.cancel
-arbol:daemons/shared/arbol_shared/native_domain.py#launch
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner.cancel`
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/native_domain.py#launch`
 
 ### On a z.ai Subscription
 
@@ -261,11 +261,11 @@ Not to be reproduced. The legacy map in [CLD-0](00-overview-and-legacy-map.md) l
 - **One malformed question disabled every later turn** until the Driver was restarted.
 - **Later text could be lost** when part of a turn was streamed and a later block arrived whole.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/rate_limit.py#is_rate_limit_signal
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
-arbol:product-spec/03-turn-execution.md#Known problems and lessons
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/rate_limit.py#is_rate_limit_signal`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native`
+- `arbol_deprecated_v1:product-spec/03-turn-execution.md#Known problems and lessons`
 
 ## Historical TypeScript verification — SYL-87, 7 October 2026
 

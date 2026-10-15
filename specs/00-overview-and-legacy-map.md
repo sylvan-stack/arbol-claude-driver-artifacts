@@ -93,9 +93,9 @@ Fate is one of: **Kept** (same behaviour, rewritten), **Changed** (same purpose,
 | `jsonl.py`: transcript regeneration | Before every follow-up, overwrote the tool's saved session with one rebuilt from Arbol's history: text only, so the tool's own record of its tool calls was lost between turns | Changed, following the Product Specification's default: Arbol's history stays the authority; the tool's own session is resumed when it exists and matches that history, and rebuilt from the history otherwise, with the run saying which happened | CLD-2 |
 | First-message sessions left behind | One saved session per attempt, never read again, never removed | Dropped | CLD-2 |
 
-<!-- sources:
-arbol:product-spec/12-lessons-and-invariants.md#Decisions for the successor's design
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:product-spec/12-lessons-and-invariants.md#Decisions for the successor's design`
 
 ### Reading the tool's output
 

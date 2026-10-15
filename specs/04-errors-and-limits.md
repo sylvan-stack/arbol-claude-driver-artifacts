@@ -44,11 +44,11 @@ Observed with the installed tool: a missing login gives the error `authenticatio
 
 Observed in version 1: a result counted as a failure only when its subtype was one of two error subtypes and its text held a phrase from the rate-limit or the authentication list. Every other error result ended the turn as completed.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/rate_limit.py#is_rate_limit_signal
-arbol:drivers/claude/arbol_driver_claude/rate_limit.py#is_auth_error_signal
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/rate_limit.py#is_rate_limit_signal`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/rate_limit.py#is_auth_error_signal`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native`
 
 ### The wording lists
 
@@ -63,10 +63,10 @@ Version 1 also matched the bare fragments `429`, `401` and `quota`. They are dro
 
 A wait is read from the text when it says "retry after", "retry in", "try again in" or "wait", followed by a number and a unit. Seconds and minutes are understood, and a number without a unit is seconds only after "retry after". Version 1 read "retry after 5 minutes" as five seconds; the unit is now required to be read with the number.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/rate_limit.py#extract_recovery_seconds
-arbol:drivers/claude/arbol_driver_claude/protocol.py#AUTH_ERROR_INDICATORS
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/rate_limit.py#extract_recovery_seconds`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/protocol.py#AUTH_ERROR_INDICATORS`
 
 ### The tool's own retries
 
@@ -97,9 +97,9 @@ Observed with the installed tool: the record's reset times are in seconds since 
 
 Observed in version 1: the record was skipped.
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner._run_native`
 
 ### Time limits
 
@@ -117,9 +117,9 @@ The Driver reads the version by running `claude --version`. It keeps the answer 
 
 Observed in version 1: the version was never read; health reports always said "unknown".
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/server.py#_claude_version
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/server.py#_claude_version`
 
 ## Requirements
 
@@ -153,10 +153,10 @@ Not to be reproduced.
 - **The limit records of the stream were skipped**, while the account's usage was read from a web page.
 - **The tool's version was always "unknown".**
 
-<!-- sources:
-arbol:drivers/claude/arbol_driver_claude/rate_limit.py#extract_recovery_seconds
-arbol:drivers/claude/arbol_driver_claude/server.py#_claude_version
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/rate_limit.py#extract_recovery_seconds`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/server.py#_claude_version`
 
 ## Historical TypeScript verification — SYL-87, 7 October 2026
 

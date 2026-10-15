@@ -36,11 +36,11 @@ The Driver has two Subscriptions from the start, `anthropic` and `zai`. `anthrop
 
 Observed in version 1: one built-in Anthropic account and one built-in z.ai account. The z.ai route was a Claude-transport route whose settings carried the gateway address; the key was stored like any other credential.
 
-<!-- sources:
-arbol:daemons/core/arbol_core/subscriptions.py#DEFAULT_SUBSCRIPTIONS
-arbol:daemons/core/arbol_core/subscriptions.py#seed_default_ip_bindings
-arbol:product-spec/05-intelligence-providers.md#Concept model
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:daemons/core/arbol_core/subscriptions.py#DEFAULT_SUBSCRIPTIONS`
+- `arbol_deprecated_v1:daemons/core/arbol_core/subscriptions.py#seed_default_ip_bindings`
+- `arbol_deprecated_v1:product-spec/05-intelligence-providers.md#Concept model`
 
 ### The existing `claude-zai` setup
 
@@ -50,11 +50,11 @@ A Driver cannot use the alias: an alias exists only inside an interactive shell,
 
 Proposed: the alias is replaced by a `zai` Subscription. The key moves into the Keychain; the gateway address, the model names and the tuning variables become the Subscription's settings; the Driver sets them in the environment of each child process. No settings file is read when a turn runs, so a turn does not change when that file is edited, and the alias keeps working for the Leather Bag's own terminal sessions. A one-time import command, `subscriptions import <id> --from <file>`, reads the existing file and writes those settings into the Driver's settings file. It stores the key in the Subscription's Keychain item by handing the `security` program its instruction on standard input, so that the key is never an argument of any program.
 
-<!-- sources:
-arbol:daemons/shared/arbol_shared/claude_cli.py#config_dir
-arbol:daemons/shared/arbol_shared/claude_cli.py#alias_args
-arbol:product-spec/05-intelligence-providers.md#Account profiles for the Claude tool
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/claude_cli.py#config_dir`
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/claude_cli.py#alias_args`
+- `arbol_deprecated_v1:product-spec/05-intelligence-providers.md#Account profiles for the Claude tool`
 
 ### Home and environment
 
@@ -68,10 +68,10 @@ The environment of a child process is built in this order:
 
 Observed in version 1: the environment was the service's own environment minus `ANTHROPIC_*` and five named variables, with the token then applied as `CLAUDE_CODE_OAUTH_TOKEN` for an Anthropic route, or as gateway address plus `ANTHROPIC_AUTH_TOKEN` for a gateway route. The profile folder was shared: `~/.claude-anthropic` when it existed, otherwise `~/.claude`, for Anthropic; `~/.claude` for a gateway.
 
-<!-- sources:
-arbol:daemons/shared/arbol_shared/claude_cli.py#environment
-arbol:drivers/claude/arbol_driver_claude/turn.py#_env_overrides_for
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/claude_cli.py#environment`
+- `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#_env_overrides_for`
 
 ### Signing in and out
 
@@ -91,13 +91,13 @@ Observed in version 1: Arbol implemented the authorisation itself with the vendo
 
 Observed in version 1: the key was stored without contacting z.ai. A later rejection read "z.ai rejected the API key … re-paste the key using Replace key".
 
-<!-- sources:
-arbol:daemons/shared/arbol_shared/subscription_oauth.py
-arbol:daemons/core/arbol_core/subscription_login.py#start_login
-arbol:daemons/core/arbol_core/subscription_login.py#logout
-arbol:daemons/core/arbol_core/rpc/subscription.py#_set_token
-arbol:daemons/core/arbol_core/zai_usage.py#fetch_raw
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/subscription_oauth.py`
+- `arbol_deprecated_v1:daemons/core/arbol_core/subscription_login.py#start_login`
+- `arbol_deprecated_v1:daemons/core/arbol_core/subscription_login.py#logout`
+- `arbol_deprecated_v1:daemons/core/arbol_core/rpc/subscription.py#_set_token`
+- `arbol_deprecated_v1:daemons/core/arbol_core/zai_usage.py#fetch_raw`
 
 ### Status check
 
@@ -105,9 +105,9 @@ arbol:daemons/core/arbol_core/zai_usage.py#fetch_raw
 
 Observed in version 1: the accounts page's Test performed a usage read for Anthropic and a live quota call for z.ai.
 
-<!-- sources:
-arbol:product-spec/05-intelligence-providers.md#Intelligence Provider settings
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:product-spec/05-intelligence-providers.md#Intelligence Provider settings`
 
 ### Usage
 
@@ -131,14 +131,14 @@ The request is a `GET` with the header `Authorization: Bearer <key>` and has 20 
 
 Observed in version 1: Anthropic usage was read from the vendor's usage web page inside a hidden browser session owned by the Swift application, one persistent session per account. A Driver has no browser, and that reading is not carried over.
 
-<!-- sources:
-arbol:daemons/core/arbol_core/zai_usage.py#normalize
-arbol:daemons/core/arbol_core/zai_usage.py#_parse_limit
-arbol:daemons/core/arbol_core/zai_usage.py#_window_label
-arbol:daemons/core/arbol_core/zai_usage.py#_collect_models
-arbol:daemons/core/arbol_core/zai_usage.py#fetch_raw
-arbol:app/Arbol/ContentView.swift
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:daemons/core/arbol_core/zai_usage.py#normalize`
+- `arbol_deprecated_v1:daemons/core/arbol_core/zai_usage.py#_parse_limit`
+- `arbol_deprecated_v1:daemons/core/arbol_core/zai_usage.py#_window_label`
+- `arbol_deprecated_v1:daemons/core/arbol_core/zai_usage.py#_collect_models`
+- `arbol_deprecated_v1:daemons/core/arbol_core/zai_usage.py#fetch_raw`
+- `arbol_deprecated_v1:app/Arbol/ContentView.swift`
 
 ### Model catalog
 
@@ -158,11 +158,11 @@ Observed in a second round of probes with a signed-in folder ([probe record](../
 
 Observed in version 1: the Anthropic list was read from `api.anthropic.com/v1/models` with the account's token, and each listed model was then sent a one-token request to learn whether the account may run it.
 
-<!-- sources:
-arbol:daemons/core/arbol_core/provider_models.py#fetch_claude_models
-arbol:daemons/core/arbol_core/provider_models.py#_probe_claude_entitlement
-arbol:daemons/core/arbol_core/provider_models.py#fetch_zai_models
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:daemons/core/arbol_core/provider_models.py#fetch_claude_models`
+- `arbol_deprecated_v1:daemons/core/arbol_core/provider_models.py#_probe_claude_entitlement`
+- `arbol_deprecated_v1:daemons/core/arbol_core/provider_models.py#fetch_zai_models`
 
 ## Requirements
 
@@ -223,12 +223,12 @@ Not to be reproduced.
 - **The Anthropic usage reading needed a browser.** It broke with page changes and had its own login state, separate from the account's credential.
 - **Each catalog fetch spent one request per model.**
 
-<!-- sources:
-arbol:product-spec/05-intelligence-providers.md#Can two accounts of one vendor run at the same time, isolated?
-arbol:product-spec/05-intelligence-providers.md#Known problems and lessons
-arbol:daemons/shared/arbol_shared/subscription_oauth.py#_default_opener
-arbol:daemons/shared/arbol_shared/claude_cli.py#alias_args
--->
+Historical evidence (frozen version 1; ordinary locators, not Source Refs):
+
+- `arbol_deprecated_v1:product-spec/05-intelligence-providers.md#Can two accounts of one vendor run at the same time, isolated?`
+- `arbol_deprecated_v1:product-spec/05-intelligence-providers.md#Known problems and lessons`
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/subscription_oauth.py#_default_opener`
+- `arbol_deprecated_v1:daemons/shared/arbol_shared/claude_cli.py#alias_args`
 
 ## Historical TypeScript verification — SYL-87, 7 October 2026
 
@@ -249,7 +249,7 @@ The packaged no-prompt probe and account/catalog/usage checks use the existing t
 | ID | Question | Proposed default | Outcome |
 |---|---|---|---|
 | CLD-D16 | How are subscription credentials read, imports checked and catalog failures handled? | Run secret commands without a shell in a clean environment, with a 20-second limit, and remove one final line ending from stdout. The unsuffixed Keychain service is reserved for the operating-system user's actual default state path, not a default derived from an overridden HOME; temporary test homes therefore always use a hashed service. Read and delete Keychain items by explicit service and account; write imported keys through quoted standard input of security -i and verify the item by reading it back. Escape double quotes and backslashes in that input (confirmed with made-up keys on 6 October 2026). Preserve unrelated Driver settings and all defaults during import; reject imports into a command-source Subscription. Anthropic catalog failures fall back to the short names default, opus, sonnet and haiku, without invented effort levels. Credential rejection in a catalog still moves the account to needs_attention. Status and catalog commands run in the private config home, with CLAUDE_CONFIG_DIR set to it, with bounded output and no prompt. HOME is the actual operating-system home for Keychain discovery. security -w writes a value containing non-ASCII characters as hexadecimal; decode that representation before key validation, and disambiguate an all-hex ASCII key with a metadata-only -g read whose password line quotes ASCII but leaves binary values unquoted | Decided 6 October 2026 during SYL-78, a technical choice |
-| CLD-D15 | How are family settings returned and isolated before an operation? | Known settings are validated when the Subscription is read; unknown names are ignored with notices and their values are never returned. Anthropic accepts no family settings. The gateway model map accepts haiku, sonnet and opus, and its three allowed tuning variables have string values. CLAUDE_CONFIG_DIR and the working directory are the private Subscription home. On macOS HOME remains the operating-system user's actual home for Keychain discovery: a probe on 6 October showed that an overridden HOME hides the login Keychain. Claude keeps its configuration in CLAUDE_CONFIG_DIR; the subscription probes verify that the owner's own configuration is unchanged | Decided 6 October 2026 during SYL-78, a technical choice |
+| CLD-D15 | How are family settings returned and isolated before an operation? | Known settings are validated when the Subscription is read; an unknown name refuses with `invalid_input` and is named, and its value is never returned. Anthropic accepts no family settings. The gateway model map accepts haiku, sonnet and opus, and its three allowed tuning variables have string values. CLAUDE_CONFIG_DIR and the working directory are the private Subscription home. On macOS HOME remains the operating-system user's actual home for Keychain discovery: a probe on 6 October showed that an overridden HOME hides the login Keychain. Claude keeps its configuration in CLAUDE_CONFIG_DIR; the subscription probes verify that the owner's own configuration is unchanged | Decided 6 October 2026 during SYL-78, a technical choice. Until 14 October 2026 an unknown name was ignored with a notice; that day the owner decided that it refuses (DRV-D34 in DRV-0) |
 | CLD-D1 | How does an `anthropic` Subscription sign in? | The tool's own login inside the Subscription's home (CLD-1.8). The isolation this depends on is confirmed: the tool keeps one login per config folder (see the probes). The fallback, should the tool's login prove unusable from a Driver, is `claude setup-token`, with the Driver keeping the resulting long-lived token in the Keychain and passing it as `CLAUDE_CODE_OAUTH_TOKEN`, the variable version 1 used. Version 1's own authorisation code is dropped in both cases. The page stays in the caller's window: with `BROWSER` set, the tool hands the address over and opens no browser (see the probes). The vendor's terms require its own sign-in flow, which version 1's authorisation code did not use | Decided 5 October 2026 by the owner (SYL-9): the proposed default. The owner's conditions are that signing in is simple and is not needed again from day to day (CLD-1.18). A first choice of version 1's own authorisation was given up once the vendor's terms and the `BROWSER` probe were known |
 | CLD-D2 | Where does `anthropic` usage come from? | From the limit information the tool writes during a run (probed: five-hour and seven-day windows with share used and reset time). It costs nothing and needs no credential, but it is only as fresh as the last run. A reading on demand, like the tool's own usage display, is not offered | Decided 6 October 2026 by the owner: the proposed default (SYL-53) |
 | CLD-D3 | Which tuning variables may a `zai` Subscription set? | The three in the owner's file: `API_TIMEOUT_MS`, `CLAUDE_CODE_AUTO_COMPACT_WINDOW`, `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | Decided 6 October 2026 by the owner: the proposed default (SYL-54) |
