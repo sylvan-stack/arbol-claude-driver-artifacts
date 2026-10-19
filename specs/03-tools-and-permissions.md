@@ -1,17 +1,17 @@
 ---
 role: authored
 spec: CLD-3
-status: implemented
+status: accepted
 ---
 # Claude Driver · 03 Tools and permissions
 
-How the Claude Driver meets [DRV-3](../../arbol/driver-contract/03-tools-and-permissions.md): how the `claude` tool is started so that the agent has every tool and the owner's own skills and MCP servers, nothing of the tool is switched off but its memory, and nothing asks for permission; what a run without tools gets; and how a question from the agent travels to the caller and back. It matters because the tool's own starting mode differs by home and by model, and because a run in the wrong mode does not ask: it refuses calls silently.
+How the Claude Driver meets [DRV-3](../../arbol/driver-contract/03-tools-and-permissions.md): how the `claude` tool is started so that the agent has every tool and everything the owner set up for `claude`, nothing of the tool is switched off but its memory, and nothing asks for permission; what a run without tools gets; and how a question from the agent travels to the caller and back. It matters because the tool's own starting mode differs by home and by model, and because a run in the wrong mode does not ask: it refuses calls silently.
 
 Everything stated about the installed tool was observed on 5 October 2026 with `claude` 2.1.289 and is recorded in the [probe record](../research/tool-probes-2026-10-05.md).
 
 ## Scope
 
-Covered: the arguments that give a run its tools, what a run has because nothing but memory is switched off, the owner's own skills and MCP servers, the mode that asks for no permission, a request for permission that arrives nonetheless, questions from the agent, calls the tool refuses by itself, sub-agents.
+Covered: the arguments that give a run its tools, what a run has because nothing but memory is switched off, the owner's own setup of `claude`, the mode that asks for no permission, a request for permission that arrives nonetheless, questions from the agent, calls the tool refuses by itself, sub-agents.
 
 Not covered: the contract (DRV-3); the rest of a run's arguments and its events (CLD-2).
 
@@ -21,7 +21,7 @@ Not covered: the contract (DRV-3); the rest of a run's arguments and its events 
 
 | Run | Argument | The agent has |
 |---|---|---|
-| With tools | None that names a tool | Every tool the installed version offers in the Subscription's home for the model in use |
+| With tools | None that names a tool | Every tool the installed version offers with the owner's own setup, for the account and the model in use |
 | Without tools | `--tools ""` | No tool |
 
 For a run with tools the Driver passes neither `--tools`, nor `--allowedTools`, nor `--disallowedTools`.
@@ -47,18 +47,21 @@ The one part of the tool the Driver switches off is its own memory: every run ge
 
 Observed with the installed tool on 6 October 2026, with one real message each: in a folder holding a `CLAUDE.md` the agent knew what the file said; with `--setting-sources ""` it did not; in a folder holding only an `AGENTS.md` it knew that file. In a signed-in home the account's servers were listed 2.0 to 2.6 seconds after the start, three connected and two waiting for a sign-in. They load beside the run and do not hold it up. Observed on 5 October with the memory on: the agent wrote memory files into the home without asking, and in a later run a memory file was believed over the conversation.
 
-### The owner's own skills and MCP servers
+### The owner's own setup
 
-A run with tools has the skills and the MCP servers the owner set up for `claude` (DRV-3.31).
+A run starts in the tool's default home, `~/.claude` (CLD-1.2), so it has everything the owner set up for `claude`, as when the owner starts the tool by hand (DRV-3.31, [DRV-D42](../../arbol/driver-contract/00-overview-and-boundary.md#the-vendor-tools-home)).
 
-| What | Where the owner keeps it | How a run gets it |
-|---|---|---|
-| Skills | User skill folders in `~/.claude/skills`, except the tool-managed `synced` folder | The Subscription's home holds its own `skills` directory, with a link to each owner user skill; its `synced` folder stays private |
-| MCP servers | The list `mcpServers` in the file `~/.claude.json` | `--mcp-config ~/.claude.json`. The tool reads the file itself; the Driver neither reads the servers' settings nor copies them |
+| What | Where the owner keeps it |
+|---|---|
+| Settings, among them hooks and permission rules | `~/.claude/settings.json` |
+| Plug-ins | Installed and switched on in the owner's settings |
+| Skills | `~/.claude/skills`, with the account's synced skills in its `synced` folder |
+| MCP servers, with their sign-ins | The list `mcpServers` in `~/.claude.json` |
+| Instruction file | `~/.claude/CLAUDE.md` and what it imports |
 
-Nothing else of the owner's own setup reaches a run: no settings, no hooks, no plug-ins, no instruction file of the owner's own. Where the owner has no user skills or no such file, the links or the argument are left out. Account-synced skills belong to the account of the Subscription. They stay in its private `skills/synced`; the Driver never links that folder to the owner's. A whole-directory link used by the original probe is not used in production, because the signed-in test account was found on 7 October 2026 to hold tool-managed synced skills in that directory.
+The Driver passes no argument for any of them, links or copies nothing, and changes nothing there. A run of any Subscription has the same setup; only the account differs (CLD-1). An MCP server that needs a sign-in uses the owner's sign-in of it, so a sign-in the owner made serves every run as well.
 
-An MCP server that needs a sign-in keeps that sign-in per home, so it is signed in once for each Subscription.
+Observed until 19 October 2026: each Subscription had a home of its own, with links to the owner's user skills and `--mcp-config ~/.claude.json` on a run with tools, so a run had none of the owner's settings, hooks, plug-ins or instruction file, and an MCP server that needs a sign-in was signed in once for each home.
 
 Observed with the installed tool on 6 October 2026: in a new home with that link the tool listed 40 of the owner's 41 skills, and wrote nothing into the linked folder. Given `~/.claude.json` as it stands, with its many other entries, the tool took the three servers listed there: one connected, one failed as it does in the owner's own folder, and one, which signs in through the browser, reported that it needs a sign-in.
 
@@ -66,7 +69,7 @@ Observed with the installed tool on 6 October 2026: in a new home with that link
 
 Every run gets `--permission-mode bypassPermissions`. The tool then carries out every call without a question: it reads and writes files, runs commands and uses the network as the owner's account can.
 
-The mode is named on every run. It is never left to the home, because a new home starts in a mode named `auto`, and what that mode did differed by model.
+The mode is named on every run. It is never left to the owner's settings or to the home, because a new home starts in a mode named `auto`, and what that mode did differed by model.
 
 A run with tools that has a control input also gets `--permission-prompt-tool stdio`. It is there for one reason: only with it does the tool offer the agent `AskUserQuestion` (below). It causes no permission question under `bypassPermissions`.
 
@@ -144,7 +147,7 @@ Observed the same day, further real runs. A stop while a background sub-agent wo
 | CLD-3.21 | treat a `result` record as the end of the run only when no background task is left, by the `tasks` list of the last `background_tasks_changed` record, and keep the tool's input open and go on reading until then | DRV-3.32 | New | Python: `C35`; historical TypeScript/probes: `C35`, `live.tools` |
 | CLD-3.18 | switch the tool's own memory off with `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, and pass no other argument and set no other variable that switches a part of the tool off | DRV-3.25 | Changed | Python: `C35`; historical TypeScript/probes: `C35`, `probe.tools` |
 | CLD-3.19 | carry `AskUserQuestion` to the caller as `ask_opened` and answer it through the answers added to the tool's input; decline through a deny that interrupts; emit `ask_closed` as withdrawn on `control_cancel_request` and refuse a later answer with `not_found` | DRV-3.26, DRV-3.28, DRV-3.29 | Kept | Python: `C36`, `test_runtime.ProtocolTests.test_questions_validate_answers_duplicate_ack_and_withdrawal`, `test_runtime.ProtocolTests.test_utf8_tool_result_cut_and_single_final_cleanup`; historical TypeScript/probes: `C36`, `tools.questions`, `tools.decline`, `tools.failed answer delivery`, `live.tools` |
-| CLD-3.20 | hold a private `skills` directory in every Subscription's home with links to the owner's user skills in `~/.claude/skills`, keeping account-synced skills private, and pass `--mcp-config ~/.claude.json` on a run with tools, each only where the owner has it; read nothing else of the owner's own setup and write nothing there | DRV-3.31 | New | Python: `C9`, `C37`; historical TypeScript/probes: `C9`, `C37`, `tools.owner setup`, `probe.tools` |
+| CLD-3.20 | give a run the owner's whole setup of `claude` by starting it in `~/.claude` alone: pass no `--mcp-config`, `--settings` or `--setting-sources`, and link, copy or change nothing of the owner's | DRV-3.31 | New | contract |
 
 CLD-3.1 to CLD-3.11 and CLD-3.13 described tool sets, levels of asking and permission questions. They were withdrawn on 6 October 2026 with DRV-D12, and their numbers are not used again.
 
@@ -157,7 +160,8 @@ CLD-3.1 to CLD-3.11 and CLD-3.13 described tool sets, levels of asking and permi
 - A stop while a sub-agent works is verified by `live.stopping` on 7 October 2026. A sub-agent question remains unavailable in the recorded tool version.
 - An answer to a question that offers several choices, and several questions open at once.
 - Which settings of a working folder the tool applies beyond its instruction file. Its hooks, its permission rules and its own list of MCP servers were not tried.
-- How the owner signs an MCP server in for a Subscription's home. A server that signs in through the browser reported `needs-auth` in a new home.
+- What the owner's own setup does to a run the Driver started: a hook that blocks a call or asks, a permission rule, a setting that turns `bypassPermissions` off, a `model` or an `env` block in the settings. A hook that waits for a person can hold a run until the idle limit ends it.
+- Which account's synced skills and connected services a run of a `zai` or a token Subscription has in `~/.claude`, where both belong to the owner's own sign-in.
 - What a run meets outside its working folder under `bypassPermissions`. Reading and writing elsewhere were not probed in this mode.
 - Which of the default tools are of use in a process that lives for one message. The tools for scheduled work and for worktrees are in the list; nothing was done with them.
 
@@ -189,7 +193,7 @@ The packaged no-prompt probe and account/catalog/usage checks use the existing t
 |---|---|---|---|
 | CLD-D9 | Which tools are standard? | `Bash`, `Read`, `Edit`, `Write`, `Glob`, `Grep`: what the agent needs to work in a repository, and nothing that reaches the network | Decided 6 October 2026 by the owner, against the proposed default: there is no standard set. The agent may use any tool of `claude` without restriction (SYL-59) |
 | CLD-D10 | How is `read_only` realised? | `dontAsk` | Withdrawn 6 October 2026: only the trusted mode is built, so there is no `read_only` (SYL-60) |
-| CLD-D14 | Which home supplies the owner's skills and MCP list? | The Driver's `HOME`, the same home that supplies its settings file | Decided 7 October 2026 during SYL-84: use that home. Prepare the individual user-skill links whenever a Subscription home is created or used; replace old links atomically, remove stale links, preserve the tool's private synced directory, and refuse a conflicting ordinary skill entry. Omit user-skill links and the MCP argument when the source does not exist. A prior whole-directory link is replaced by a private directory without touching its target. The Driver never parses the owner's MCP file |
-| CLD-D16 | Can the entire skills directory be linked to the owner's? | Link individual user-skill folders instead | Decided 7 October 2026 during SYL-84: no. The real test account already holds Claude-managed account skills under `skills/synced`. A whole-directory link risks mixing account sync into the owner's setup. Keep that folder private and expose the owner's custom user skills by individual links, so account features stay enabled and the owner's setup stays unchanged |
+| CLD-D14 | Which home supplies the owner's skills and MCP list? | The Driver's `HOME`, the same home that supplies its settings file | Superseded on 19 October 2026 by DRV-D42: no links and no MCP argument; a run has the owner's setup because it starts in `~/.claude`. Decided 7 October 2026 during SYL-84: use that home. Prepare the individual user-skill links whenever a Subscription home is created or used; replace old links atomically, remove stale links, preserve the tool's private synced directory, and refuse a conflicting ordinary skill entry. Omit user-skill links and the MCP argument when the source does not exist. A prior whole-directory link is replaced by a private directory without touching its target. The Driver never parses the owner's MCP file |
+| CLD-D16 | Can the entire skills directory be linked to the owner's? | Link individual user-skill folders instead | Superseded on 19 October 2026 by DRV-D42: nothing is linked any more. Decided 7 October 2026 during SYL-84: no. The real test account already holds Claude-managed account skills under `skills/synced`. A whole-directory link risks mixing account sync into the owner's setup. Keep that folder private and expose the owner's custom user skills by individual links, so account features stay enabled and the owner's setup stays unchanged |
 | CLD-D15 | How are several selected labels sent through Claude's string-valued answers? | Join them with `, ` | Decided 7 October 2026 during SYL-84: use that form, validate against the opened questions, and retain answered identifiers until the run ends so duplicate answers have no effect |
 | CLD-D13 | Are the account's MCP servers and the tool's own memory switched on? | No, in the first release: both bring something into a run that is neither in the request nor in the saved conversation | Decided 6 October 2026 by the owner, against the proposed default: yes for the account's MCP servers. The tool's own memory stays off, as the owner said later that day (DRV-D26, SYL-71) |

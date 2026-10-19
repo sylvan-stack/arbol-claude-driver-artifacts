@@ -1,11 +1,11 @@
 ---
 role: authored
 spec: CLD-2
-status: implemented
+status: accepted
 ---
 # Claude Driver · 02 Inference
 
-How the Claude Driver meets [DRV-2](../../arbol/driver-contract/02-inference.md) with the `claude` command-line tool. Every run is one `claude` process, started in the Subscription's home, given one message over the tool's stream format, and ended when the tool has written its result. It matters because the installed tool behaves in ways version 1 never met: a new config folder starts in a mode of its own, closing the input does not stop a run, and commands the agent put in the background survive the tool.
+How the Claude Driver meets [DRV-2](../../arbol/driver-contract/02-inference.md) with the `claude` command-line tool. Every run is one `claude` process, started in the tool's default home, `~/.claude`, given one message over the tool's stream format, and ended when the tool has written its result. It matters because the installed tool behaves in ways version 1 never met: a new config folder starts in a mode of its own, closing the input does not stop a run, and commands the agent put in the background survive the tool.
 
 Everything stated here about the installed tool was observed on 5 October 2026 with `claude` 2.1.289 and is recorded in the [probe record](../research/tool-probes-2026-10-05.md).
 
@@ -25,9 +25,8 @@ One process per run, with the request's working folder as its working directory 
 |---|---|---|
 | `-p`, `--input-format stream-json`, `--output-format stream-json`, `--verbose` | Always | The stream format. Without `--verbose` the tool refuses to start |
 | `--include-partial-messages` | Always | Pieces of text as they are produced |
-| `--permission-mode bypassPermissions` | Always (CLD-3) | The mode in which the tool carries out every call without asking. It is named on every run, because a new home otherwise starts in a mode of its own |
+| `--permission-mode bypassPermissions` | Always (CLD-3) | The mode in which the tool carries out every call without asking. It is named on every run, because the owner's settings or a new home otherwise choose the mode |
 | `--permission-prompt-tool stdio` | A run with tools that has a control input | Makes the tool offer the agent its question tool, `AskUserQuestion`, and send the question to the Driver (CLD-3) |
-| `--mcp-config ~/.claude.json` | A run with tools, where the owner has that file | The owner's own MCP servers (CLD-3) |
 | `--tools ""` | A run without tools | Leaves the agent no tool. A run with tools gets no argument about tools at all (CLD-3) |
 | `--model`, `--effort` | When the request or the settings file names them | |
 | `--append-system-prompt` | When the request has a system prompt | Adds the text to the tool's own prompt, which describes its tools |
@@ -36,7 +35,9 @@ One process per run, with the request's working folder as its working directory 
 | `--session-id` or `--resume` | By continuity, below | |
 | `--no-session-persistence` | A run without tools and without a working folder | Leaves no saved session |
 
-Added to the environment of CLD-1: `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`; the two time limits for shell commands, `BASH_DEFAULT_TIMEOUT_MS=300000` and `BASH_MAX_TIMEOUT_MS=1800000`; the request's extra search-path folders appended to the search path; `CLAUDE_CODE_SHELL`, which names the shell of the Driver's own making described under "Ending and stopping a run".
+Added to the environment of CLD-1: `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`; the two time limits for shell commands, `BASH_DEFAULT_TIMEOUT_MS=300000` and `BASH_MAX_TIMEOUT_MS=1800000`; the request's extra search-path folders appended to the search path; `CLAUDE_CODE_SHELL`, which names the shell of the Driver's own making described under "Ending and stopping a run". These are given to the run alone and never written into `~/.claude` (CLD-1.2).
+
+Observed until 19 October 2026: a run with tools also got `--mcp-config ~/.claude.json`, which the tool now reads by itself in `~/.claude`.
 
 The tool writes nothing until it has received the message. The Driver writes one line, the user record: the message's text as a text block followed by one image block per image. Every line the Driver writes is one complete JSON object; a line that is not JSON ends the tool.
 
@@ -66,11 +67,11 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 | `resumed` | Starts with `--resume` and the session the Driver's map names |
 | `rebuilt` | Writes a session file for a new identifier from the request's history, then starts with `--resume` and that identifier |
 
-A *session* in this specification is the `claude` tool's own saved conversation, kept in the Subscription's home. The Driver keeps none of its own (DRV-2). The Driver's map (DRV-2) names, for a chat session and a Subscription, the tool's session and what it covers. An entry is written after a completed run that saved its session, and removed when a run on that session ends any other way. The Driver resumes when every check of DRV-6 holds; otherwise it rebuilds, with the reason in `started`.
+A *session* in this specification is the `claude` tool's own saved conversation, kept in `~/.claude/projects` beside the owner's own sessions. The Driver keeps none of its own (DRV-2). The Driver's map (DRV-2) names, for a chat session and a Subscription, the tool's session and what it covers. An entry is written after a completed run that saved its session, and removed when a run on that session ends any other way. The Driver resumes when every check of DRV-6 holds; otherwise it rebuilds, with the reason in `started`.
 
 A rebuilt session file has one line per earlier message: the role, the content as blocks (text, and images for a user message), an identifier of its own, the identifier of the line before it, a timestamp later than the one before it and earlier than now, the session identifier, and the working folder. A tool call of the history becomes two lines: an assistant line with a tool-use block that holds the call's name and input, and a user line with a tool-result block that holds its result. A `shell` call is written as a `Bash` block with the command as its input. Any other tool call that the other Driver reported is written the same way, under the name it was reported with. When the tool does not accept such a file, the Driver starts a fresh session instead and sends the earlier messages as one labelled text before the new message, with a `notice` saying so.
 
-The tool keeps a session in the home under a folder named after the working folder: the folder's real path with every character that is not a letter or a digit replaced by `-`.
+The tool keeps a session in `~/.claude/projects` under a folder named after the working folder: the folder's real path with every character that is not a letter or a digit replaced by `-`.
 
 Observed with the installed tool: a second process started with `--resume` knew a word given in the first run and the command the first run had executed. Resuming also worked from another working folder. A session identifier that already exists is refused for `--session-id`. A hand-written two-line session file was accepted and the model answered from it. On 6 October 2026 so was a hand-written file that held a tool call and its result as tool-use and tool-result blocks: in one real turn the model answered with a value that stood only in that result. A second file held a picture in a user line and a tool call under a name the run has no tool for (`shell`, as the Codex Driver reports it): the model named the picture's colour and the call's result. Session files hold account-related data of the tool's own. A path whose encoded form exceeds 200 characters is cut and given a suffix the probe could not derive.
 
@@ -84,7 +85,7 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 ### Building a session from a history
 
-A rebuilt session is a file the Driver writes before it starts the tool: `projects/<folder name>/<session identifier>.jsonl` in the Subscription's home, under a new random identifier. The folder name is the working folder's real path with every character that is not a letter or a digit replaced by `-`. Each line is one JSON object:
+A rebuilt session is a file the Driver writes before it starts the tool: `projects/<folder name>/<session identifier>.jsonl` in `~/.claude`, under a new random identifier. It is a new file; the Driver never changes a file the tool or the owner made there ([CLD-D21](#decisions)). The folder name is the working folder's real path with every character that is not a letter or a digit replaced by `-`. Each line is one JSON object:
 
 | Key | Value |
 |---|---|
@@ -208,13 +209,13 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 The same arguments and records apply. What differs: a model is named by its GLM identifier or by one of the tool's names that the Subscription's model map points at a GLM model; the model a record names can lack a suffix the request carried; no limit information arrives in the stream; the tool's cost figure is an estimate and is left out; tool-call identifiers have another form. The tool warns on standard error that it does not recognise the model; the warning has no effect.
 
-Observed with the installed tool: a plain run and a run with tools worked in a new, empty home with the z.ai values in the environment and no settings file, which is the design of CLD-1.
+Observed with the installed tool: a plain run and a run with tools worked in a new, empty home with the z.ai values in the environment and no settings file, which was the design of CLD-1 until 19 October 2026. In `~/.claude`, beside the owner's own sign-in and settings, it is not tried yet (CLD-1).
 
 ## Requirements
 
 | ID | The Claude Driver must… | Refines | Origin | Verified by |
 |---|---|---|---|---|
-| CLD-2.1 | carry out a run as one `claude` process with the stream arguments, in the Subscription's home and the request's working folder, and start the tool a second time within a run only when its first start was refused for the conversation it was to continue (CLD-2.10, CLD-2.11) | DRV-2.21 | Kept | Python: `C10`, `C18`, `C14`, `test_runtime.RequestTests.test_typed_request_cli_replacement_labels_and_literal_prompt`, `test_runtime.StateTests.test_duplicate_run_identifiers_and_safe_paths`; historical TypeScript/probes: `C10`, `C18`, `C14` |
+| CLD-2.1 | carry out a run as one `claude` process with the stream arguments, in the tool's default home (CLD-1.2) and the request's working folder, and start the tool a second time within a run only when its first start was refused for the conversation it was to continue (CLD-2.10, CLD-2.11) | DRV-2.21 | Kept | contract |
 | CLD-2.3 | pass `--permission-mode bypassPermissions` on every run, whatever mode the home would start in | DRV-3.21 | Changed | Python: `C10`; historical TypeScript/probes: `probe.run-settings`, `C10` |
 | CLD-2.4 | switch the tool's auto memory off for every run | DRV-3.25 | Kept | historical TypeScript/probes: `probe.run-settings`, `run.images` |
 | CLD-2.5 | pass the request's system prompt with `--append-system-prompt` and add no text of its own | DRV-2.1 | Changed | Python: `C10`; historical TypeScript/probes: `run.request`, `C10` |
@@ -222,7 +223,7 @@ Observed with the installed tool: a plain run and a run with tools worked in a n
 | CLD-2.7 | refuse a request whose working folder or additional folder does not exist, since the tool accepts a missing folder silently | DRV-2.2 | New | Python: `C40`; historical TypeScript/probes: `run.validation`, `C40` |
 | CLD-2.8 | write only complete JSON objects, one per line, to the tool | DRV-2.3 | New | Python: `test_runtime.CompatibilityTests.test_independent_node24_json_golden_vectors`; historical TypeScript/probes: `run.images`, `run.protocol` |
 | CLD-2.9 | start a fresh conversation under a new random session identifier and never reuse one | DRV-2.12 | Kept | Python: `C10`, `C14`; historical TypeScript/probes: `C10`, `C14` |
-| CLD-2.10 | resume a session only when its file is in the Subscription's home and no other run in progress uses it, and rebuild otherwise | DRV-2.12 | Changed | Python: `C14`, `test_runtime.StateTests.test_legacy_split_surrogate_map_rebuilds_safely`; historical TypeScript/probes: `C14`, `continuity.concurrent`, `live.continuity` |
+| CLD-2.10 | resume a session only when its file is in `~/.claude/projects` and no other run in progress uses it, and rebuild otherwise | DRV-2.12 | Changed | contract |
 | CLD-2.11 | rebuild by writing a session file from the request's history, with its tool calls as tool-use and tool-result blocks and its images as image blocks, and fall back to a fresh session with the earlier messages as one labelled text when the tool does not accept the file | DRV-2.11 | Changed | Python: `C14`, `test_runtime.CompatibilityTests.test_native_history_links_images_shell_and_error_results`; historical TypeScript/probes: `C14`, `continuity.session`, `probe.continuity`, `live.continuity` |
 | CLD-2.12 | derive the session folder from the working folder's real path by replacing every character that is not a letter or a digit with `-` | DRV-2.11 | Changed | Python: `test_runtime.CompatibilityTests.test_golden_chat_keys_utf16_paths_and_keychain_identity`; historical TypeScript/probes: `continuity.session`, `continuity.long-folder`, `probe.continuity` |
 | CLD-2.13 | map the tool's records to events by the table above | DRV-2.3 | Changed | Python: `C10`, `C11`, `C12`, `C13`, `C25`, `C35`, `C36`, `C42`, `test_runtime.ProtocolTests.test_questions_validate_answers_duplicate_ack_and_withdrawal`, `test_runtime.ProtocolTests.test_error_fields_override_wording_and_usage_never_double_counts`; historical TypeScript/probes: `run.protocol`, `C10`, `C11`, `C12`, `C13`, `C25`, `C35`, `C36`, `C42` |
@@ -288,7 +289,8 @@ The packaged no-prompt probe and account/catalog/usage checks use the existing t
 | CLD-D11 | How are stops and shell leftovers bounded and identified? | Keep an append-only shell-call ledger in tmp/<run id>, recording PID and the process start time from ps before exec of the real shell. Check the leader identity before signalling its group; ignore a reused PID. Ask for interrupt once, allow 2 seconds, then end the tool group by signal. Clean the shell groups on tool exit, including after failure. A stop has a 15-second cleanup deadline; report surviving group numbers in a notice. After a prior result with background work, its interrupt acknowledgement permits closing input without another result. Questions opened on a control run are withdrawn before its final event | Decided 7 October 2026 during SYL-83, a technical choice |
 | CLD-D5 | System prompt added to the tool's own, or replacing it? | Added. Replacing saves about 1,900 input tokens per request and removes the tool's own guidance for its tools | Decided 6 October 2026 by the owner: added. The agent gets the tool's own instructions and Arbol's (SYL-56) |
 | CLD-D6 | Is the tool's cost figure reported on an Anthropic Subscription? | Yes, as the tool states it: the price at list rates, which is not what a Subscription is charged | Decided 6 October 2026 by the owner: yes (SYL-57) |
-| CLD-D7 | How long are saved sessions kept in a Subscription's home? | 30 days after their last run, removed at the start of a later run. A removed session only costs a rebuild | Decided 6 October 2026 by the owner, against the proposed default: a Driver never removes a saved session. Cleaning up is a feature of Arbol, and how Arbol reaches these files is settled with that feature (SYL-58). The one-off run of DRV-D11 belongs to no chat: the tool saves no session for it, and a session file the Driver wrote for it is removed when the run ends |
+| CLD-D7 | How long are saved sessions kept in a Subscription's home? | 30 days after their last run, removed at the start of a later run. A removed session only costs a rebuild | Decided 6 October 2026 by the owner, against the proposed default: a Driver never removes a saved session. Since 19 October 2026 the sessions are in `~/.claude` (DRV-D42), and the rule stands. Cleaning up is a feature of Arbol, and how Arbol reaches these files is settled with that feature (SYL-58). The one-off run of DRV-D11 belongs to no chat: the tool saves no session for it, and a session file the Driver wrote for it is removed when the run ends |
 | CLD-D10 | How is continuity recorded and a refused resume retried? | Hash and count complete main-agent text blocks as they are emitted, without retaining reply text. Reserve a conversation together with the run record under the Subscription lock. Retry at most once, using a fresh identifier and the labelled text form, only after a resume is refused as a missing conversation before answer text or tool calls; other errors never restart the tool. A refusal may arrive as a result or on standard error before the stream begins. Emit one started event for the successful start and a notice for the text form | Decided 7 October 2026 during SYL-82, a technical choice |
 | CLD-D9 | How are fresh requests validated and streamed? | Read JSON once, apply command-line replacements, then validate before starting inference. Keep the run record by atomic exclusive creation. Consume records in order and await output backpressure. A tool result larger than 200 KiB becomes a UTF-8 prefix of its text or JSON representation with `truncated: true`; smaller structured results keep their shape | Decided 6 October 2026 during SYL-80, a technical choice |
 | CLD-D8 | How is a conversation rebuilt? | By a session file written from the history, as version 1 did and the installed tool still accepts, with the labelled text as the fallback | Decided 6 October 2026 by the owner: the Driver writes the session file. Confirmed with the installed tool, tool calls and pictures included |
+| CLD-D21 | The Driver writes nothing in `~/.claude` (DRV-0.4), yet a rebuilt conversation is a session file it writes into `~/.claude/projects` (CLD-2.11, CLD-D8). May it still? | Yes, as the one exception: a new file under a new random identifier, in the folder the tool uses for the working folder, made by the Driver where the tool has not made it yet. The Driver never changes or removes a file the tool or the owner made; it removes only the file it wrote for a run without a working folder (CLD-2.22). The tool reads the file as one of its own and adds to it, and the session then shows up among the owner's sessions. The other choice, the labelled text of DRV-2 for every rebuild, writes nothing there but loses the tool calls of the history | Open: technical consequence of DRV-D42, proposed 19 October 2026 |

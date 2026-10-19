@@ -1,7 +1,7 @@
 ---
 role: authored
 spec: CLD-0
-status: implemented
+status: accepted
 sources:
   - arbol-claude-driver:research/v1-driver-inventory.md
 ---
@@ -19,8 +19,8 @@ Not covered: behaviour in detail. Each row of the legacy map names the specifica
 
 - One command-line program, `arbol-claude-driver`, written in typed Python on pinned CPython 3.14 (SYL-95). Its command line is its only interface, and Arbol holds none of its code (DRV-0).
 - It serves two vendor families through one tool: `anthropic` and `zai` ([CLD-1](01-subscriptions.md)).
-- Every Subscription has its own home for the tool. Every inference run is one `claude` process started in that home, spoken to over the tool's stream format, and gone when the run ends.
-- A run is given what it needs in the request: system prompt text, working folders, conversation, and the Subscription, model and effort where the caller names them. What is left out comes from the Driver's settings file. Beyond that file, the request file and the owner's own skills and list of MCP servers, which it hands to the tool (CLD-3), it uses nothing outside its state directory and the Subscription's home.
+- Every Subscription uses the tool's default home, `~/.claude`, as `claude` started by hand does; only the credential differs ([DRV-D42](../../arbol/driver-contract/00-overview-and-boundary.md#the-vendor-tools-home), CLD-1). Every inference run is one `claude` process started there, spoken to over the tool's stream format, and gone when the run ends. Observed until 19 October 2026: every Subscription had a home of its own in the state directory.
+- A run is given what it needs in the request: system prompt text, working folders, conversation, and the Subscription, model and effort where the caller names them. What is left out comes from the Driver's settings file. The tool brings everything the owner set up for it in `~/.claude` (CLD-3). Beyond that, the Driver itself uses nothing but its settings file, the request file and its state directory.
 - It has no socket, no launch job, no database connection and no knowledge of Chat Sessions, routes or repositories.
 
 ## Requirements
@@ -81,7 +81,7 @@ Fate is one of: **Kept** (same behaviour, rewritten), **Changed** (same purpose,
 |---|---|---|---|
 | `protocol.build_argv` | Stream input and output, partial messages, ambient settings off, permission questions routed to the caller, five tools disallowed, appended system prompt, allowed folders, model, effort | Changed. The stream arguments and the system prompt are kept and re-verified against the installed tool, see below. Permission questions are no longer routed to the caller, no tool is disallowed (DRV-D12), and the settings of the working folder are no longer switched off (DRV-D26) | CLD-2, CLD-3 |
 | The seven thinking levels mapped to four effort tiers | `xhigh` and `max` both became `max`; `ultra` and `none` requested nothing | Dropped. The caller names an effort from the model catalog, in the tool's own words | DRV-1.21, CLD-2 |
-| `claude_cli.py`: profile folder, alias arguments, environment | Rebuilt the owner's shell aliases: a shared profile folder, a personal settings file for z.ai, a removal list for inherited variables | Changed: a home per Subscription, an allow-list, no settings file | CLD-1 |
+| `claude_cli.py`: profile folder, alias arguments, environment | Rebuilt the owner's shell aliases: a shared profile folder, a personal settings file for z.ai, a removal list for inherited variables | Changed: the tool's default home without `CLAUDE_CONFIG_DIR` (DRV-D42; until 19 October 2026 a home per Subscription), an allow-list, no settings file | CLD-1 |
 | Extra environment: auto memory off, Bash time limits, `~/bin` added to the search path | Kept the tool from writing its own memory, bounded shell commands, made Arbol's own commands reachable | Kept. The addition to the search path becomes a setting of the request | CLD-2 |
 | `system_prompt.py` and the instruction templates | Built the system prompt from template files in the Artifact Corpus, repository chapters found through the Mycel library, and extra text from the caller | Caller. The Driver receives the finished text | CLD-0.4 |
 
@@ -134,7 +134,7 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 | Version 1 part | What it did | Fate | Specified in |
 |---|---|---|---|
 | `subscription_oauth.py`, `subscription_login.py` | Arbol's own Anthropic authorisation and renewal | Dropped. Decided 5 October 2026 (CLD-D1): the tool's own login, which the vendor's terms require | CLD-1.8 |
-| `subscriptions.py` credential store, `macos_keychain.py` | Keychain items written through the Security framework | Changed: the z.ai key is read with the system's `security` command, or taken from a command the owner names | CLD-1.10, DRV-D4 |
+| `subscriptions.py` credential store, `macos_keychain.py` | Keychain items written through the Security framework | Changed: the z.ai key, and the token of a further Anthropic Subscription, are read with the system's `security` command; a key can be taken from a command the owner names instead | CLD-1.10, CLD-1.19, DRV-D4 |
 | `rpc/subscription.py` | Sign-in, sign-out, key entry, usage, as Root operations | Changed: the Subscription operations of the contract | DRV-1 |
 | `zai_usage.py` | z.ai quota reading and its normalisation | Kept | CLD-1.13 |
 | `provider_models.py`: Anthropic list and entitlement probes | One request per listed model | Dropped | CLD-1.15 |
