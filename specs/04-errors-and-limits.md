@@ -1,13 +1,15 @@
 ---
 role: authored
 spec: CLD-4
-status: implemented
+status: accepted
 ---
 # Claude Driver · 04 Errors and limits
 
 How the Claude Driver meets [DRV-4](../../arbol/driver-contract/04-errors-and-limits.md): which fields of the `claude` tool's records decide the error code of a failed run, how a rejected credential is caught before the tool has finished retrying, what the tool reports about the account's limits, and the time limits. It matters because the installed tool states most failures in fields that version 1 did not read, and because the one place where wording is still needed, a limit that has actually been reached, could not be observed.
 
 The original observations about the installed tool were made on 5 October 2026 with `claude` 2.1.289 and are recorded in the [probe record](../research/tool-probes-2026-10-05.md).
+
+Contract-2 target accepted 20 October 2026: the active mapping below is Anthropic-only; dated implementation evidence remains contract 1. Requalify Anthropic and stale-route refusal before release.
 
 ## Scope
 
@@ -23,7 +25,7 @@ A failed run is one whose `result` record has its error flag set, or that ends w
 
 | What the tool states | Code | Remedy |
 |---|---|---|
-| The `assistant` record's error is `authentication_failed`, or the result's status is 401 or 403 | `credential_rejected` | `anthropic`: sign in again. `zai`: replace the key |
+| The `assistant` record's error is `authentication_failed`, or the result's status is 401 or 403 | `credential_rejected` | Sign in to the Anthropic subscription again |
 | The error is `model_not_found`, or the status is 404 | `invalid_input` | Choose a model from the catalog |
 | The error names a rate limit, or the status is 429 | `rate_limited` | Wait |
 | The status is 500 or above, or the error is `server_error`, which is also what the tool reports when it could not reach the vendor | `vendor_unavailable` | Try again |
@@ -91,7 +93,7 @@ On an Anthropic Subscription the tool writes a `rate_limit_event` record once pe
 
 When a run fails with `rate_limited` and the text names no wait, the wait is the time until the reset of the window the latest record names as the limiting one, if a record arrived in that run.
 
-On a z.ai Subscription no such record arrives. Its usage report comes from z.ai's quota address on request (CLD-1.13), and a `rate_limited` error carries a wait only when the text names one.
+Historical contract 1: z.ai had no such native limit record and queried its quota address. Contract 2 removes this usage branch (CLD-1.13 withdrawn) and refuses the stale route under CLD-1.20.
 
 Observed with the installed tool: the record's reset times are in seconds since 1970 and the share used is a number between 0 and 1. The original probe saw the status `allowed_warning` and the limiting window `seven_day`. The raw run of 6 October also records `allowed` and `five_hour`; these values are retained without changing the window mapping.
 
@@ -141,7 +143,7 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 - What a run looks like when a limit has actually been reached, when the vendor is overloaded, and when the conversation no longer fits: which error code the `assistant` record carries, which status, which text. None occurred. Until one has been seen, the rows for 429, for 500 and above, and for a conversation that is too long rest on the status alone, and the wording lists stay in place.
 - Other values of the limit record's status and limiting window.
-- Limit and quota signals of z.ai.
+- Historical z.ai quota signals are outside contract-2 Claude; Pi defines its own supported usage/error capabilities.
 - Whether the tool honours a retry limit of zero.
 
 ## Known problems in version 1

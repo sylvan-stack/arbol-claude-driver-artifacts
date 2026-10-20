@@ -11,7 +11,7 @@ Everything stated here about the installed tool was observed on 5 October 2026 w
 
 ## Scope
 
-Covered: the arguments and environment of a run, what is written to the tool, sessions and conversation continuity, the mapping from the tool's records to contract events, usage, ending and stopping a run, what differs on a z.ai Subscription.
+Covered: the arguments and environment of a run, what is written to the tool, sessions and conversation continuity, the mapping from the tool's records to contract events, usage, ending and stopping a run, refusal of retired z.ai routes before inference (CLD-1.20).
 
 Not covered: the contract (DRV-2); which tools the agent has, how the tool is kept from asking for permission, and the agent's questions (CLD-3); the mapping of failures to error codes, limit information and time limits (CLD-4).
 
@@ -205,11 +205,13 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 - `arbol_deprecated_v1:drivers/claude/arbol_driver_claude/turn.py#TurnRunner.cancel`
 - `arbol_deprecated_v1:daemons/shared/arbol_shared/native_domain.py#launch`
 
-### On a z.ai Subscription
+### Historical contract 1 — z.ai execution (withdrawn 20 October 2026)
 
 The same arguments and records apply. What differs: a model is named by its GLM identifier or by one of the tool's names that the Subscription's model map points at a GLM model; the model a record names can lack a suffix the request carried; no limit information arrives in the stream; the tool's cost figure is an estimate and is left out; tool-call identifiers have another form. The tool warns on standard error that it does not recognise the model; the warning has no effect.
 
 Observed with the installed tool: a plain run and a run with tools worked in a new, empty home with the z.ai values in the environment and no settings file, which was the design of CLD-1 until 19 October 2026. In `~/.claude`, beside the owner's own sign-in and settings, it is not tried yet (CLD-1).
+
+For contract 2 this historical execution branch is replaced by CLD-1.20 refusal before credential access or submission. No Pi run is routed through Claude.
 
 ## Requirements
 

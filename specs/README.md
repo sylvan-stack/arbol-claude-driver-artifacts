@@ -9,12 +9,16 @@ Conventions (shape of a specification, requirement identifiers, origin, checks, 
 
 Source Refs name enabled repositories only. Evidence from the frozen version 1 repository or corpus uses ordinary Markdown links or `arbol_deprecated_v1:path#symbol` locators, never machine-readable source declarations or provenance edges. Active references to the Driver Contract remain Source Refs.
 
+Contract 2 target accepted 20 October 2026: Anthropic subscription only; retired z.ai branches refuse under CLD-1.20. Pi supplies z.ai Coding Plan and DeepSeek through [the accepted coordinated cutover](../../sagas/pi-integration-specs/cutover.md). Historical verification is not target-release evidence.
+
+Claude has no separate CLD-5/CLD-6 documents: shared DRV-5/DRV-6 govern conformance and state. Keep Anthropic regression and replace former gateway/import/catalog/quota successes with explicit stale-request refusal cases (M2), plus interrupted migration (M3). Both Pi provider gates must pass before route cutover.
+
 | Spec | Title | Refines | Status |
 |---|---|---|---|
 | [CLD-0](00-overview-and-legacy-map.md) | Overview and legacy map | DRV-0 | accepted |
 | [CLD-1](01-subscriptions.md) | Subscriptions | DRV-1 | accepted |
 | [CLD-2](02-inference.md) | Inference | DRV-2 | accepted |
 | [CLD-3](03-tools-and-permissions.md) | Tools and permissions | DRV-3 | accepted |
-| [CLD-4](04-errors-and-limits.md) | Errors and limits | DRV-4 | implemented |
+| [CLD-4](04-errors-and-limits.md) | Errors and limits | DRV-4 | accepted |
 
 Evidence the specifications rest on is in `research/`: the [inventory of the version 1 Driver](../research/v1-driver-inventory.md) and the [record of probes against the installed tool](../research/tool-probes-2026-10-05.md).

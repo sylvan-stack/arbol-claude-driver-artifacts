@@ -161,7 +161,7 @@ CLD-3.1 to CLD-3.11 and CLD-3.13 described tool sets, levels of asking and permi
 - An answer to a question that offers several choices, and several questions open at once.
 - Which settings of a working folder the tool applies beyond its instruction file. Its hooks, its permission rules and its own list of MCP servers were not tried.
 - What the owner's own setup does to a run the Driver started: a hook that blocks a call or asks, a permission rule, a setting that turns `bypassPermissions` off, a `model` or an `env` block in the settings. A hook that waits for a person can hold a run until the idle limit ends it.
-- Which account's synced skills and connected services a run of a `zai` or a token Subscription has in `~/.claude`, where both belong to the owner's own sign-in.
+- Which account's synced skills and connected services a run of an additional Anthropic token Subscription has in `~/.claude`, where both belong to the owner's own sign-in.
 - What a run meets outside its working folder under `bypassPermissions`. Reading and writing elsewhere were not probed in this mode.
 - Which of the default tools are of use in a process that lives for one message. The tools for scheduled work and for worktrees are in the list; nothing was done with them.
 

@@ -9,13 +9,9 @@ sources:
 
 The Claude Driver is the Arbol 2 [Driver](../../arbol/GLOSSARY.md#driver) for the `claude` command-line tool. This specification says what it is in one page and where every part of the version 1 code went: carried over, changed, moved to the caller or dropped. It matters because the version 1 Driver is about 1,900 lines resting on some 4,500 lines of shared process, authority and recovery helpers, and a rewrite that ports the wrong part reproduces the problems the rewrite exists to remove.
 
-## Next-release Pi routing amendment — in review
+## Contract 2 amendment — accepted 20 October 2026
 
-The owner selected Pi on 20 October 2026 and renamed the work **Pi Integration Specs Saga**. The first `arbol-pi-driver` must support z.ai Coding Plan and DeepSeek using the API keys already managed by OpenCode. Claude's target is the Anthropic subscription family only. OpenCode is the credential owner, not the new execution engine.
-
-The [Pi specification set](../../sagas/pi-integration-specs/overview.md) and [coordinated A1/A2 amendments](../../sagas/pi-integration-specs/cutover.md) define the exact target: contract 2 for the breaking Claude-family removal; native-managed key attachment and authenticated non-inference checks; no key migration or deletion; private in-memory Pi key override; normal Pi home/discovery; and explicit refusal of stale Claude z.ai/default/gateway settings before inference. No automatic fallback to Anthropic or the retired route is permitted.
-
-**Version boundary:** the accepted text and dated verification below describe the pre-cutover contract-1 Builds. For target contract 2, A1/A2 explicitly supersede the z.ai-on-Claude family, key injection, sign-in, catalog, usage and run branches. Native-login and Keychain modes retain their existing semantics except the retired family. The target amendment remains in review alongside PI-0–PI-6; it does not claim that existing code or installed settings have changed. Final acceptance waits for P5 normal-resource compatibility qualification and SYL-267 review. Implementation then coordinates caller/default/model migration, Pi history rebuilding, Anthropic regression and crash-safe cutover/recovery.
+The accepted [Pi specifications](../../sagas/pi-integration-specs/overview.md) and [A1/A2 cutover](../../sagas/pi-integration-specs/cutover.md) add Pi for z.ai Coding Plan and DeepSeek using existing OpenCode-owned keys. Claude serves Anthropic subscriptions only. P5 compatibility qualification is complete. The operative requirements below target contract 2; dated probes, legacy maps, decisions and Build verification remain historical evidence of their stated versions, not contract-2 verification. Installed routes change only after the coordinated release and migration gates. No automatic fallback or key migration.
 
 ## Scope
 
@@ -23,10 +19,12 @@ Covered: what this Driver is, its requirements beyond [DRV-0](../../arbol/driver
 
 Not covered: behaviour in detail. Each row of the legacy map names the specification that carries it.
 
+The legacy map below preserves historical destinations; its z.ai key, usage, catalog and import rows are withdrawn for contract 2 by CLD-1.20 and A1. They are not implementation instructions for the new release.
+
 ## What this Driver is
 
 - One command-line program, `arbol-claude-driver`, written in typed Python on pinned CPython 3.14 (SYL-95). Its command line is its only interface, and Arbol holds none of its code (DRV-0).
-- It serves two vendor families through one tool: `anthropic` and `zai` ([CLD-1](01-subscriptions.md)).
+- It serves one vendor family through this tool: `anthropic`; z.ai is retired from Claude in contract 2 ([CLD-1](01-subscriptions.md)).
 - Every Subscription uses the tool's default home, `~/.claude`, as `claude` started by hand does; only the credential differs ([DRV-D42](../../arbol/driver-contract/00-overview-and-boundary.md#the-vendor-tools-home), CLD-1). Every inference run is one `claude` process started there, spoken to over the tool's stream format, and gone when the run ends. Observed until 19 October 2026: every Subscription had a home of its own in the state directory.
 - A run is given what it needs in the request: system prompt text, working folders, conversation, and the Subscription, model and effort where the caller names them. What is left out comes from the Driver's settings file. The tool brings everything the owner set up for it in `~/.claude` (CLD-3). Beyond that, the Driver itself uses nothing but its settings file, the request file and its state directory.
 - It has no socket, no launch job, no database connection and no knowledge of Chat Sessions, routes or repositories.

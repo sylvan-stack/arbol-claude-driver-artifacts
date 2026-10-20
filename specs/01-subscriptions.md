@@ -5,19 +5,15 @@ status: accepted
 ---
 # Claude Driver · 01 Subscriptions
 
-How the Claude Driver meets [DRV-1](../../arbol/driver-contract/01-subscriptions.md) with the `claude` command-line tool. It serves two vendor families through that one tool: Anthropic accounts, and z.ai accounts that reach z.ai's Anthropic-compatible gateway with a static key. It matters because both families share a transport and nothing else: a z.ai turn that picks up an Anthropic login, or the reverse, bills the wrong vendor and sends repository content to a vendor that may be forbidden for it.
+How the Claude Driver meets [DRV-1](../../arbol/driver-contract/01-subscriptions.md) with `claude`. Contract 2 serves Anthropic subscriptions only; z.ai Coding Plan and DeepSeek use Pi. Anthropic API-key billing is not added.
 
-## Next-release Pi routing amendment — in review
+## Contract 2 amendment — accepted 20 October 2026
 
-The owner selected Pi on 20 October 2026 and renamed the work **Pi Integration Specs Saga**. The first `arbol-pi-driver` must support z.ai Coding Plan and DeepSeek using the API keys already managed by OpenCode. Claude's target is the Anthropic subscription family only. OpenCode is the credential owner, not the new execution engine.
-
-The [Pi specification set](../../sagas/pi-integration-specs/overview.md) and [coordinated A1/A2 amendments](../../sagas/pi-integration-specs/cutover.md) define the exact target: contract 2 for the breaking Claude-family removal; native-managed key attachment and authenticated non-inference checks; no key migration or deletion; private in-memory Pi key override; normal Pi home/discovery; and explicit refusal of stale Claude z.ai/default/gateway settings before inference. No automatic fallback to Anthropic or the retired route is permitted.
-
-**Version boundary:** the accepted text and dated verification below describe the pre-cutover contract-1 Builds. For target contract 2, A1/A2 explicitly supersede the z.ai-on-Claude family, key injection, sign-in, catalog, usage and run branches. Native-login and Keychain modes retain their existing semantics except the retired family. The target amendment remains in review alongside PI-0–PI-6; it does not claim that existing code or installed settings have changed. Final acceptance waits for P5 normal-resource compatibility qualification and SYL-267 review. Implementation then coordinates caller/default/model migration, Pi history rebuilding, Anthropic regression and crash-safe cutover/recovery.
+The accepted [Pi specifications](../../sagas/pi-integration-specs/overview.md) and [A1/A2 cutover](../../sagas/pi-integration-specs/cutover.md) add Pi for z.ai Coding Plan and DeepSeek using existing OpenCode-owned keys. Claude serves Anthropic subscriptions only. P5 compatibility qualification is complete. The operative requirements below target contract 2; dated probes, legacy maps, decisions and Build verification remain historical evidence of their stated versions, not contract-2 verification. Installed routes change only after the coordinated release and migration gates. No automatic fallback or key migration.
 
 ## Scope
 
-Covered: the two families and their settings, the home the vendor tool runs in and the environment each Subscription gives it, sign-in and sign-out per family, status checks, usage, model catalogs, taking over the existing `claude-zai` setup.
+Covered: the Anthropic family and retired-route refusal, the home the vendor tool runs in and the environment each Subscription gives it, sign-in and sign-out per family, status checks, usage, model catalogs, preserving retired configuration for explicit owner cleanup.
 
 Not covered: the contract itself (DRV-1); arguments, input and output of an inference run (CLD-2); recognising a rate limit or a rejected credential in the output of a run (CLD-4).
 
@@ -28,19 +24,10 @@ Not covered: the contract itself (DRV-1); arguments, input and output of an infe
 | Family | Vendor | Sign-in | Reaches the vendor through |
 |---|---|---|---|
 | `anthropic` | Anthropic | The Subscription `anthropic`: the owner's own sign-in of `claude`. A further Subscription of the family: a long-lived token made by `claude setup-token` | The tool's default address |
-| `zai` | Z.AI | A static key | The gateway address in the Subscription's settings, by default `https://api.z.ai/api/anthropic` |
 
-Settings of a `zai` Subscription, none of them secret. They are written in the Driver's settings file, `~/.arbol/arbol-claude-driver.json`, under the Subscription's `settings` (DRV-0):
+An Anthropic Subscription has no gateway settings. The Driver starts with `anthropic` as its default; further supported Anthropic token Subscriptions retain CLD-1.19. An old default pointing at z.ai is invalid and must never be reinterpreted as Anthropic.
 
-| Setting | Meaning | Default |
-|---|---|---|
-| `baseUrl` | Gateway address. Must be an http or https address | `https://api.z.ai/api/anthropic` |
-| `modelMap` | Which gateway model stands in for the tool's `haiku`, `sonnet` and `opus` names, which the tool also uses for its own background requests | Empty: the gateway decides |
-| `toolEnvironment` | Tuning variables for the tool. Only names on the Driver's allow-list are accepted | Empty |
-
-An `anthropic` Subscription has no settings.
-
-The Driver has two Subscriptions from the start, `anthropic` and `zai`. `anthropic` is the default: a run that names no Subscription uses it, unless the Driver's settings file names another (DRV-0).
+Reject stale z.ai family/Subscription/default/alias, `baseUrl`, `modelMap`, gateway `toolEnvironment`, and gateway import requests before credential access or inference. Use `invalid_input` with a Pi migration remedy, or `not_found` for an absent retired record ID. Preserve old keys and configuration until explicit owner cleanup. No gateway variable reaches the child.
 
 Observed in version 1: one built-in Anthropic account and one built-in z.ai account. The z.ai route was a Claude-transport route whose settings carried the gateway address; the key was stored like any other credential.
 
@@ -50,13 +37,13 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 - `arbol_deprecated_v1:daemons/core/arbol_core/subscriptions.py#seed_default_ip_bindings`
 - `arbol_deprecated_v1:product-spec/05-intelligence-providers.md#Concept model`
 
-### The existing `claude-zai` setup
+### Historical `claude-zai` setup — retired from the Driver in contract 2
 
 Observed on the owner's machine on 5 October 2026. The shell alias `claude-zai` runs the tool with `CLAUDE_CONFIG_DIR` set to `~/.claude` and with `--settings ~/.claude/settings-zai.json`. That file's environment block holds the gateway address, the z.ai key in plain text, three model-name variables (`ANTHROPIC_DEFAULT_HAIKU_MODEL`, `ANTHROPIC_DEFAULT_SONNET_MODEL`, `ANTHROPIC_DEFAULT_OPUS_MODEL`) and three tuning variables (`API_TIMEOUT_MS`, `CLAUDE_CODE_AUTO_COMPACT_WINDOW`, `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`). Plain `claude` uses the default folder `~/.claude` and the owner's Anthropic login stored for it. The separate `~/.claude-anthropic` profile that version 1 looked for is retired: the folder is gone, while the Keychain still holds the login once made for it.
 
 A Driver cannot use the alias: an alias exists only inside an interactive shell, and a program that starts another program never sees it. Version 1 met the same limit and rebuilt the alias by hand: profile folder `~/.claude` for a gateway route, the settings file added only when the gateway host was exactly `api.z.ai` and the file existed, the key placed in the environment.
 
-Proposed: the alias is replaced by a `zai` Subscription. The key moves into the Keychain; the gateway address, the model names and the tuning variables become the Subscription's settings; the Driver sets them in the environment of each child process. The Driver passes no `--settings` file when a turn runs, so a turn does not change when `settings-zai.json` is edited, and the alias keeps working for the Leather Bag's own terminal sessions. Like the alias, a `zai` run uses `~/.claude` with the owner's own settings (below). A one-time import command, `subscriptions import <id> --from <file>`, reads the existing file and writes those settings into the Driver's settings file. It stores the key in the Subscription's Keychain item by handing the `security` program its instruction on standard input, so that the key is never an argument of any program.
+Historical contract-1 design, withdrawn on 20 October 2026: the alias was replaced by a `zai` Subscription. The key moves into the Keychain; the gateway address, the model names and the tuning variables become the Subscription's settings; the Driver sets them in the environment of each child process. The Driver passes no `--settings` file when a turn runs, so a turn does not change when `settings-zai.json` is edited, and the alias keeps working for the Leather Bag's own terminal sessions. Like the alias, a `zai` run uses `~/.claude` with the owner's own settings (below). A one-time import command, `subscriptions import <id> --from <file>`, reads the existing file and writes those settings into the Driver's settings file. It stores the key in the Subscription's Keychain item by handing the `security` program its instruction on standard input, so that the key is never an argument of any program.
 
 Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
@@ -68,14 +55,14 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 Decided by the owner on 19 October 2026 ([DRV-D42](../../arbol/driver-contract/00-overview-and-boundary.md#the-vendor-tools-home)). Every child process the Driver starts, for every Subscription, uses the tool's default home, `~/.claude`, as `claude` started by hand does: status checks, catalog requests, runs. The Driver sets no `CLAUDE_CONFIG_DIR`, and the allow-list below removes an inherited one. A run therefore has the owner's settings, hooks, plug-ins, skills, MCP servers and `CLAUDE.md` (CLD-3). Only the credential differs from one Subscription to another, and it reaches the child of that Subscription alone.
 
-For example, `arbol-claude-driver run --subscription zai …` starts `claude` without `CLAUDE_CONFIG_DIR` and with the z.ai values in its environment. It reads `~/.claude/settings.json` and runs the hooks set there, as the alias `claude-zai` does, but no `settings-zai.json`.
+For example, an Anthropic run uses `~/.claude` and its normal setup, with no gateway environment or z.ai settings file.
 
 The Driver writes nothing in `~/.claude` itself. What a run needs, such as the tool's memory switched off, is given on that run's command line or in its environment (CLD-2). A rebuilt conversation is the one file in question, still open in [CLD-D21](02-inference.md#decisions).
 
 The environment of a child process is built in this order:
 
 1. Start from an allow-list of inherited variables: home, path, user, locale, temporary directory, proxy and certificate settings. Nothing named `ANTHROPIC_*`, `CLAUDE_*` or `CLAUDECODE` is inherited, `CLAUDE_CONFIG_DIR` included. `HOME` is the owner's own, so `~/.claude` is the owner's folder.
-2. Apply the account. For `anthropic`: nothing more, the tool uses the owner's own sign-in, which it keeps in `~/.claude` and the Keychain item `Claude Code-credentials`. For a further Subscription of the Anthropic family: `CLAUDE_CODE_OAUTH_TOKEN` with the token read at that moment from the Subscription's Keychain item (not tried yet). For `zai`: `ANTHROPIC_BASE_URL` from `baseUrl`, `ANTHROPIC_AUTH_TOKEN` with the key read at that moment from the Keychain, or from the owner's command where the settings file names one (DRV-0), the three model-name variables from `modelMap`, and the variables of `toolEnvironment`.
+2. Apply the account. For `anthropic`: nothing more, the tool uses the owner's own sign-in, which it keeps in `~/.claude` and the Keychain item `Claude Code-credentials`. For a further Subscription of the Anthropic family: `CLAUDE_CODE_OAUTH_TOKEN` with the token read at that moment from the Subscription's Keychain item (not tried yet).
 
 Probes and live checks keep homes created for them (DRV-D44): a test Subscription such as `test-anthropic` keeps `home/` in its folder of the state directory, passed as `CLAUDE_CONFIG_DIR`, with its sign-in in the Keychain item named after that folder ([CLD-D20](#decisions)). A `home/` that an earlier Build made for any other Subscription is no longer used, and the Driver leaves it and its Keychain item as they are (DRV-6).
 
@@ -104,11 +91,11 @@ Observed in version 1: Arbol implemented the authorisation itself with the vendo
 
 Observed until 19 October 2026: the `anthropic` login was made in the Subscription's own home, the tool kept it in a Keychain item named after that home, and `claude auth logout` in that home signed it out.
 
-**A further Subscription of the Anthropic family.** Decided by the owner on 19 October 2026 (DRV-D42), not tried yet. The owner's own sign-in serves `anthropic` alone, so a further account signs in with a long-lived token. The Driver makes a temporary home, a new empty folder under `tmp` in its state directory, and runs `claude setup-token` with `CLAUDE_CONFIG_DIR` set to it and `BROWSER` set as above, so that the sign-in page reaches the caller as `open_url`. The tool prints the token when the sign-in is done. The Driver writes it into the Subscription's Keychain item (CLD-1.10) through the standard input of the `security` program, as the import does, and removes the temporary home, so that the owner's own sign-in is never touched. The token is then a credential like a key: read from the item when a child is started and given to it as `CLAUDE_CODE_OAUTH_TOKEN`, never in a file or an argument. The tool does not renew it: when the vendor rejects it, the Subscription moves to `needs_attention` with the remedy "sign in again", and a new sign-in replaces the token. Signing out deletes the Keychain item. Removal deletes it as well (DRV-1.13).
+**A further Subscription of the Anthropic family.** Decided by the owner on 19 October 2026 (DRV-D42), not tried yet. The owner's own sign-in serves `anthropic` alone, so a further account signs in with a long-lived token. The Driver makes a temporary home, a new empty folder under `tmp` in its state directory, and runs `claude setup-token` with `CLAUDE_CONFIG_DIR` set to it and `BROWSER` set as above, so that the sign-in page reaches the caller as `open_url`. The tool prints the token when the sign-in is done. The Driver writes it into the Subscription's Keychain item (CLD-1.10) through the standard input of the `security` program, and removes the temporary home, so that the owner's own sign-in is never touched. The token is then a credential like a key: read from the item when a child is started and given to it as `CLAUDE_CODE_OAUTH_TOKEN`, never in a file or an argument. The tool does not renew it: when the vendor rejects it, the Subscription moves to `needs_attention` with the remedy "sign in again", and a new sign-in replaces the token. Signing out deletes the Keychain item. Removal deletes it as well (DRV-1.13).
 
 This is the fallback CLD-D1 named on 5 October 2026, and the variable version 1 used for its own Anthropic token.
 
-**`zai`.** The step is `store_secret`. It names the Subscription's Keychain item: the service of CLD-1.10, with the Subscription's identifier as the account. The caller stores the key there, or the owner does so by hand; the Driver is never handed the key. It reads the key from the item with the system's `security` command (DRV-D4), checks its form (DRV-1.4), then checks it against z.ai's quota address. If z.ai rejects it, the Driver removes it from the item and the step is `failed`. If z.ai accepts it, or cannot be reached, the key stays and the Subscription is `signed_in`; an unreachable vendor leaves `checkedAt` empty. Replacing a key is a new sign-in. Signing out deletes the Keychain item. A static key has no renewal: when z.ai rejects it later, the Subscription moves to `needs_attention` with the remedy "replace the key". Where the settings file names a command as the source of the key, there is no step: the Driver takes the key from the command, checks it in the same way, and fails the sign-in when z.ai rejects it.
+**Historical contract 1 only — `zai` (withdrawn 20 October 2026).** The step is `store_secret`. It names the Subscription's Keychain item: the service of CLD-1.10, with the Subscription's identifier as the account. The caller stores the key there, or the owner does so by hand; the Driver is never handed the key. It reads the key from the item with the system's `security` command (DRV-D4), checks its form (DRV-1.4), then checks it against z.ai's quota address. If z.ai rejects it, the Driver removes it from the item and the step is `failed`. If z.ai accepts it, or cannot be reached, the key stays and the Subscription is `signed_in`; an unreachable vendor leaves `checkedAt` empty. Replacing a key is a new sign-in. Signing out deletes the Keychain item. A static key has no renewal: when z.ai rejects it later, the Subscription moves to `needs_attention` with the remedy "replace the key". Where the settings file names a command as the source of the key, there is no step: the Driver takes the key from the command, checks it in the same way, and fails the sign-in when z.ai rejects it.
 
 Observed in version 1: the key was stored without contacting z.ai. A later rejection read "z.ai rejected the API key … re-paste the key using Replace key".
 
@@ -122,7 +109,7 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 ### Status check
 
-`check` contacts the vendor without inference. For `anthropic` it runs `claude auth status --json` in `~/.claude` and reads whether the tool is logged in, by which method, and the account details the tool reports. For `zai` it calls the quota address with the key: accepted means `signed_in`, a 401 or 403 means `needs_attention`, anything else leaves the state as it was and reports `vendor_unavailable`.
+`check` contacts the vendor without inference. For `anthropic` it runs `claude auth status --json` in `~/.claude` and reads whether the tool is logged in, by which method, and the account details the tool reports. Contract 2 refuses a stale z.ai check before reading its key or contacting a vendor.
 
 Observed in version 1: the accounts page's Test performed a usage read for Anthropic and a live quota call for z.ai.
 
@@ -132,7 +119,7 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 ### Usage
 
-**`zai`.** One request to `https://api.z.ai/api/monitor/usage/quota/limit` with the key. The address is undocumented; its shape was taken from the vendor's own console. The answer is turned into a usage report by these rules, all carried over:
+**Historical contract 1 only — `zai` (withdrawn 20 October 2026).** One request to `https://api.z.ai/api/monitor/usage/quota/limit` with the key. The address is undocumented; its shape was taken from the vendor's own console. The answer is turned into a usage report by these rules, all carried over:
 
 | Rule | Detail |
 |---|---|
@@ -175,7 +162,7 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 Observed in a second round of probes with a signed-in folder ([probe record](../research/tool-probes-2026-10-05.md)): the `account` part of the answer then names the provider, e-mail address, organisation and plan. The list holds the tool's short names (`default`, `opus`, `sonnet`, `haiku`, `fable`) and, in later calls, full model identifiers as well. A full identifier that is not in the list is still accepted by the tool, so the catalog is what the tool offers, not everything it accepts. One model reports no effort levels.
 
-**`zai`.** One request to `https://api.z.ai/api/paas/v4/models` with the key. Each entry gives a model by `id`, `model` or `name` and optionally a label. Source `vendor`. When the request fails the Driver answers with its built-in z.ai list, source `builtin`. It never answers with Anthropic's list: the gateway cannot run Anthropic models. The request is a `GET` with the header `Authorization: Bearer <key>` and has 30 seconds to answer. Its address is on the host of the Subscription's `baseUrl`, with the path `/api/paas/v4/models`, and the answer holds the entries as a list under `data`. The built-in list is the models named in the Subscription's `modelMap`.
+**Historical contract 1 only — `zai` (withdrawn 20 October 2026).** One request to `https://api.z.ai/api/paas/v4/models` with the key. Each entry gives a model by `id`, `model` or `name` and optionally a label. Source `vendor`. When the request fails the Driver answers with its built-in z.ai list, source `builtin`. It never answers with Anthropic's list: the gateway cannot run Anthropic models. The request is a `GET` with the header `Authorization: Bearer <key>` and has 30 seconds to answer. Its address is on the host of the Subscription's `baseUrl`, with the path `/api/paas/v4/models`, and the answer holds the entries as a list under `data`. The built-in list is the models named in the Subscription's `modelMap`.
 
 Observed in version 1: the Anthropic list was read from `api.anthropic.com/v1/models` with the account's token, and each listed model was then sent a one-token request to learn whether the account may run it.
 
@@ -189,25 +176,20 @@ Historical evidence (frozen version 1; ordinary locators, not Source Refs):
 
 | ID | The Claude Driver must… | Refines | Origin | Verified by |
 |---|---|---|---|---|
-| CLD-1.1 | offer the families `anthropic` (vendor login) and `zai` (key) with the settings listed above, with one Subscription of each from the start, named `anthropic` and `zai`, and `anthropic` as the default unless the settings file names another | DRV-1.1 | Kept | Python: `C1`, `C10`; historical TypeScript/probes: `subscriptions.local`, `subscriptions.create`, `C1`, `C10` |
+| CLD-1.1 | offer only the `anthropic` family, with one default Subscription named `anthropic` and additional subscription-token accounts as CLD-1.19; refuse retired routes under CLD-1.20 | DRV-1.1 | Kept | contract-2 C1/C10 and M2; earlier verification is contract 1 |
 | CLD-1.2 | start every child process of every Subscription in the tool's default home, `~/.claude`: set no `CLAUDE_CONFIG_DIR` and write nothing there itself but a rebuilt conversation (CLD-D21). Only a test Subscription gets `CLAUDE_CONFIG_DIR` set to a home of its own (CLD-D20) | DRV-0.4, DRV-1.2 | Changed | contract; probe |
 | CLD-1.3 | build each child's environment from an allow-list; no inherited `ANTHROPIC_*`, `CLAUDE_*` or `CLAUDECODE` variable reaches the tool | DRV-0.5 | Changed | Python: `C8`, `test_runtime.CompatibilityTests.test_settings_unknown_values_withheld_and_environment_allowlist`; historical TypeScript/probes: `subscriptions.environment`, `base.environment`, `C8` |
-| CLD-1.4 | apply a `zai` account as gateway address, key, model names and allowed tuning variables in the child's environment, with the key read from its source (DRV-0.14) when the child is started | DRV-0.3 | Kept | Python: `C2`, `C7`, `test_runtime.TransportTests.test_secret_command_fresh_environment_and_single_newline`; historical TypeScript/probes: `subscriptions.environment`, `subscriptions.secret-source`, `C2`, `C7`, `run.zai` |
-| CLD-1.5 | accept a `baseUrl` only if it is an http or https address | DRV-0.16 | Kept | Python: `test_runtime.CompatibilityTests.test_settings_unknown_values_withheld_and_environment_allowlist`, `migration.claude-settings-compatibility.json`; historical TypeScript/probes: `subscriptions.settings` |
-| CLD-1.6 | accept in `toolEnvironment` only variable names on its allow-list, and never one that selects an account or an address | DRV-0.5 | New | Python: `test_runtime.CompatibilityTests.test_settings_unknown_values_withheld_and_environment_allowlist`, `migration.claude-settings-compatibility.json`; historical TypeScript/probes: `subscriptions.settings`, `subscriptions.environment` |
 | CLD-1.7 | pass no `--settings` file and read no file of the Leather Bag's own tool configuration itself when a child is started; the tool reads `~/.claude` as it does when started by hand | DRV-0.4 | Changed | contract |
 | CLD-1.8 | sign `anthropic` in with the tool's own `claude auth login --claudeai` run in `~/.claude`, with `BROWSER` set so that the sign-in address reaches the caller instead of the system browser, hold no copy of its credential, and refuse its sign-out and removal with `invalid_input` | DRV-1.8, DRV-1.13 | Changed | contract; live |
-| CLD-1.9 | on `zai` sign-in read the key from its source (DRV-0.14), check it against z.ai, remove a rejected key from the Keychain item when it came from there, and keep it when z.ai cannot be reached | DRV-1.26 | Changed | Python: `C2`, `C3`, `C4`; historical TypeScript/probes: `C2`, `C3`, `C4` |
-| CLD-1.10 | keep a `zai` key, and the token of a further Anthropic Subscription, as one Keychain item per Subscription, under the service `com.sylvan-stack.arbol.claude-driver`, extended as DRV-1 says when the state directory is not the default one, with the Subscription's identifier as the account, separate from version 1's items, and read it with the system's `security` command. A Subscription whose settings name a command as the source of its key has no item | DRV-0.3 | New | unit; contract |
-| CLD-1.11 | never attempt to renew a `zai` key; a rejection moves the Subscription to `needs_attention` with the remedy "replace the key" | DRV-1.7 | Kept | Python: `C4`, `C41`; historical TypeScript/probes: `C4`, `C41` |
-| CLD-1.12 | check an `anthropic` Subscription with `claude auth status --json` and a `zai` Subscription with the quota address; neither spends inference quota | DRV-1.14 | Kept | Python: `C4`; historical TypeScript/probes: `C4`, `probe.subscriptions`, `live.subscriptions` |
-| CLD-1.13 | turn z.ai's quota answer into a usage report by the rules in the Usage table | DRV-1.17 | Kept | Python: `C41`, `test_runtime.CompatibilityTests.test_key_validation_and_quota_math_resets_and_order`; historical TypeScript/probes: `subscriptions.quota`, `C41` |
+| CLD-1.10 | keep the token of a further Anthropic Subscription, as one Keychain item per Subscription, under the service `com.sylvan-stack.arbol.claude-driver`, extended as DRV-1 says when the state directory is not the default one, with the Subscription's identifier as the account, separate from version 1's items, and read it with the system's `security` command. A Subscription whose settings name a command as the source of its key has no item | DRV-0.3 | New | unit; contract |
+| CLD-1.12 | check an `anthropic` Subscription with `claude auth status --json`; spend no inference quota | DRV-1.14 | Kept | Python: `C4`; historical TypeScript/probes: `C4`, `probe.subscriptions`, `live.subscriptions` |
 | CLD-1.14 | build the `anthropic` usage report from the limit information the tool writes during a run, keep the latest with the Subscription, and answer `unsupported` while there is none | DRV-1.17 | Changed | Python: `C41`, `C30`, `test_runtime.StateTests.test_subscriptions_late_check_and_usage_cannot_overwrite_newer_state`; historical TypeScript/probes: `subscriptions.update`, `C41`, `errors.usage`, `C30`, `live.errors-usage` |
 | CLD-1.15 | take the `anthropic` catalog from the tool's `initialize` answer, without a prompt and without a request to the vendor's model interface | DRV-1.20 | Changed | Python: `C41`; historical TypeScript/probes: `probe.subscriptions`, `live.subscriptions`, `C41` |
-| CLD-1.16 | take the `zai` catalog from z.ai and fall back only to its built-in z.ai list | DRV-1.19 | Kept | Python: `C41`; historical TypeScript/probes: `C41` |
-| CLD-1.17 | provide a one-time import command, `subscriptions import <id> --from <file>`, that reads a `claude` settings file, writes its gateway address, model names and allowed tuning variables into the `zai` entry of the Driver's settings file, stores its key in the Keychain through the standard input of the `security` program, prints no value from it and leaves the `claude` file unchanged | DRV-0.4 | New | historical TypeScript/probes: `subscriptions.import` (synthetic file and key only) |
 | CLD-1.18 | leave the renewal of an `anthropic` login to the tool, and ask for a new sign-in only when the tool reports that it is not logged in or the vendor has rejected the login | DRV-1.7 | New | Python: `C4`, `C7`, `C28`; historical TypeScript/probes: `C4`, `C7`, `C28`, `live.subscriptions`, `probe.errors` |
 | CLD-1.19 | sign a further Subscription of the Anthropic family in with `claude setup-token` run in a temporary home that is removed afterwards, with `BROWSER` set as for `anthropic`; keep the token in the Subscription's Keychain item, written through the standard input of the `security` program; give it to that Subscription's children only, as `CLAUDE_CODE_OAUTH_TOKEN`; never renew it, and on its rejection move the Subscription to `needs_attention` with the remedy "sign in again" | DRV-1.2, DRV-1.7 | Changed | contract; live |
+| CLD-1.20 | refuse every stale z.ai family, record/default/alias, gateway settings and import request before credential access or inference; never reinterpret it as Anthropic; preserve retired keys/history until explicit migration/cleanup | DRV-0.13; A1 | New | contract-2 M2/M3; Anthropic C suite regression |
+
+Withdrawn on 20 October 2026 for contract 2 by the owner's Pi cutover decision: CLD-1.4, CLD-1.5, CLD-1.6, CLD-1.9, CLD-1.11, CLD-1.13, CLD-1.16 and CLD-1.17. Their IDs are not reused. Historical branches/probes/decisions below and above retain contract-1 evidence, not active requirements. CLD-1.1/1.10/1.12 retain only their Anthropic meaning. CLD-1.20 replaces gateway selection/import with explicit refusal.
 
 ## Probes recorded
 
