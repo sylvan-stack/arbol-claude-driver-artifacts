@@ -7,6 +7,12 @@ status: accepted
 
 How the Claude Driver meets [DRV-1](../../arbol/driver-contract/01-subscriptions.md) with the `claude` command-line tool. It serves two vendor families through that one tool: Anthropic accounts, and z.ai accounts that reach z.ai's Anthropic-compatible gateway with a static key. It matters because both families share a transport and nothing else: a z.ai turn that picks up an Anthropic login, or the reverse, bills the wrong vendor and sends repository content to a vendor that may be forbidden for it.
 
+## Next-release routing decision
+
+Decided by the owner on 20 October 2026: the first OpenCode Driver must support z.ai and DeepSeek using the API keys already stored in OpenCode; the target Claude Driver serves only the Anthropic subscription family. The saved OpenCode connections are Z.AI Coding Plan and DeepSeek. The [OpenCode Integration Specs Saga](https://linear.app/sylvan-stack/project/opencode-integration-specs-saga-f1bdce69e9da) specifies the change, including [OPC-0's routing and cutover requirements](https://linear.app/sylvan-stack/document/opc-0-opencode-driver-overview-and-boundary-de78a2d90e10).
+
+This decision supersedes the older routing scope below for the next release. The z.ai-on-Claude behaviour and its verification below describe the pre-cutover contract. SYL-265 must reconcile the detailed family, credential and capability requirements, and SYL-267 must review their compatibility and cutover checks before implementation. The new OpenCode specification set is still draft. No installed route or credential is changed by this notice; after cutover, a stale Claude z.ai request must fail before inference rather than run as Anthropic.
+
 ## Scope
 
 Covered: the two families and their settings, the home the vendor tool runs in and the environment each Subscription gives it, sign-in and sign-out per family, status checks, usage, model catalogs, taking over the existing `claude-zai` setup.
