@@ -9,11 +9,13 @@ sources:
 
 The Claude Driver is the Arbol 2 [Driver](../../arbol/GLOSSARY.md#driver) for the `claude` command-line tool. This specification says what it is in one page and where every part of the version 1 code went: carried over, changed, moved to the caller or dropped. It matters because the version 1 Driver is about 1,900 lines resting on some 4,500 lines of shared process, authority and recovery helpers, and a rewrite that ports the wrong part reproduces the problems the rewrite exists to remove.
 
-## Next-release routing decision
+## Next-release Pi routing amendment — in review
 
-Decided by the owner on 20 October 2026: the first OpenCode Driver must support z.ai and DeepSeek using the API keys already stored in OpenCode; the target Claude Driver serves only the Anthropic subscription family. The saved OpenCode connections are Z.AI Coding Plan and DeepSeek. The [OpenCode Integration Specs Saga](https://linear.app/sylvan-stack/project/opencode-integration-specs-saga-f1bdce69e9da) specifies the change, including [OPC-0's routing and cutover requirements](https://linear.app/sylvan-stack/document/opc-0-opencode-driver-overview-and-boundary-de78a2d90e10).
+The owner selected Pi on 20 October 2026 and renamed the work **Pi Integration Specs Saga**. The first `arbol-pi-driver` must support z.ai Coding Plan and DeepSeek using the API keys already managed by OpenCode. Claude's target is the Anthropic subscription family only. OpenCode is the credential owner, not the new execution engine.
 
-This decision supersedes the older routing scope below for the next release. The z.ai-on-Claude behaviour and its verification below describe the pre-cutover contract. SYL-265 must reconcile the detailed family, credential and capability requirements, and SYL-267 must review their compatibility and cutover checks before implementation. The new OpenCode specification set is still draft. No installed route or credential is changed by this notice; after cutover, a stale Claude z.ai request must fail before inference rather than run as Anthropic.
+The [Pi specification set](../../sagas/pi-integration-specs/overview.md) and [coordinated A1/A2 amendments](../../sagas/pi-integration-specs/cutover.md) define the exact target: contract 2 for the breaking Claude-family removal; native-managed key attachment and authenticated non-inference checks; no key migration or deletion; private in-memory Pi key override; normal Pi home/discovery; and explicit refusal of stale Claude z.ai/default/gateway settings before inference. No automatic fallback to Anthropic or the retired route is permitted.
+
+**Version boundary:** the accepted text and dated verification below describe the pre-cutover contract-1 Builds. For target contract 2, A1/A2 explicitly supersede the z.ai-on-Claude family, key injection, sign-in, catalog, usage and run branches. Native-login and Keychain modes retain their existing semantics except the retired family. The target amendment remains in review alongside PI-0–PI-6; it does not claim that existing code or installed settings have changed. Final acceptance waits for P5 normal-resource compatibility qualification and SYL-267 review. Implementation then coordinates caller/default/model migration, Pi history rebuilding, Anthropic regression and crash-safe cutover/recovery.
 
 ## Scope
 
