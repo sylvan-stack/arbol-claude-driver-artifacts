@@ -1,41 +1,41 @@
 {
-  "workspace": "https://linear.app/sylvan-stack",
+  "workspace": "https://linear.app/amorphius",
   "team": "Sylvan Stack",
   "project": {
     "name": "Arbol Claude Driver",
-    "url": "https://linear.app/sylvan-stack/project/arbol-claude-driver-46bb03105787",
-    "id": "P-SYL-2"
+    "url": "https://linear.app/amorphius/project/arbol-claude-driver-3c51f3ec4186",
+    "id": "P-SYL-5"
   },
   "note": "Local files are the originals. Linear documents are copies republished from them.",
   "documents": {
     "specs/00-overview-and-legacy-map.md": {
       "title": "Claude Driver · 00 Overview and legacy map",
-      "id": "a64580ea-6180-475b-93d0-f9e5539c8a11",
-      "url": "https://linear.app/sylvan-stack/document/claude-driver-00-overview-and-legacy-map-c5d665b9db2b",
+      "id": "e3c65182-a304-4afe-ac5d-c33e68779f2d",
+      "url": "https://linear.app/amorphius/document/claude-driver-00-overview-and-legacy-map-60e41fe8a582",
       "published": "2026-10-08"
     },
     "specs/01-subscriptions.md": {
       "title": "Claude Driver · 01 Subscriptions",
-      "id": "d423396a-5a86-4097-9e3e-c500885464c2",
-      "url": "https://linear.app/sylvan-stack/document/claude-driver-01-subscriptions-5adf4b41d3bb",
+      "id": "01d70f8b-469a-4f0a-a3d3-379c6e276bb5",
+      "url": "https://linear.app/amorphius/document/claude-driver-01-subscriptions-17f2f2a3be2e",
       "published": "2026-10-08"
     },
     "specs/02-inference.md": {
       "title": "Claude Driver · 02 Inference",
-      "id": "8dd8ccad-48dc-4064-b79c-e84f5a84cc38",
-      "url": "https://linear.app/sylvan-stack/document/claude-driver-02-inference-5ca98a466dcc",
+      "id": "81b6cc26-e880-4bee-ba83-41e08382b70a",
+      "url": "https://linear.app/amorphius/document/claude-driver-02-inference-a95a01d5720c",
       "published": "2026-10-08"
     },
     "specs/03-tools-and-permissions.md": {
       "title": "Claude Driver · 03 Tools and permissions",
-      "id": "d9ac2410-c9ee-4a98-8358-ce373ed8962c",
-      "url": "https://linear.app/sylvan-stack/document/claude-driver-03-tools-and-permissions-523f052a266d",
+      "id": "e966b863-b40e-4acb-8973-7471dd30438c",
+      "url": "https://linear.app/amorphius/document/claude-driver-03-tools-and-permissions-e5b8738165a3",
       "published": "2026-10-08"
     },
     "specs/04-errors-and-limits.md": {
       "title": "Claude Driver · 04 Errors and limits",
-      "id": "2c50bf01-3294-45c0-a6d1-69ca0a26c5df",
-      "url": "https://linear.app/sylvan-stack/document/claude-driver-04-errors-and-limits-37e99b3ca77e",
+      "id": "623e4ad0-233b-4f6b-a45a-e7185c2b78a7",
+      "url": "https://linear.app/amorphius/document/claude-driver-04-errors-and-limits-9aeedad1c298",
       "published": "2026-10-08"
     }
   }
