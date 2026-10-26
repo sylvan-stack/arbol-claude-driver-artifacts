@@ -17,6 +17,7 @@ How this Driver meets the [Driver Contract](../arbol/driver-contract/README.md) 
 - [`v1-driver-inventory.md`](research/v1-driver-inventory.md): what the version 1 Driver does, read from the deprecated source, with Source Refs.
 - [`tool-probes-2026-10-05.md`](research/tool-probes-2026-10-05.md): what the installed tool does, observed in real runs: start-up arguments, the record catalogue, the permission bridge, effort and model, sessions, stopping, errors, z.ai.
 - [`probe-scripts-2026-10-06/`](research/probe-scripts-2026-10-06/README.md): the scripts behind the probes of 6 October 2026 and the raw records of one real run, kept as records of what was run against the installed `claude`.
+- [`anthropic-rate-limit-windows-probe-2026-10-26.md`](research/anthropic-rate-limit-windows-probe-2026-10-26.md): which windows the stream's `rate_limit_info` carries, probed for SGM-D26: `five_hour` and `seven_day` only, no model-specific weekly window.
 
 ## Conventions
 
