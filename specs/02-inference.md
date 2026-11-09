@@ -39,6 +39,13 @@ Added to the environment of CLD-1: `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`; the two 
 
 Observed until 19 October 2026: a run with tools also got `--mcp-config ~/.claude.json`, which the tool now reads by itself in `~/.claude`.
 
+For an Arbol chat, the request's `rootId` and `chatSessionId` add `ARBOL_ROOT` and `ARBOL_CHAT` to that run's Claude Code environment after the CLD-1.3 allow-list is applied. The Driver uses the formats and refusal of DRV-2.37. Neither variable is inherited; without `rootId` neither is set.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/request.py#read_request
+arbol-claude-driver:src/arbol_claude_driver/runtime.py#run
+-->
+
 The tool writes nothing until it has received the message. The Driver writes one line, the user record: the message's text as a text block followed by one image block per image. Every line the Driver writes is one complete JSON object; a line that is not JSON ends the tool.
 
 Before the message the Driver sends one `get_settings` control request and compares the model and effort the tool reports as applied with the request. An effort the tool did not apply refuses the run with `invalid_input`, before anything is sent to the vendor. A model the vendor does not know cannot be seen this way: it fails the run at the first request, at no cost.
@@ -241,6 +248,7 @@ For contract 2 this historical execution branch is replaced by CLD-1.20 refusal 
 | CLD-2.23 | send images as image blocks of the user record, and of the earlier user messages in a rebuilt session | DRV-2.23 | Kept | Python: `C14`, `test_runtime.CompatibilityTests.test_native_history_links_images_shell_and_error_results`; historical TypeScript/probes: `run.validation`, `run.images`, `C14`, `continuity.session` |
 | CLD-2.24 | write a rebuilt session file with the keys, the order of lines, the made-up call identifiers and the result texts stated above, and use the text form of DRV-2 where no file can be written or the tool refuses it | DRV-2.36 | New | Python: `C14`, `test_runtime.CompatibilityTests.test_native_history_links_images_shell_and_error_results`; historical TypeScript/probes: `continuity.session`, `continuity.results`, `continuity.unwritable-session`, `C14`, `probe.continuity` |
 | CLD-2.25 | pass `--system-prompt-snapshot off` on every run, and continue a saved conversation also when the request's system prompt is not the one it was last run with | DRV-2.1 | New | Python: `C14`, `test_runtime.RequestTests.test_typed_request_cli_replacement_labels_and_literal_prompt`; historical TypeScript/probes: `C14`, `probe.run-settings`, `live.continuity` |
+| CLD-2.26 <!-- 50b04c22-c03f-487a-8bbc-36fac7bf4586 --> | refuse malformed Arbol identity before tool launch and add only the two validated identity variables to the run's clean Claude Code environment | DRV-2.37 | New | contract and live shell check; pending qualification |
 
 CLD-2.2 switched off the settings of the working folder and the account's MCP servers. It was withdrawn on 6 October 2026 with DRV-D26, and its number is not used again.
 
