@@ -170,3 +170,9 @@ None of this is settled by help text. CLD-2 and CLD-3 are written against probes
 ## Tests as evidence
 
 The version 1 unit tests pin many of the behaviours marked Kept: the order of text and tool events, usage arithmetic, rate-limit phrases, account environment. They are listed with what each pins in the [inventory](../research/v1-driver-inventory.md#12-tests-as-evidence) and are the starting point for this Driver's test cases. They ran against a scripted stand-in for the tool, written for version 2.1.81, so they show what version 1 expected, not what the installed tool does.
+
+## Real existing profiles for qualification · 12 November 2026
+
+The owner prohibited test profiles and required real existing profiles. Probes and live qualification select an existing real provider profile and Subscription ID directly. Discover and verify that selection before inference. The gate must refuse a missing or signed-out selection. Creating a test profile, creating a profile alias, copying authentication or starting a new sign-in to satisfy qualification is prohibited.
+
+Keep application database, runtime, Build registry and evidence disposable and separate from provider profile selection. A real live run uses the existing profile's native credential binding and records its actual inference, completion and usage outcome. Keep the complete documented Build gates. Earlier test-profile decisions and qualification records remain historical evidence of their original releases.
