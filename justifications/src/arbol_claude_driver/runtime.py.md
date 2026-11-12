@@ -5,7 +5,7 @@ role: authored
 
 ## run
 
-Reason: Validate Arbol chat identity before Claude Code starts, then set the two fixed variables on its clean run environment.
+Reason: Validate the UUID marker before Claude starts and export only that chat UUID from the run environment.
 
-Origins: CLD-2.26, DRV-2.37 · Intention i-b4b60105 · 2026-11-09
+Origins: ARC-4.7 · Intention i-da52a791 · 2026-11-12
 
