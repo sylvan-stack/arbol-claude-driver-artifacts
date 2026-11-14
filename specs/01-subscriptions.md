@@ -331,3 +331,39 @@ arbol-claude-driver:bin/entry.py#bootstrap
 arbol-claude-driver:src/arbol_claude_driver/cli.py#main
 arbol-claude-driver:src/arbol_claude_driver/core.py#build_identity
 -->
+
+
+### ABR-35 state and local-proof source checkpoint · 15 November 2026
+
+The next published source checkpoint completes the repaired normal-only
+bootstrap and stages format2/local capture. Shared admission process identities
+now use Darwin libproc's exact kernel integer seconds/microseconds in canonical
+UTC six-digit form, with strict ABI/size/PID/status/bounds checks and no ps
+fallback. Historical Driver state owners keep their existing representation.
+
+Qualified new state durably publishes format2/root generation under a stable
+identity guard. Existing format1 remains format1 and cannot prove identity;
+newer state refuses before preparation. A missing guard in existing format2,
+malformed root or pending administrative/local journal refuses. Normal entry
+retains the shared identity guard through task drainage and final output.
+Canonical subscriptions identity capture/expect validates only the local record
+and sidecar under the short lock, returns account-free proof, and bypasses
+settings, stdin, vendor discovery, native login, Keychain and secret-source work.
+Ordinary list does not materialize a witness. The staged info path includes
+revision1 behind accepted-payload admission; no acceptance is issued here.
+
+The producer remains incomplete: create/remove journals, delayed auth/run
+fencing, actual metadata broker participation, administrative operations and
+immutable packaging remain future leaves. No runtime, native API, race/crash,
+provider or Build-gate pass is claimed; ABR-38 and final independent source/Arc
+review remain mandatory. No state was converted or installed.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/identity_protocol.py#process_identity
+arbol-claude-driver:src/arbol_claude_driver/identity_protocol.py#inspect_process
+arbol-claude-driver:src/arbol_claude_driver/identity.py#IdentityState
+arbol-claude-driver:src/arbol_claude_driver/state.py#State
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Subscriptions.identity
+arbol-claude-driver:src/arbol_claude_driver/cli.py#main
+arbol-claude-driver:src/arbol_claude_driver/cli.py#entry
+-->
