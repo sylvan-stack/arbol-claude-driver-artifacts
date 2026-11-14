@@ -297,3 +297,13 @@ arbol-claude-driver:src/arbol_claude_driver/state.py#State
 | ID | Requirement | Refines | Origin | Verified by |
 |---|---|---|---|---|
 | CLD-1.22 | implement revision-1 local capture/compare and format-2 lifetime evidence with the Driver-specific rules above; preserve ordinary catalogue/auth/refusal behavior | DRV-0.17, DRV-1.28–1.30, DRV-6.17–6.20 | BRW-D32 | pending ABR-38; application ABR-19/21 |
+
+
+
+### ABR-40 concrete writer and maintenance refinement
+
+Implement the exact shared DRV-6 cooperative custody, immutable payload/capability/acceptance validation and fixed administrative argv/context/result protocol. Every Driver metadata writer and detached helper independently opens shared component admission before first state access; durable preregistration and acknowledged child handoff precede parent release. Delayed writes remain bound to captured lifetime, and no helper writes after lease release. Lost handoff/custody stays refused pending exact cooperative evidence or the durably closed boot recovery; neither main exit nor group emptiness is proof. Existing vendor ownership/cleanup requirements remain separately intact. Legacy execution is tainted by the shared provider before execution; this producer does not install gates or trigger a reboot. All four exact state upgrade/identity-reset/restore/identity-recover commands consume the same context and idempotent attempt/generation protocol, preserving metadata-only archives and native credential boundaries. Source packaging declares exact M/D bytes, not qualified acceptance. ABR-38 owns actual five-repository qualification and genuine boot-transition evidence.
+
+ABR-35's writer inventory includes CLI/state initialization, Subscriptions reserve/finish/reap, Authentication.save/sign-out, status/usage/run-report, core/process/guard cleanup and any delayed recovery write. Each actual spawned guard/watcher gets an explicit metadata-writer versus vendor-only disposition; no arbitrary descendant-custody claim replaces existing cleanup. Preserve native anthropic refusal and supported token-record lifetime semantics.
+
+ABR-40 actual-review correction: consume DRV-6's exact `-ISB` bootstrap/D.importRoots and normal/helper `ARBOL_DRIVER_ADMISSION_FD`/`ARBOL_DRIVER_ADMISSION_CONTEXT` wire. Validate registry/boot/epoch/own and parent process identity, exact payload/entry/acceptance and the offer/ready/go/started acknowledged handoff before any Driver state access. Each child opens its own independent lease; no inherited main lock or exclusive-maintenance receipt substitutes. Source/helper declarations and candidate state never become qualified Browser authority.
