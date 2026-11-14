@@ -17,7 +17,7 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d
 
 ## main
 
-Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+Reason: Keep local identity independent of unrelated caller stdin while retaining existing command input transport behavior
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+Origins: DRV-1.28, DRV-1.30, CLD-1.22 · Intention i-696e9447 · 2026-11-14
 
