@@ -35,9 +35,9 @@ Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-
 
 ## IdentityState.open
 
-Reason: Add private durable format-two root identity and stable lifetime admission guard without upgrading legacy state
+Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
 
-Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-e6c9d1f0 · 2026-11-14
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
 
 ## IdentityState.publish_sidecar
 
@@ -107,13 +107,25 @@ Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-
 
 ## state_format
 
-Reason: Add private durable format-two root identity and stable lifetime admission guard without upgrading legacy state
+Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
 
-Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-e6c9d1f0 · 2026-11-14
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
 
 ## unsafe
 
 Reason: Add private durable format-two root identity and stable lifetime admission guard without upgrading legacy state
 
 Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-e6c9d1f0 · 2026-11-14
+
+## IdentityState.capture
+
+Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+
+## parse_expected
+
+Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
 
