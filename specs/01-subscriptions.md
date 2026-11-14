@@ -278,3 +278,22 @@ The packaged no-prompt probe and account/catalog/usage checks use the existing t
 The owner prohibited test profiles and required real existing profiles. Probes and live qualification select an existing real provider profile and Subscription ID directly. Discover and verify that selection before inference. The gate must refuse a missing or signed-out selection. Creating a test profile, creating a profile alias, copying authentication or starting a new sign-in to satisfy qualification is prohibited.
 
 Keep application database, runtime, Build registry and evidence disposable and separate from provider profile selection. A real live run uses the existing profile's native credential binding and records its actual inference, completion and usage outcome. Keep the complete documented Build gates. Earlier test-profile decisions and qualification records remain historical evidence of their original releases.
+
+## Browser lifetime proof refinement · 14 November 2026
+
+The shared [revision-1 local proof](../../arbol/driver-contract/01-subscriptions.md#local-subscription-lifetime-proof--browser-amendment-14-november-2026) and [format-2 maintenance boundary](../../arbol/driver-contract/06-state-and-simultaneous-calls.md#identity-format-2-and-maintenance-boundary--14-november-2026) are specified technical means for BRW-1.11/.14. This amendment is unimplemented and has no historical qualification credit.
+
+The default canonical selector is `anthropic`; materialize its witness independently from the current format-file timestamps. `Subscriptions.record` rejects unknown keys, so the new proof belongs in the format-2 sidecar. Preserve `anthropic` native sign-out/remove refusal, further supported Anthropic token Subscription semantics and retired `zai`/`claude-zai` refusals; neither alias can become a proof for Anthropic. Identity does not call Claude, Keychain or a secret-source command. Sign-out/reattachment of a supported removable token record keeps its proof; successful removal/recreation rotates it.
+
+ABR-35 must inspect `state.py`, `subscriptions.py`, `cli.py`, `core.py` and all `Authentication.save`, status/usage/run-report and recovery writers before deriving its exact territory. Keep the existing operation owner/revision fencing and add lifetime comparison; a late successful auth update must not recreate a removed lifetime.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Subscriptions.record
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Authentication.save
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Authentication.sign_out
+arbol-claude-driver:src/arbol_claude_driver/state.py#State
+-->
+
+| ID | Requirement | Refines | Origin | Verified by |
+|---|---|---|---|---|
+| CLD-1.22 | implement revision-1 local capture/compare and format-2 lifetime evidence with the Driver-specific rules above; preserve ordinary catalogue/auth/refusal behavior | DRV-0.17, DRV-1.28–1.30, DRV-6.17–6.20 | BRW-D32 | pending ABR-38; application ABR-19/21 |

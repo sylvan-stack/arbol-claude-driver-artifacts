@@ -22,3 +22,7 @@ Claude has no separate CLD-5/CLD-6 documents: shared DRV-5/DRV-6 govern conforma
 | [CLD-4](04-errors-and-limits.md) | Errors and limits | DRV-4 | accepted |
 
 Evidence the specifications rest on is in `research/`: the [inventory of the version 1 Driver](../research/v1-driver-inventory.md) and the [record of probes against the installed tool](../research/tool-probes-2026-10-05.md).
+
+## Browser producer amendment · 14 November 2026
+
+[CLD-1.22](01-subscriptions.md#browser-lifetime-proof-refinement--14-november-2026) and shared DRV-0.17/DRV-1.28–1.30/DRV-6.17–6.20 add the unimplemented revision-1 Subscription lifetime producer. Earlier package/Build evidence remains valid only for its recorded scope and supplies no identity-format-2 pass. Producer implementation and qualification are ABR-35/ABR-38 of the Arbol Browser Saga; no installed migration occurs in the specification amendment.
