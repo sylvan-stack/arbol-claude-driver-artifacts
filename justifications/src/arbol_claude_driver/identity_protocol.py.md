@@ -5,9 +5,9 @@ role: authored
 
 ## <before Refusal>
 
-Reason: Validate canonical immutable payload and private protocol authority before state access
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
-Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-11-14
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
 
 ## <before relative>
 
@@ -197,9 +197,9 @@ Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-
 
 ## natural
 
-Reason: Validate canonical immutable payload and private protocol authority before state access
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
-Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-11-14
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
 
 ## physical
 
@@ -287,7 +287,61 @@ Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-
 
 ## validate
 
-Reason: Validate canonical immutable payload and private protocol authority before state access
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
-Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-11-14
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## <before BsdInfo>
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## BsdInfo
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## Process
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## identity_record
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## inspect_process
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## library
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## process_identity
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## start_string
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## valid_start
+
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
 

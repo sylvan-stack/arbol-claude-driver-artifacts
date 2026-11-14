@@ -5,9 +5,9 @@ role: authored
 
 ## <before without_authority>
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
 
 ## Admission
 
@@ -137,9 +137,9 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 
 ## _identity
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
 
 ## _writer
 
@@ -173,9 +173,9 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 
 ## process_identity
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Removed: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Removed by Intention i-047dae3d · 2026-11-14
 
 ## verify_acceptance
 
