@@ -17,27 +17,27 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 
 ## Admission._check
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
 
 ## Admission.finish
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
 
 ## Admission.prepare_helper
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
 
 ## Admission.receive
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
 
 ## Frames
 
@@ -95,9 +95,9 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 
 ## HelperHandoff.acknowledge
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
 
 ## HelperHandoff.context_path
 
@@ -188,4 +188,10 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
 
 Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+
+## Admission._lease_current
+
+Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
+
+Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
 
