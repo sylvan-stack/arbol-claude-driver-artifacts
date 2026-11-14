@@ -309,3 +309,25 @@ Implement the exact shared DRV-6 cooperative custody, immutable payload/capabili
 ABR-35's writer inventory includes CLI/state initialization, Subscriptions reserve/finish/reap, Authentication.save/sign-out, status/usage/run-report, core/process/guard cleanup and any delayed recovery write. Each actual spawned guard/watcher gets an explicit metadata-writer versus vendor-only disposition; no arbitrary descendant-custody claim replaces existing cleanup. Preserve native anthropic refusal and supported token-record lifetime semantics.
 
 ABR-40 actual-review correction: consume DRV-6's exact `-ISB` bootstrap/D.importRoots and normal/helper `ARBOL_DRIVER_ADMISSION_FD`/`ARBOL_DRIVER_ADMISSION_CONTEXT` wire. Validate registry/boot/epoch/own and parent process identity, exact payload/entry/acceptance and the offer/ready/go/started acknowledged handoff before any Driver state access. Each child opens its own independent lease; no inherited main lock or exclusive-maintenance receipt substitutes. Source/helper declarations and candidate state never become qualified Browser authority.
+
+
+### ABR-35 partial source checkpoint · 14 November 2026
+
+The published source now supplies strict canonical protocol/payload verification,
+normal main/helper offer/ready/go/started admission with independently opened
+writer leases, and isolated normal entry before CLI/settings/state access.
+The normal entry accepts only registered immutable payload bytes and live
+normal authority; direct unadmitted invocation refuses. The administrative pair
+remains explicitly refused pending its later exact maintenance consumer.
+This is incomplete producer source: format2/lifetime/migration/broker integration,
+packaging and actual qualification remain pending. No capability, acceptance,
+installed migration or runtime route is qualified by this checkpoint.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/identity_protocol.py
+arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission
+arbol-claude-driver:src/arbol_claude_driver/admission.py#HelperHandoff
+arbol-claude-driver:bin/entry.py#bootstrap
+arbol-claude-driver:src/arbol_claude_driver/cli.py#main
+arbol-claude-driver:src/arbol_claude_driver/core.py#build_identity
+-->
