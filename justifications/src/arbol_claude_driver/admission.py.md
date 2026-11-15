@@ -95,9 +95,9 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 
 ## HelperHandoff.acknowledge
 
-Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
+Reason: Compose existing Claude helper ticket with joined async child and acknowledgement
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
+Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-116b0ba6 · 2026-11-15
 
 ## HelperHandoff.context_path
 
@@ -197,13 +197,31 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-
 
 ## <before current_admission>
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Compose existing Claude helper ticket with joined async child and acknowledgement
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-116b0ba6 · 2026-11-15
 
 ## current_admission
 
 Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
 
 Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+
+## Admission.spawn_helper_async
+
+Reason: Compose existing Claude helper ticket with joined async child and acknowledgement
+
+Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-116b0ba6 · 2026-11-15
+
+## _close_development_child
+
+Reason: Compose existing Claude helper ticket with joined async child and acknowledgement
+
+Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-116b0ba6 · 2026-11-15
+
+## _join_owned
+
+Reason: Compose existing Claude helper ticket with joined async child and acknowledgement
+
+Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-116b0ba6 · 2026-11-15
 
