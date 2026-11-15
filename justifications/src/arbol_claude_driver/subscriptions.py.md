@@ -5,9 +5,9 @@ role: authored
 
 ## <before family_id>
 
-Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
 
-Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
 
 ## Subscriptions.identity
 
@@ -59,9 +59,9 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.clean_progress
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
 
 ## Authentication.rejection
 
@@ -122,4 +122,16 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
 
 Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.progress
+
+Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
+
+## Subscriptions.get
+
+Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
 
