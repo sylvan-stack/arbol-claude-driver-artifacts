@@ -29,7 +29,7 @@ Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-f6090745 · 2026-
 
 ## bootstrap
 
-Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
+Reason: Allow exact declared public Claude helper entry through existing role validation
 
-Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
+Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-56225dca · 2026-11-15
 
