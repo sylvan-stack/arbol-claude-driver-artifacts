@@ -414,3 +414,55 @@ arbol-claude-driver:src/arbol_claude_driver/continuity.py#Chats
 arbol-claude-driver:src/arbol_claude_driver/runtime.py#run
 arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission.receive
 -->
+
+
+### ABR-35 broker and administrative source checkpoint · 15 November 2026
+
+The next source checkpoint supplies the immutable metadata-helper entry and
+actual direct-parent normal handoff. The broker independently owns component
+admission and the state guard. Generated tool/shell/address clients now send
+bounded notifications to that fixed operation rather than writing Driver
+metadata. Vendor clients receive no component/maintenance fd/context or state
+path; only the admitted broker publishes the fixed ledgers/address after exact
+reservation/lifetime checks and durable acknowledgement. Helper loss remains
+counted; parent/main exit is no substitute for terminal helper custody. Existing
+process owner formats and vendor cleanup stay separate.
+
+The main immutable entry now accepts the exclusive administrative protocol only
+after verifying its exact context/receipt/control/qualification/payload and live
+same-description exclusive fd. The four fixed argument schemas cannot fall
+back to ordinary CLI/settings/state initialization. Contexts use the coordinated
+sessions/session/contexts/attempt.json path and active operation/result pointers
+remain at sessions/session. No authority comes from a backup or receipt alone.
+
+Metadata-only before/manifest.json entries preserve bounded raw identity bytes
+and explicit absences with canonical hashes. Account records, native homes,
+credentials, chats, guards and registry authority are excluded. A private outer
+preservation binder ties partial copying to its attempt/source/before image;
+it is not a restore source or authority. Interrupted staging bytes stay evidence.
+Upgrade stages the root before its format2 fence and resumes its original
+generation/journal/backup. Reset changes only root generation and retries the
+same attempted rotation. Restore preserves failed before bytes and abandoned
+source journals, applies only declared metadata/absence under durable intent,
+and keeps operation=restore through same-attempt conversion-before or reset
+checkpoints. No restored proof receives normal admission from copied markers.
+
+These remain incomplete producer source implementations. Conservative retire
+recovery and the exact shared successful maintenance tuple are subsequent
+leaves15/16; packaging and independent source review also remain outstanding.
+No helper, upgrade, reset, restore, native API, profile/provider/model, test,
+Build gate, deployment or installation was executed, and no acceptance or
+qualification was issued. ABR-38 still owns actual complete composition evidence.
+
+<!-- sources:
+arbol-claude-driver:bin/metadata-helper.py#bootstrap
+arbol-claude-driver:src/arbol_claude_driver/metadata.py#Broker
+arbol-claude-driver:src/arbol_claude_driver/metadata.py#Target
+arbol-claude-driver:src/arbol_claude_driver/metadata.py#helper
+arbol-claude-driver:src/arbol_claude_driver/processes.py#run_launchers
+arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Archive
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance
+arbol-claude-driver:bin/entry.py#bootstrap
+arbol-claude-driver:src/arbol_claude_driver/cli.py#administrative_entry
+-->
