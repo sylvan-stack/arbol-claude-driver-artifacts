@@ -155,9 +155,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-
 
 ## H1Child.start
 
-Reason: Author Claude full-inventory local/report and actual independent H1 lifetime support under accepted4da, source-only without gate wiring.
+Reason: Retain actual bounded helper stdout/stderr and all cleanup errors when startup fails before Result ownership, using its one existing cleanup deadline.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f7cc4ede · 2026-11-15
 
 ## LocalResult
 
@@ -314,4 +314,10 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-
 Reason: Author Claude full-inventory local/report and actual independent H1 lifetime support under accepted4da, source-only without gate wiring.
 
 Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-11-15
+
+## _retain_start_failure
+
+Reason: Retain actual bounded helper stdout/stderr and all cleanup errors when startup fails before Result ownership, using its one existing cleanup deadline.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f7cc4ede · 2026-11-15
 
