@@ -29,9 +29,9 @@ Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b9
 
 ## Maintenance.execute
 
-Reason: Stage and resume explicit format-one upgrade under both verified exclusive component and stable local guard without touching account data
+Reason: Rotate only root generation for a fresh reset and reconstruct the same durable result for its exact retry
 
-Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
+Origins: DRV-1.30, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-e6d5ac9b · 2026-11-15
 
 ## Maintenance.finish
 
@@ -164,4 +164,10 @@ Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
 Reason: Stage and resume explicit format-one upgrade under both verified exclusive component and stable local guard without touching account data
 
 Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
+
+## Maintenance.reset
+
+Reason: Rotate only root generation for a fresh reset and reconstruct the same durable result for its exact retry
+
+Origins: DRV-1.30, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-e6d5ac9b · 2026-11-15
 
