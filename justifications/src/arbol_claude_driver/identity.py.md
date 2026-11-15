@@ -5,9 +5,9 @@ role: authored
 
 ## <before canonical_id>
 
-Reason: Add private durable format-two root identity and stable lifetime admission guard without upgrading legacy state
+Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
 
-Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-e6c9d1f0 · 2026-11-14
+Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
 
 ## IdentityState
 
@@ -128,4 +128,28 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d
 Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
 
 Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+
+## IdentityState.clear_journal
+
+Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+
+Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+
+## IdentityState.finish_create
+
+Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+
+Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+
+## IdentityState.finish_remove
+
+Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+
+Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+
+## IdentityState.journal
+
+Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+
+Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
 
