@@ -367,3 +367,50 @@ arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Subscriptions.ident
 arbol-claude-driver:src/arbol_claude_driver/cli.py#main
 arbol-claude-driver:src/arbol_claude_driver/cli.py#entry
 -->
+
+
+### ABR-35 lifecycle-fencing source checkpoint · 15 November 2026
+
+The next source checkpoint journals create and permitted removal with exact
+prepared/committed identity metadata. Creation publishes its witness before
+success. Removal keeps native refusal and vendor cleanup ahead of local commit,
+retires proof before record deletion and acknowledgement, and preserves an
+ambiguous prepared remove for explicit conservative maintenance. Normal local
+settlement can finish a committed outcome or settle/retire a prepared create;
+it never infers successful removal from a vanished owner.
+
+Auth reservations now capture lifetime and a distinct operation attempt. Delayed
+saves, rejection/status/usage/run reports, sign-in failure settlement, progress
+updates and release retain existing revision/owner checks and additionally reject
+or discard stale, retired or pending lifetimes. Old sign-in progress cannot
+project signing_in onto the newer catalogue record. Reaping a dead exact old
+progress slot does not write its account record or a newer lifetime's temporary
+files; pending remove remains unavailable.
+
+Run reservations and private chat entries carry captured generation/witness.
+Delayed run updates and conditional native/chat settlement require that same
+active lifetime; a map with no matching lifetime cannot supply continuation.
+Recovery still performs the original verified old process cleanup, conditionally
+retires only that exact global run reservation, and touches Subscription chat
+metadata only for its matching lifetime/conversation. Temporary cleanup and
+reservation replacement serialize on the canonical lock. These are source
+claims only; no race/crash/native/provider/runtime route has been executed.
+
+The normal context-file ordering was inspected without changing completed
+bootstrap work: the file is opened after offer, allowing the parent to publish
+it after obtaining the spawned child's exact identity. Broker conversion of
+the still-generated file writers, independent helper admission, administrative
+operations and immutable packaging remain future work. This is incomplete
+producer source; no acceptance or qualification is issued and final independent
+source review plus ABR-38 remain mandatory.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/identity.py#IdentityState
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Subscriptions.settle_local
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Subscriptions.snapshot
+arbol-claude-driver:src/arbol_claude_driver/subscriptions.py#Authentication
+arbol-claude-driver:src/arbol_claude_driver/continuity.py#Runs
+arbol-claude-driver:src/arbol_claude_driver/continuity.py#Chats
+arbol-claude-driver:src/arbol_claude_driver/runtime.py#run
+arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission.receive
+-->
