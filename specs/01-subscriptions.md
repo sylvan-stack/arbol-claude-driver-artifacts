@@ -466,3 +466,42 @@ arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance
 arbol-claude-driver:bin/entry.py#bootstrap
 arbol-claude-driver:src/arbol_claude_driver/cli.py#administrative_entry
 -->
+
+
+### ABR-35 source ready for independent review · 15 November 2026
+
+The conservative identity-recover implementation retires the exact preserved
+pending witness under the canonical short lock, keeps root generation and
+account/credential references, and repeats the same retirement after interruption.
+It does not claim successful native cleanup. Each completed administrative
+operation now returns the exact bounded maintenance tuple, including subscription
+only for recovery, after a durable complete marker and fresh target/authority/
+archive validation. The child retains both exclusive descriptions through final
+output; only the shared provider may publish its result and reopen control.
+
+Packaging uses a clean committed source snapshot and the pinned CPython archive.
+All executable/runtime/source/helper/import-root bytes and provenance settle
+under the fixed driver-payload root before canonical M/D publication. Mutable
+Build metadata and compatibility links remain outside; existing gate commands
+resolve into those same inventoried bytes. Only a real registered Build receives
+D. Unregistered static inputs contain M and declaration inputs, with no D or
+acceptance; pinned stdlib version inspection is their only executable packaging
+observation. Runtime caches are excluded from writing into the frozen payload.
+
+The source metadata declares format2 support while retaining format1 ordinary
+compatibility and complete gate command values. README documents registered
+admission, local proof/refusal, explicit maintenance and native credential/home
+boundaries. Source review remains pending; static input construction is not
+producer/runtime qualification. ABR-38 still owns actual full gates and integrated
+local/helper/race/crash/import/genuine-boot/native/profile/model evidence.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance.recover
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance.complete
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance.validate_result
+arbol-claude-driver:src/arbol_claude_driver/cli.py#administrative_entry
+arbol-claude-driver:scripts/package_build.py#package
+arbol-claude-driver:scripts/build_support.py#committed_source
+arbol-claude-driver:scripts/driver_payload.py#emit
+arbol-claude-driver:README.md#Subscription lifetime and explicit maintenance
+-->
