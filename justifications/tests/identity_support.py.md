@@ -5,9 +5,9 @@ role: authored
 
 ## <before SpanFailure>
 
-Reason: Author Claude full-inventory local/report and actual independent H1 lifetime support under accepted4da, source-only without gate wiring.
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
 
 ## Directory
 
@@ -95,9 +95,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-
 
 ## H1Child.__exit__
 
-Reason: Author Claude full-inventory local/report and actual independent H1 lifetime support under accepted4da, source-only without gate wiring.
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
 
 ## H1Child._await_ready
 
@@ -320,4 +320,82 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-e18349a3 · 2026-
 Reason: Retain actual bounded helper stdout/stderr and all cleanup errors when startup fails before Result ownership, using its one existing cleanup deadline.
 
 Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f7cc4ede · 2026-11-15
+
+## TerminalCloseScope
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope.__enter__
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope.__exit__
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope.__init__
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope._close
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope._finish_source
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope._graph
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope._original_lease
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope._quiet_exception
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope.arm
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalHelperWitness
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalHelperWitness.from_h1
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalHelperWitness.verify
+
+Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
 
