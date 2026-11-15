@@ -549,3 +549,18 @@ arbol-claude-driver:src/arbol_claude_driver/maintenance.py#snapshot
 arbol-claude-driver:src/arbol_claude_driver/maintenance.py#preserve
 arbol-claude-driver:src/arbol_claude_driver/identity_protocol.py#read_bytes
 -->
+
+
+### ABR-45 nested admission and helper declaration source · 15 November 2026
+
+Source `78396b54bafe212997e272088d15b23a6355149d`, tree `f9b6eda762d195e417b9af93d15b0609bb8bbf1a`, composes asynchronous nested public entry spawning with the existing one-use helper ticket. Spawn and acknowledgement work are joined before owned socket closure, including cancellation; existing bounded group cleanup, streams, native HOME/auth/config and request/control behavior remain. The shipped archived live_check body uses this admitted nested entry. bin/entry.py accepts the exact independently verified helper role/entry as well as the existing main role, without changing the underlying parent/context/lease handshake. Actual test methods, fixtures and gate wrappers are unchanged.
+
+Package source declares only bin/entry.py, bin/metadata-helper.py, scripts/check_build.py and reserved tests/identity_actor.py as helpers and requires regular inventoried entries. Missing future bodies refuse packaging; the reservation grants no body admission. Published managed Justifications identify the atomic changes. Actual runner/actor bodies, complete gates, executable M/D/Build/acceptance, runtime and genuine-transition evidence remain ABR-38. No product/package/generator/test/native execution or separate index ingest/embedding ran.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission.spawn_helper_async
+arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission.prepare_helper
+arbol-claude-driver:bin/entry.py#bootstrap
+arbol-claude-driver:tests/mid/archived/src/arbol_claude_driver/dev.py#live_check
+arbol-claude-driver:scripts/package_build.py#package
+-->
