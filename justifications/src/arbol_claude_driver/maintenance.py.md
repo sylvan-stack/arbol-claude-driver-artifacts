@@ -5,9 +5,9 @@ role: authored
 
 ## <before administrative_arguments>
 
-Reason: Conservatively retire an interrupted witness under exact exclusive authority while preserving account records and credential references
+Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
 
-Origins: DRV-1.29, DRV-1.30, DRV-6.17, DRV-6.19, CLD-1.22 · Intention i-c95bd85d · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
 
 ## Maintenance
 
@@ -143,9 +143,9 @@ Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
 
 ## Maintenance.complete
 
-Reason: Stage and resume explicit format-one upgrade under both verified exclusive component and stable local guard without touching account data
+Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
 
-Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
 
 ## Maintenance.convert
 
@@ -194,4 +194,22 @@ Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 Reason: Conservatively retire an interrupted witness under exact exclusive authority while preserving account records and credential references
 
 Origins: DRV-1.29, DRV-1.30, DRV-6.17, DRV-6.19, CLD-1.22 · Intention i-c95bd85d · 2026-11-15
+
+## Maintenance.<before Maintenance.convert>
+
+Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
+
+Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
+
+## Maintenance.result
+
+Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
+
+Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
+
+## Maintenance.validate_result
+
+Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
+
+Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
 
