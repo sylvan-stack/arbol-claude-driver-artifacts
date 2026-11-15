@@ -535,3 +535,17 @@ arbol-claude-driver:src/arbol_claude_driver/metadata.py#helper_entry
 arbol-claude-driver:src/arbol_claude_driver/metadata.py#Target.write
 arbol-claude-driver:scripts/driver_payload.py#emit
 -->
+
+
+### ABR-43 metadata absence repair · 15 November 2026
+
+Source `a629f2c8105cb9481bcb4b70b55df2dd77e41161` preserves explicit absence when a verified restore source introduces metadata beneath a genuinely missing Subscription parent. Each existing parent retains physical/private validation; the bounded reader still rejects unsafe, changed or disappearing files. Snapshotting creates no Subscription directory or record. Union preservation, canonical manifest hashes, source validation, ordinary auth/refusal and native credential boundaries remain intact.
+
+This new source/static repair does not replace ABR-35's completed plan, accepted `f38b902` source or preserved candidate. Independent repair review and ABR-38's actual restore/unsafe-parent, runtime and complete gate qualification remain pending.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#snapshot_bytes
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#snapshot
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#preserve
+arbol-claude-driver:src/arbol_claude_driver/identity_protocol.py#read_bytes
+-->
