@@ -131,9 +131,9 @@ Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-
 
 ## snapshot
 
-Reason: Preserve only bounded identity metadata in immutable hash-bound before archives and exact durable attempt markers
+Reason: Record genuine source-only metadata parent absence without creating directories or weakening existing parent verification
 
-Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-11-15
+Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-4cd11d27 · 2026-11-15
 
 ## Maintenance.acquire_guard
 
@@ -212,4 +212,10 @@ Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-
 Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
 
 Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
+
+## snapshot_bytes
+
+Reason: Record genuine source-only metadata parent absence without creating directories or weakening existing parent verification
+
+Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-4cd11d27 · 2026-11-15
 
