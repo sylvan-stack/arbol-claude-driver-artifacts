@@ -5,9 +5,9 @@ role: authored
 
 ## <before administrative_arguments>
 
-Reason: Stage and resume explicit format-one upgrade under both verified exclusive component and stable local guard without touching account data
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
 
-Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 
 ## Maintenance
 
@@ -29,9 +29,9 @@ Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b9
 
 ## Maintenance.execute
 
-Reason: Rotate only root generation for a fresh reset and reconstruct the same durable result for its exact retry
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
 
-Origins: DRV-1.30, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-e6d5ac9b · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 
 ## Maintenance.finish
 
@@ -77,15 +77,15 @@ Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-
 
 ## Archive.content
 
-Reason: Preserve only bounded identity metadata in immutable hash-bound before archives and exact durable attempt markers
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
 
-Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 
 ## Archive.load
 
-Reason: Preserve only bounded identity metadata in immutable hash-bound before archives and exact durable attempt markers
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
 
-Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 
 ## Maintenance.begin_attempt
 
@@ -119,9 +119,9 @@ Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-
 
 ## preserve
 
-Reason: Preserve only bounded identity metadata in immutable hash-bound before archives and exact durable attempt markers
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
 
-Origins: DRV-6.17, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-1d6352b5 · 2026-11-15
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 
 ## raw_format
 
@@ -170,4 +170,22 @@ Origins: DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-a6c2cc69 · 2026-11-15
 Reason: Rotate only root generation for a fresh reset and reconstruct the same durable result for its exact retry
 
 Origins: DRV-1.30, DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-e6d5ac9b · 2026-11-15
+
+## Archive.rows
+
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
+
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
+
+## Maintenance.restore
+
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
+
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
+
+## preserve_entry
+
+Reason: Restore verified identity metadata with preserved failed images, abandoned journals and resumable same-attempt conversion/reset checkpoints
+
+Origins: DRV-6.18, DRV-6.19, CLD-1.22 · Intention i-d37eb0f3 · 2026-11-15
 
