@@ -335,9 +335,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-
 
 ## TerminalCloseScope.__exit__
 
-Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+Reason: Restore and delegate the same original close exactly once before any fallible match checks, preserving unavailable observations and real close failures without postterminal output.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-3d5e922d · 2026-11-15
 
 ## TerminalCloseScope.__init__
 
@@ -347,9 +347,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-
 
 ## TerminalCloseScope._close
 
-Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+Reason: Restore and delegate the same original close exactly once before any fallible match checks, preserving unavailable observations and real close failures without postterminal output.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-3d5e922d · 2026-11-15
 
 ## TerminalCloseScope._finish_source
 
@@ -398,4 +398,10 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-
 Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
 
 Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+
+## TerminalCloseScope.<before TerminalCloseScope.__exit__>
+
+Reason: Restore and delegate the same original close exactly once before any fallible match checks, preserving unavailable observations and real close failures without postterminal output.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-3d5e922d · 2026-11-15
 
