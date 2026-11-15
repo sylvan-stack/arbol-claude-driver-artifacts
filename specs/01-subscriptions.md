@@ -458,7 +458,7 @@ qualification was issued. ABR-38 still owns actual complete composition evidence
 arbol-claude-driver:bin/metadata-helper.py#bootstrap
 arbol-claude-driver:src/arbol_claude_driver/metadata.py#Broker
 arbol-claude-driver:src/arbol_claude_driver/metadata.py#Target
-arbol-claude-driver:src/arbol_claude_driver/metadata.py#helper
+arbol-claude-driver:src/arbol_claude_driver/metadata.py#helper_entry
 arbol-claude-driver:src/arbol_claude_driver/processes.py#run_launchers
 arbol-claude-driver:src/arbol_claude_driver/admission.py#Admission
 arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Archive
@@ -504,4 +504,34 @@ arbol-claude-driver:scripts/package_build.py#package
 arbol-claude-driver:scripts/build_support.py#committed_source
 arbol-claude-driver:scripts/driver_payload.py#emit
 arbol-claude-driver:README.md#Subscription lifetime and explicit maintenance
+-->
+
+
+### ABR-35 independent source review accepted · 15 November 2026
+
+Independent complete-source/static-candidate review accepted source
+`f38b90229a260a67c88e439a481c6074b90a15dc` with no consequential findings.
+The review matched all1928 canonical manifest entries,1944 archive entries,
+54 committed payload files/generated wrapper,1689 runtime files and the exact
+pinned runtime archive; AST, Ruff and strict non-incremental mypy passed.
+Working-tree diff is clean. Reporting correction: whole-change diff --check
+from `62376f6` reports a blank EOF line at identity_protocol.py:754; it did not
+pass. The reviewer requires no source or preserved-candidate change.
+
+The accepted source implements the operation-relative pending-journal rule
+clarified in shared DRV-6 corpus revision `ec0bd38`: identity-recover resolves
+only its context's canonical Subscription, preserving other well-formed pending
+journals/refusals; upgrade/reset/restore require all pending journals clear.
+Malformed metadata, unfinished root maintenance, exact marker/result/retry or
+custody mismatch remains a closed-fence refusal. This is source/static evidence.
+Registered D, acceptance, runtime and genuine boot, complete existing gates,
+provider/native and race/crash/cancellation composition, plus independent Arc
+Review remain ABR-38. No working-producer or Driver Arc pass is claimed.
+
+<!-- sources:
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance.validate_result
+arbol-claude-driver:src/arbol_claude_driver/maintenance.py#Maintenance.recover
+arbol-claude-driver:src/arbol_claude_driver/metadata.py#helper_entry
+arbol-claude-driver:src/arbol_claude_driver/metadata.py#Target.write
+arbol-claude-driver:scripts/driver_payload.py#emit
 -->
