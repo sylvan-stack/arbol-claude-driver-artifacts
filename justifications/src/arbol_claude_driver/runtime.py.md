@@ -5,7 +5,7 @@ role: authored
 
 ## run
 
-Reason: Validate the UUID marker before Claude starts and export only that chat UUID from the run environment.
+Reason: Carry captured lifetime through run reservation, conditional chat settlement and independently preserved old process cleanup
 
-Origins: ARC-4.7 · Intention i-da52a791 · 2026-11-12
+Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-11-15
 
