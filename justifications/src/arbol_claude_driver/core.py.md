@@ -17,7 +17,13 @@ Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-f6090745 · 2026-
 
 ## <before parse_arguments>
 
-Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
+
+## parse_arguments
+
+Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
+
+Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
 

@@ -5,19 +5,25 @@ role: authored
 
 ## <before input_stream>
 
-Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
 
 ## entry
 
-Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
 
 ## main
 
-Reason: Keep local identity independent of unrelated caller stdin while retaining existing command input transport behavior
+Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
 
-Origins: DRV-1.28, DRV-1.30, CLD-1.22 · Intention i-696e9447 · 2026-11-14
+Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
+
+## administrative_entry
+
+Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
+
+Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
 
