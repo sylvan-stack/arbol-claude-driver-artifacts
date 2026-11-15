@@ -5,7 +5,13 @@ role: authored
 
 ## run
 
-Reason: Keep conditional run-temporary cleanup within the same canonical lock as reservation replacement
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
 
-Origins: DRV-6.10, DRV-6.20, CLD-1.22 · Intention i-7cc623fa · 2026-11-15
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+
+## <before run>
+
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
 

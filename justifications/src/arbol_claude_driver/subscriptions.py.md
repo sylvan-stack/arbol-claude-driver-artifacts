@@ -5,9 +5,9 @@ role: authored
 
 ## <before family_id>
 
-Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
 
 ## Subscriptions.identity
 
@@ -83,9 +83,9 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.sign_in
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
 
 ## Authentication.status
 

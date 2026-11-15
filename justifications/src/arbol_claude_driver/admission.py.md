@@ -5,9 +5,9 @@ role: authored
 
 ## <before without_authority>
 
-Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+Removed: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
 
-Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+Removed by Intention i-f6ae9104 · 2026-11-15
 
 ## Admission
 
@@ -35,9 +35,9 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-
 
 ## Admission.receive
 
-Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
 
 ## Frames
 
@@ -194,4 +194,16 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-
 Reason: Reject boolean frame versions and replaced writer leases during final custody settlement
 
 Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-11-14
+
+## <before current_admission>
+
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+
+## current_admission
+
+Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+
+Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
 
