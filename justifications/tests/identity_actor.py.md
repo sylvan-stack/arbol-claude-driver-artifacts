@@ -5,15 +5,15 @@ role: authored
 
 ## <before ActorFailure>
 
-Reason: Author fixed independently admitted Claude H1 helper and final local precondition case with real capture-return readiness; source-only, no support or gate wiring changes.
+Removed: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-11-15
+Removed by Intention i-fe115f18 · 2026-11-15
 
 ## <end>
 
-Reason: Author fixed independently admitted Claude H1 helper and final local precondition case with real capture-return readiness; source-only, no support or gate wiring changes.
+Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
 
 ## ActorFailure
 
@@ -71,9 +71,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## _bootstrap
 
-Reason: Author fixed independently admitted Claude H1 helper and final local precondition case with real capture-return readiness; source-only, no support or gate wiring changes.
+Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-11-15
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
 
 ## _inside
 
@@ -92,4 +92,28 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 Reason: Author fixed independently admitted Claude H1 helper and final local precondition case with real capture-return readiness; source-only, no support or gate wiring changes.
 
 Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-11-15
+
+## <before _preterminal_diagnostic>
+
+Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
+
+## _preterminal_diagnostic
+
+Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
+
+## _standalone
+
+Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
+
+## _unhandled
+
+Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
+
+Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
 
