@@ -17,15 +17,15 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d
 
 ## Authentication.release
 
-Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
 
-Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
 
 ## Authentication.sign_out
 
-Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
 
-Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
 
 ## Subscriptions.create
 
@@ -50,4 +50,76 @@ Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9
 Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
 
 Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+
+## Authentication.check
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.clean_progress
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.rejection
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.reserve
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.save
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.sign_in
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.status
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Subscriptions.environment
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Subscriptions.run_report
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Authentication.same_progress
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Subscriptions.matches
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## Subscriptions.snapshot
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
 

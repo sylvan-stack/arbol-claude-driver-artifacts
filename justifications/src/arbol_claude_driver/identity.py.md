@@ -153,3 +153,15 @@ Reason: Journal local create/remove settlement and retain ambiguous removal for 
 
 Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
 
+## IdentityState.lifetime
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
+## IdentityState.matches
+
+Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+
