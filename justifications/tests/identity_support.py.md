@@ -5,9 +5,9 @@ role: authored
 
 ## <before SpanFailure>
 
-Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
 
 ## Directory
 
@@ -404,4 +404,82 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-
 Reason: Restore and delegate the same original close exactly once before any fallible match checks, preserving unavailable observations and real close failures without postterminal output.
 
 Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-3d5e922d · 2026-11-15
+
+## ClaudeCapture
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeInvocation
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.__init__
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject._child
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject._terminal
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.check
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.close
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.collect
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.image
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.request
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.spawn
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+
+## ClaudeLocalSubject.stop
+
+Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+
+Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
 
