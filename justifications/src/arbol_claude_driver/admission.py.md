@@ -179,9 +179,9 @@ Removed by Intention i-047dae3d · 2026-11-14
 
 ## verify_acceptance
 
-Reason: Register independently leased normal metadata writers through exact acknowledged handoff before state access
+Reason: Protect the new registry using the same installation root and OS account home.
 
-Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-bcb062a5 · 2026-11-14
+Origins: ARC-5.5 · Intention i-a4e96fe9 · 2026-11-19
 
 ## without_authority
 
@@ -197,9 +197,9 @@ Origins: DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-be5d6d0a · 2026-
 
 ## <before current_admission>
 
-Reason: Compose existing Claude helper ticket with joined async child and acknowledgement
+Reason: Protect the new registry using the same installation root and OS account home.
 
-Origins: DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-116b0ba6 · 2026-11-15
+Origins: ARC-5.5 · Intention i-a4e96fe9 · 2026-11-19
 
 ## current_admission
 
