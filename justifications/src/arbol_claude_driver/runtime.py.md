@@ -5,13 +5,13 @@ role: authored
 
 ## run
 
-Reason: Disable only Cue Card injection when Claude already receives cue context
+Reason: Pass long system instructions without using the process argument budget
 
-Origins: STE-0.21 · Intention i-702f5406 · 2026-11-19
+Origins: CLD-2.5, STE-0.22 · Intention i-53c50a95 · 2026-11-19
 
 ## <before run>
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Pass long system instructions without using the process argument budget
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-2.5, STE-0.22 · Intention i-53c50a95 · 2026-11-19
 
