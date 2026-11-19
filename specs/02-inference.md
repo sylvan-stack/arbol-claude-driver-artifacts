@@ -29,7 +29,7 @@ One process per run, with the request's working folder as its working directory 
 | `--permission-prompt-tool stdio` | A run with tools that has a control input | Makes the tool offer the agent its question tool, `AskUserQuestion`, and send the question to the Driver (CLD-3) |
 | `--tools ""` | A run without tools | Leaves the agent no tool. A run with tools gets no argument about tools at all (CLD-3) |
 | `--model`, `--effort` | When the request or the settings file names them | |
-| `--append-system-prompt` | When the request has a system prompt | Adds the text to the tool's own prompt, which describes its tools |
+| `--append-system-prompt` or `--append-system-prompt-file` | When the request has a system prompt | Adds the text to the tool's own prompt, which describes its tools. At 64 KiB or more of UTF-8 text, pass the path to an owner-only file in the run's temporary folder to avoid the operating system's argument size limit |
 | `--system-prompt-snapshot off` | Always | A conversation that is continued then follows the system prompt of the request at hand. As shipped, a continued conversation keeps the prompt it was started with |
 | `--add-dir` | Once per additional folder | Further folders the agent is told to work in |
 | `--session-id` or `--resume` | By continuity, below | |
@@ -227,7 +227,7 @@ For contract 2 this historical execution branch is replaced by CLD-1.20 refusal 
 | CLD-2.1 | carry out a run as one `claude` process with the stream arguments, in the tool's default home (CLD-1.2) and the request's working folder, and start the tool a second time within a run only when its first start was refused for the conversation it was to continue (CLD-2.10, CLD-2.11) | DRV-2.21 | Kept | contract |
 | CLD-2.3 | pass `--permission-mode bypassPermissions` on every run, whatever mode the home would start in | DRV-3.21 | Changed | Python: `C10`; historical TypeScript/probes: `probe.run-settings`, `C10` |
 | CLD-2.4 | switch the tool's auto memory off for every run | DRV-3.25 | Kept | historical TypeScript/probes: `probe.run-settings`, `run.images` |
-| CLD-2.5 | pass the request's system prompt with `--append-system-prompt` and add no text of its own | DRV-2.1 | Changed | Python: `C10`; historical TypeScript/probes: `run.request`, `C10` |
+| CLD-2.5 | append the system prompt as given using the inline or file form described above. Remove the temporary file with the run folder | DRV-2.1 | Changed | Python: `C10`; historical TypeScript/probes: `run.request`, `C10` |
 | CLD-2.6 | read what the tool applied with `get_settings` before sending the message, and refuse the run when the effort differs from the request | DRV-2.2 | New | Python: `C40`; historical TypeScript/probes: `C40`, `probe.run-settings` |
 | CLD-2.7 | refuse a request whose working folder or additional folder does not exist, since the tool accepts a missing folder silently | DRV-2.2 | New | Python: `C40`; historical TypeScript/probes: `run.validation`, `C40` |
 | CLD-2.8 | write only complete JSON objects, one per line, to the tool | DRV-2.3 | New | Python: `test_runtime.CompatibilityTests.test_independent_node24_json_golden_vectors`; historical TypeScript/probes: `run.images`, `run.protocol` |
