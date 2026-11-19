@@ -5,9 +5,9 @@ role: authored
 
 ## <before family_id>
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Share the normal state and settings paths and keep the same Keychain service for the moved default.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: ARC-5.5, ARC-5.9 · Intention i-6bac00d4 · 2026-11-19
 
 ## Subscriptions.identity
 
@@ -134,4 +134,10 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-
 Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
 
 Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
+
+## keychain_service
+
+Reason: Share the normal state and settings paths and keep the same Keychain service for the moved default.
+
+Origins: ARC-5.5, ARC-5.9 · Intention i-6bac00d4 · 2026-11-19
 

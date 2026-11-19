@@ -5,9 +5,9 @@ role: authored
 
 ## <before input_stream>
 
-Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
+Removed: Share the normal state and settings paths and keep the same Keychain service for the moved default.
 
-Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
+Removed by Intention i-6bac00d4 · 2026-11-19
 
 ## entry
 
@@ -17,13 +17,25 @@ Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b9
 
 ## main
 
-Reason: Pass Steady Cue Cards to Claude’s current turn
+Reason: Share the normal state and settings paths and keep the same Keychain service for the moved default.
 
-Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
+Origins: ARC-5.5, ARC-5.9 · Intention i-6bac00d4 · 2026-11-19
 
 ## administrative_entry
 
 Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
 
 Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
+
+## <before initialized_state>
+
+Reason: Share the normal state and settings paths and keep the same Keychain service for the moved default.
+
+Origins: ARC-5.5, ARC-5.9 · Intention i-6bac00d4 · 2026-11-19
+
+## initialized_state
+
+Reason: Share the normal state and settings paths and keep the same Keychain service for the moved default.
+
+Origins: ARC-5.5, ARC-5.9 · Intention i-6bac00d4 · 2026-11-19
 
