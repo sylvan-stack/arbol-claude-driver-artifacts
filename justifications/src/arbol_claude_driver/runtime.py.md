@@ -5,9 +5,9 @@ role: authored
 
 ## run
 
-Reason: Pass Steady Cue Cards to Claude’s current turn
+Reason: Disable only Cue Card injection when Claude already receives cue context
 
-Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
+Origins: STE-0.21 · Intention i-702f5406 · 2026-11-19
 
 ## <before run>
 
