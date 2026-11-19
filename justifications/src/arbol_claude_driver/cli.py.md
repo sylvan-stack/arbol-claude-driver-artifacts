@@ -17,9 +17,9 @@ Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b9
 
 ## main
 
-Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
+Reason: Pass Steady Cue Cards to Claude’s current turn
 
-Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
+Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
 
 ## administrative_entry
 

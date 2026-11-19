@@ -5,7 +5,13 @@ role: authored
 
 ## read_request
 
-Reason: Validate the UUID marker before Claude starts and export only that chat UUID from the run environment.
+Reason: Pass Steady Cue Cards to Claude’s current turn
 
-Origins: ARC-4.7 · Intention i-da52a791 · 2026-11-12
+Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
+
+## user_record
+
+Reason: Pass Steady Cue Cards to Claude’s current turn
+
+Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
 
