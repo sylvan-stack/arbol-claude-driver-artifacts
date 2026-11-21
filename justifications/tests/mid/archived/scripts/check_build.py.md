@@ -5,13 +5,13 @@ role: authored
 
 ## <before verify>
 
-Reason: Use the real existing Claude profile directly through the full genuine live gate
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
 
-Origins: ARC-4.3, ARC-4.6, DRV-5.10 · Intention i-a536b350 · 2026-11-12
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
 
 ## live
 
-Reason: Use the real existing Claude profile directly through the full genuine live gate
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
 
-Origins: ARC-4.3, ARC-4.6, DRV-5.10 · Intention i-a536b350 · 2026-11-12
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
 

@@ -5,19 +5,43 @@ role: authored
 
 ## check_account
 
-Reason: Use the real existing Claude profile directly through the full genuine live gate
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
 
-Origins: ARC-4.3, ARC-4.6, DRV-5.10 · Intention i-a536b350 · 2026-11-12
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
 
 ## live_check
 
-Reason: Admit only the shipped Claude live command public Driver child
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
 
-Origins: DRV-5.6, DRV-5.8, DRV-5.10, DRV-6.21, CLD-1.22 · Intention i-ac5691d3 · 2026-11-15
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
 
 ## <before probe_shape>
 
-Reason: Admit only the shipped Claude live command public Driver child
+Removed: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
 
-Origins: DRV-5.6, DRV-5.8, DRV-5.10, DRV-6.21, CLD-1.22 · Intention i-ac5691d3 · 2026-11-15
+Removed by Intention i-1aa84b68 · 2026-11-21
+
+## probe
+
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
+
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
+
+## verify
+
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
+
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
+
+## probe_shape
+
+Removed: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
+
+Removed by Intention i-1aa84b68 · 2026-11-21
+
+## <before verify>
+
+Reason: Keep the ordinary live inference oracle on the existing native Claude Subscription and keep no-prompt probing out of authentication flows.
+
+Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
 
