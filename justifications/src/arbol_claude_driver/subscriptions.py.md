@@ -59,9 +59,9 @@ Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.clean_progress
 
-Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
+Reason: Preserve legacy native authentication when process ownership cannot be proved and recover only known local new reservations.
 
-Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
+Origins: CLD-1.8, CLD-1.22, DRV-1.29, OG-5 · Intention i-f9766d30 · 2026-11-21
 
 ## Authentication.rejection
 
@@ -71,9 +71,9 @@ Removed by Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.reserve
 
-Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
+Reason: Preserve legacy native authentication when process ownership cannot be proved and recover only known local new reservations.
 
-Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
+Origins: CLD-1.8, CLD-1.22, DRV-1.29, OG-5 · Intention i-f9766d30 · 2026-11-21
 
 ## Authentication.save
 
@@ -107,9 +107,9 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.same_progress
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Preserve legacy native authentication when process ownership cannot be proved and recover only known local new reservations.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-1.29, OG-5 · Intention i-f9766d30 · 2026-11-21
 
 ## Subscriptions.matches
 
@@ -125,9 +125,9 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.progress
 
-Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
+Reason: Preserve legacy native authentication when process ownership cannot be proved and recover only known local new reservations.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-1.29, OG-5 · Intention i-f9766d30 · 2026-11-21
 
 ## Subscriptions.get
 
