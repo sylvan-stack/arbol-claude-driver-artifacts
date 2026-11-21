@@ -33,3 +33,9 @@ Reason: Use only the existing default Claude profile for live operations and ref
 
 Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
+## read_settings
+
+Reason: Retire credential access and preserve native data during local Subscription removal.
+
+Origins: CLD-1.10, CLD-1.19, DRV-0.14, OG-5 · Intention i-4cc028b9 · 2026-11-21
+

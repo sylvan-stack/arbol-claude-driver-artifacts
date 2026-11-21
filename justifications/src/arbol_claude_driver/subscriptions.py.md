@@ -23,9 +23,9 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.sign_out
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Retire credential access and preserve native data during local Subscription removal.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.10, CLD-1.19, DRV-0.14, OG-5 · Intention i-4cc028b9 · 2026-11-21
 
 ## Subscriptions.create
 
@@ -137,9 +137,9 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-
 
 ## keychain_service
 
-Reason: Backport the installed layout and Keychain paths to the real-account format-1 Claude Build, with an existing-state-only default.
+Removed: Retire credential access and preserve native data during local Subscription removal.
 
-Origins: ARC-5.5, ARC-5.6, ARC-5.9 · Intention i-3aae283f · 2026-11-20
+Removed by Intention i-4cc028b9 · 2026-11-21
 
 ## Authentication.models
 
@@ -167,9 +167,9 @@ Removed by Intention i-004ce942 · 2026-11-21
 
 ## <before native_sign_in_required>
 
-Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
+Reason: Retire credential access and preserve native data during local Subscription removal.
 
-Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
+Origins: CLD-1.10, CLD-1.19, DRV-0.14, OG-5 · Intention i-4cc028b9 · 2026-11-21
 
 ## Authentication.require_native_login
 
@@ -200,4 +200,88 @@ Removed by Intention i-b559ed5d · 2026-11-21
 Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
 Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
+
+## Authentication.__init__
+
+Reason: Retire credential access and preserve native data during local Subscription removal.
+
+Origins: CLD-1.10, CLD-1.19, DRV-0.14, OG-5 · Intention i-4cc028b9 · 2026-11-21
+
+## <before normalize_quota>
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Authentication.key
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## NoRedirect
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## NoRedirect.redirect_request
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Secrets
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Secrets.__init__
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Secrets.item
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Secrets.read
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Secrets.remove
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## Secrets.store
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## gateway
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## normalize_quota
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
+
+## validate_key
+
+Removed: Retire credential access and preserve native data during local Subscription removal.
+
+Removed by Intention i-4cc028b9 · 2026-11-21
 
