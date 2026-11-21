@@ -425,9 +425,9 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe1
 
 ## ClaudeLocalSubject.__init__
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Remove fabricated login state from Claude qualification while preserving local identity and transport evidence.
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: CLD-1.8, CLD-1.10, CLD-1.22, OG-5 · Intention i-8f7e9abd · 2026-11-21
 
 ## ClaudeLocalSubject._child
 

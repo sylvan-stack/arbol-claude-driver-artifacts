@@ -5,9 +5,9 @@ role: authored
 
 ## <before StandIn>
 
-Reason: CLD-2.26: the Claude stand-in plays C44 and records the Arbol identity it was launched with
+Reason: Remove fabricated login state from Claude qualification while preserving local identity and transport evidence.
 
-Origins: CLD-2.26, DRV-5.9 · Intention i-2f7bddf2 · 2026-11-11
+Origins: CLD-1.8, CLD-1.10, CLD-1.22, OG-5 · Intention i-8f7e9abd · 2026-11-21
 
 ## StandIn.log
 
@@ -17,9 +17,9 @@ Origins: CLD-2.26, DRV-5.9 · Intention i-2f7bddf2 · 2026-11-11
 
 ## stand_in
 
-Reason: CLD-2.26: the Claude stand-in plays C44 and records the Arbol identity it was launched with
+Reason: Remove fabricated login state from Claude qualification while preserving local identity and transport evidence.
 
-Origins: CLD-2.26, DRV-5.9 · Intention i-2f7bddf2 · 2026-11-11
+Origins: CLD-1.8, CLD-1.10, CLD-1.22, OG-5 · Intention i-8f7e9abd · 2026-11-21
 
 ## arbol_identity
 
