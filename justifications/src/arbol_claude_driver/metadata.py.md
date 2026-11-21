@@ -23,9 +23,9 @@ Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae910
 
 ## Broker.notification_code
 
-Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
+Reason: Preserve generated inference launchers and let a first-time Claude user obtain the native sign-in remedy.
 
-Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
+Origins: CLD-1.8, CLD-1.12, CLD-1.22 · Intention i-e88eec74 · 2026-11-21
 
 ## Broker.start
 
