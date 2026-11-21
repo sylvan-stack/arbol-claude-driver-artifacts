@@ -17,9 +17,9 @@ Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b9
 
 ## main
 
-Reason: Backport the installed layout and Keychain paths to the real-account format-1 Claude Build, with an existing-state-only default.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: ARC-5.5, ARC-5.6, ARC-5.9 · Intention i-3aae283f · 2026-11-20
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## administrative_entry
 

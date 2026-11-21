@@ -35,9 +35,9 @@ Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.update
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Subscriptions.mutation
 
@@ -53,39 +53,39 @@ Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9
 
 ## Authentication.check
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.clean_progress
 
-Reason: Keep stale progress out of current catalogue state and reap only its exact dead metadata slot without changing a newer lifetime
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-11-15
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.rejection
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Removed: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Removed by Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.reserve
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.save
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.sign_in
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.status
 
@@ -149,9 +149,9 @@ Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Authentication.usage
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Subscriptions.folder
 
@@ -167,15 +167,15 @@ Removed by Intention i-004ce942 · 2026-11-21
 
 ## <before native_sign_in_required>
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Authentication.require_native_login
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
 ## Subscriptions.require_native_route
 
@@ -185,7 +185,19 @@ Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## native_sign_in_required
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
+
+## is_test
+
+Removed: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
+
+Removed by Intention i-b559ed5d · 2026-11-21
+
+## Authentication.require_idle
+
+Reason: Refresh native status without launching authentication, reading stdin, or signalling an older native login.
+
+Origins: CLD-1.8, DRV-1.25, OG-5 · Intention i-b559ed5d · 2026-11-21
 
