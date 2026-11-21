@@ -23,21 +23,21 @@ Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae910
 
 ## Broker.notification_code
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
 
 ## Broker.start
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
 
 ## Target
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
 
 ## Target.client
 
@@ -47,15 +47,15 @@ Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae910
 
 ## Target.owns
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
 
 ## Target.write
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
 
 ## _check
 
@@ -77,9 +77,9 @@ Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae910
 
 ## helper
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Keep the admitted inference broker and remove the obsolete OAuth address write path.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.8, CLD-1.22, DRV-0.14, OG-5 · Intention i-a8a0ebbc · 2026-11-21
 
 ## helper_entry
 
