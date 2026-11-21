@@ -5,9 +5,9 @@ role: authored
 
 ## <before family_id>
 
-Reason: Backport the installed layout and Keychain paths to the real-account format-1 Claude Build, with an existing-state-only default.
+Removed: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: ARC-5.5, ARC-5.6, ARC-5.9 · Intention i-3aae283f · 2026-11-20
+Removed by Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.identity
 
@@ -23,21 +23,21 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.sign_out
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.create
 
-Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.update
 
-Reason: Journal local create/remove settlement and retain ambiguous removal for explicit conservative recovery
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: DRV-1.29, DRV-6.4, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-3bb8bec9 · 2026-11-15
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.mutation
 
@@ -83,21 +83,21 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-
 
 ## Authentication.sign_in
 
-Reason: Replace generated metadata file writers with bounded notification IPC to an independently admitted immutable helper broker
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: DRV-6.10, DRV-6.18, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-f6ae9104 · 2026-11-15
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Authentication.status
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.environment
 
-Reason: Fence auth/progress/usage completions by captured lifetime plus existing revision and operation ownership
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d6ecb64d · 2026-11-15
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## Subscriptions.run_report
 
@@ -140,4 +140,52 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-664f928b · 2026-
 Reason: Backport the installed layout and Keychain paths to the real-account format-1 Claude Build, with an existing-state-only default.
 
 Origins: ARC-5.5, ARC-5.6, ARC-5.9 · Intention i-3aae283f · 2026-11-20
+
+## Authentication.models
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+
+## Authentication.usage
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+
+## Subscriptions.folder
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+
+## Subscriptions.require_signed_in
+
+Removed: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Removed by Intention i-004ce942 · 2026-11-21
+
+## <before native_sign_in_required>
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+
+## Authentication.require_native_login
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+
+## Subscriptions.require_native_route
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+
+## native_sign_in_required
+
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 

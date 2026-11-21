@@ -5,13 +5,13 @@ role: authored
 
 ## run
 
-Reason: Pass long system instructions without using the process argument budget
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: CLD-2.5, STE-0.22 · Intention i-53c50a95 · 2026-11-19
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
 ## <before run>
 
-Reason: Pass long system instructions without using the process argument budget
+Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
 
-Origins: CLD-2.5, STE-0.22 · Intention i-53c50a95 · 2026-11-19
+Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
 
