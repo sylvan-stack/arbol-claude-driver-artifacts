@@ -53,9 +53,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before LocalIdentityTests>
 
-Reason: Prepare matching and displaced Claude conditional record save case
+Reason: Author independent Claude five-window create parent cases
 
-Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f02721 · 2026-11-23
 
 ## LocalIdentityTests
 
@@ -188,4 +188,16 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-9e6fe9c
 Reason: Prepare duplicate create refusal and explicitly historical create-journal settlement
 
 Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-9e6fe9c1 · 2026-11-23
+
+## LocalIdentityTests._create_publication_window
+
+Reason: Author independent Claude five-window create parent cases
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f02721 · 2026-11-23
+
+## LocalIdentityTests.test_create_publication_five_real_fsync_windows
+
+Reason: Author independent Claude five-window create parent cases
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f02721 · 2026-11-23
 
