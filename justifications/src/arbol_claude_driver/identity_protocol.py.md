@@ -5,9 +5,9 @@ role: authored
 
 ## <before Refusal>
 
-Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
 
-Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
 
 ## <before relative>
 
@@ -191,9 +191,9 @@ Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-
 
 ## load_payload
 
-Reason: Validate canonical immutable payload and private protocol authority before state access
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
 
-Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-d8c8a92b · 2026-11-14
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
 
 ## natural
 
@@ -344,4 +344,22 @@ Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-
 Reason: Complete isolated normal bootstrap with the accepted exact Darwin kernel process-start representation and reserved administrative refusal
 
 Origins: DRV-0.17, DRV-6.18, DRV-6.21, CLD-1.22 · Intention i-047dae3d · 2026-11-14
+
+## installed_registry
+
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
+
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
+
+## registered_payload_root
+
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
+
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
+
+## verify_installed_registration
+
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
+
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
 

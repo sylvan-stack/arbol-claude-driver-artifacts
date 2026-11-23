@@ -5,9 +5,9 @@ role: authored
 
 ## <before administrative_arguments>
 
-Reason: Emit the exact bounded maintenance success tuple only after durable completion and fresh authority/result validation through final output
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
 
-Origins: DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-16c7cffe · 2026-11-15
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
 
 ## Maintenance
 
@@ -47,9 +47,9 @@ Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b9
 
 ## Maintenance.receive
 
-Reason: Verify exact exclusive maintenance receipt/context/descriptor authority before fixed administrative dispatch and Driver state access
+Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
 
-Origins: DRV-5.11, DRV-6.18, DRV-6.19, DRV-6.21, CLD-1.22 · Intention i-76690b97 · 2026-11-15
+Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
 
 ## Maintenance.session_folder
 
