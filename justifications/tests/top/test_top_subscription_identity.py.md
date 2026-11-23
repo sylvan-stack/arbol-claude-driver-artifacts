@@ -53,9 +53,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before LocalIdentityTests>
 
-Reason: Prepare Claude matching and stale run write counterexample
+Reason: Prepare real Claude Chat Session completion lifetime counterexample
 
-Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-81f21ad1 · 2026-11-23
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
 
 ## LocalIdentityTests
 
@@ -212,4 +212,28 @@ Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-81f21ad1 · 2026-11-23
 Reason: Prepare Claude matching and stale run write counterexample
 
 Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-81f21ad1 · 2026-11-23
+
+## LifetimeRaceTests._chat_session_completion
+
+Reason: Prepare real Claude Chat Session completion lifetime counterexample
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
+
+## LifetimeRaceTests._inference_metadata_broker
+
+Reason: Prepare real Claude Chat Session completion lifetime counterexample
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
+
+## LifetimeRaceTests.test_matching_and_displaced_chat_session_completion
+
+Reason: Prepare real Claude Chat Session completion lifetime counterexample
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
+
+## LifetimeRaceTests.test_matching_and_displaced_inference_metadata_broker
+
+Reason: Prepare real Claude Chat Session completion lifetime counterexample
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
 
