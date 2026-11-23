@@ -35,9 +35,9 @@ Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-
 
 ## IdentityState.open
 
-Reason: Require format 2 in normal Claude Driver state admission while preserving exclusive conversion.
+Reason: Name the Driver state layout clearly when normal startup refuses an old store.
 
-Origins: DRV-6.17, DRV-6.18 · Intention i-a26dd92c · 2026-11-23
+Origins: DRV-6.17, DRV-6.18 · Intention i-7e230f17 · 2026-11-23
 
 ## IdentityState.publish_sidecar
 
