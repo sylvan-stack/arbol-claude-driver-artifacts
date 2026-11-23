@@ -491,9 +491,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 
 ## <before ClaudeWholeUnitPhase>
 
-Reason: Stage authored Claude run lifetime case identity
+Reason: Stage authored Claude chat and broker source case identities
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-09384669 · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-e2f3ace0 · 2026-11-23
 
 ## ClaudeWholeUnitPhase
 
