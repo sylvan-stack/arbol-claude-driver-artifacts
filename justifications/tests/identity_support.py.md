@@ -491,9 +491,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 
 ## <before ClaudeWholeUnitPhase>
 
-Reason: Stage only authored Claude case identities and refuse incomplete required bodies
+Reason: Stage actual five-window case and omit unallocated historical cases
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2000bbaa · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-a8438303 · 2026-11-23
 
 ## ClaudeWholeUnitPhase
 
