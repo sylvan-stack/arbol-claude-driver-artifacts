@@ -5,9 +5,9 @@ role: authored
 
 ## <before SpanFailure>
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Preserve actual Claude provider child custody across interrupted local requests
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
 
 ## Directory
 
@@ -467,19 +467,25 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe1
 
 ## ClaudeLocalSubject.request
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Preserve actual Claude provider child custody across interrupted local requests
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
 
 ## ClaudeLocalSubject.spawn
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Preserve actual Claude provider child custody across interrupted local requests
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
 
 ## ClaudeLocalSubject.stop
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Preserve actual Claude provider child custody across interrupted local requests
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
+
+## ClaudeLocalSubject._reap
+
+Reason: Preserve actual Claude provider child custody across interrupted local requests
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
 
