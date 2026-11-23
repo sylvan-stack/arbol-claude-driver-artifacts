@@ -135,3 +135,15 @@ Reason: Author bounded Claude missing and corrupt proof preservation cases
 
 Origins: DRV-1.28, DRV-1.29, DRV-1.30, DRV-6.17, DRV-5.11, CLD-1.22 · Intention i-d8ccfe5b · 2026-11-23
 
+## LocalIdentityTests._native_refusals_and_local_retirement
+
+Reason: Author Claude native and alias refusal with local retirement preservation
+
+Origins: DRV-1.29, DRV-1.30, CLD-1.22 · Intention i-995ce6b7 · 2026-11-23
+
+## LocalIdentityTests.test_native_refusals_preserve_proof_and_native_state
+
+Reason: Author Claude native and alias refusal with local retirement preservation
+
+Origins: DRV-1.29, DRV-1.30, CLD-1.22 · Intention i-995ce6b7 · 2026-11-23
+
