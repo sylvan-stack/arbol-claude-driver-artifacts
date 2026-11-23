@@ -5,9 +5,9 @@ role: authored
 
 ## <before SpanFailure>
 
-Reason: Capture actual source-bound broker registration without changing production
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## Directory
 
@@ -413,9 +413,9 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe1
 
 ## ClaudeInvocation
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeLocalSubject
 
@@ -425,9 +425,9 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe1
 
 ## ClaudeLocalSubject.__init__
 
-Reason: Remove fabricated login state from Claude qualification while preserving local identity and transport evidence.
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: CLD-1.8, CLD-1.10, CLD-1.22, OG-5 · Intention i-8f7e9abd · 2026-11-21
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeLocalSubject._child
 
@@ -437,9 +437,9 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe1
 
 ## ClaudeLocalSubject._terminal
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeLocalSubject.check
 
@@ -455,9 +455,9 @@ Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe1
 
 ## ClaudeLocalSubject.collect
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeLocalSubject.image
 
@@ -473,9 +473,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 
 ## ClaudeLocalSubject.spawn
 
-Reason: Preserve actual Claude provider child custody across interrupted local requests
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeLocalSubject.stop
 
@@ -545,9 +545,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitResult.__init__
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeWholeUnitResult.addError
 
@@ -581,9 +581,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitResult.addSuccess
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeWholeUnitResult.addUnexpectedSuccess
 
@@ -611,15 +611,15 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitResult.startTest
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeWholeUnitResult.stopTest
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Bind Claude case-owned public calls to original provider custody
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
 ## ClaudeWholeUnitPhase.record_create_helper
 
@@ -704,4 +704,34 @@ Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
 Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
+
+## <before _public_graph>
+
+Reason: Bind Claude case-owned public calls to original provider custody
+
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
+
+## _PublicCallCase
+
+Reason: Bind Claude case-owned public calls to original provider custody
+
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
+
+## _PublicCallCase.__init__
+
+Reason: Bind Claude case-owned public calls to original provider custody
+
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
+
+## _PublicCallCase.retain
+
+Reason: Bind Claude case-owned public calls to original provider custody
+
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
+
+## _public_graph
+
+Reason: Bind Claude case-owned public calls to original provider custody
+
+Origins: DRV-6.21 · Intention i-9ef03ea3 · 2026-11-23
 
