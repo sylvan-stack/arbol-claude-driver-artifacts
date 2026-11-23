@@ -123,3 +123,15 @@ Reason: Qualify Claude proof publication under concurrent ordinary capture and p
 
 Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
 
+## LocalIdentityTests._lost_or_corrupt_proof
+
+Reason: Author bounded Claude missing and corrupt proof preservation cases
+
+Origins: DRV-1.28, DRV-1.29, DRV-1.30, DRV-6.17, DRV-5.11, CLD-1.22 · Intention i-d8ccfe5b · 2026-11-23
+
+## LocalIdentityTests.test_lost_or_corrupt_proof_refuses_without_regeneration
+
+Reason: Author bounded Claude missing and corrupt proof preservation cases
+
+Origins: DRV-1.28, DRV-1.29, DRV-1.30, DRV-6.17, DRV-5.11, CLD-1.22 · Intention i-d8ccfe5b · 2026-11-23
+
