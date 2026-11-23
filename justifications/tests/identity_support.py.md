@@ -359,9 +359,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-
 
 ## TerminalCloseScope._graph
 
-Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## TerminalCloseScope._original_lease
 
@@ -377,9 +377,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-
 
 ## TerminalCloseScope.arm
 
-Reason: Author fixed terminal-close evidence and one-use original admission descriptor interception around the sole genuine runner finish, source-only without gate wiring.
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-82f40957 · 2026-11-15
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## TerminalHelperWitness
 
@@ -491,9 +491,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 
 ## <before ClaudeWholeUnitPhase>
 
-Reason: Bind Claude create owner receipts to whole-unit phase
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-fc19e029 · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## ClaudeWholeUnitPhase
 
@@ -503,9 +503,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitPhase.__enter__
 
-Reason: Bind Claude create owner receipts to whole-unit phase
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-fc19e029 · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## ClaudeWholeUnitPhase.__exit__
 
@@ -515,15 +515,15 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitPhase.__init__
 
-Reason: Reconcile Claude authored case schedule and result callbacks
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## ClaudeWholeUnitPhase._cleanup
 
-Reason: Bind Claude create owner receipts to whole-unit phase
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-fc19e029 · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## ClaudeWholeUnitPhase.continue_h1
 
@@ -629,9 +629,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-fc19e029 · 2026-11-23
 
 ## ClaudeWholeUnitPhase.terminal_helpers
 
-Reason: Reconcile Claude authored case schedule and result callbacks
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## Fixture.create_publication
 
@@ -674,4 +674,34 @@ Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
 Reason: Capture actual source-bound broker registration without changing production
 
 Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+
+## BrokerTerminalWitness
+
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
+
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
+
+## BrokerTerminalWitness.cleanup
+
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
+
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
+
+## BrokerTerminalWitness.close
+
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
+
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
+
+## BrokerTerminalWitness.verify
+
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
+
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
+
+## ClaudeWholeUnitPhase.record_broker
+
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
+
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 

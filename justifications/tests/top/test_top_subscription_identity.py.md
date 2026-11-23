@@ -53,9 +53,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before LocalIdentityTests>
 
-Reason: Retain actual Claude create actor ACK and owner receipts
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## LocalIdentityTests
 
@@ -149,9 +149,9 @@ Origins: DRV-1.29, DRV-1.30, CLD-1.22 · Intention i-995ce6b7 · 2026-11-23
 
 ## LifetimeRaceTests
 
-Reason: Prepare matching and displaced Claude conditional record save case
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## LifetimeRaceTests._conditional_record_save
 
@@ -221,9 +221,9 @@ Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
 
 ## LifetimeRaceTests._inference_metadata_broker
 
-Reason: Prepare real Claude Chat Session completion lifetime counterexample
+Reason: Publish reviewed actual Claude broker close and whole-unit witness
 
-Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
+Origins: DRV-6.21 · Intention i-3a79dcd7 · 2026-11-23
 
 ## LifetimeRaceTests.test_matching_and_displaced_chat_session_completion
 
