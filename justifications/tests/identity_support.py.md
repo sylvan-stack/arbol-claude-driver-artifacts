@@ -5,9 +5,9 @@ role: authored
 
 ## <before SpanFailure>
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Capture actual source-bound broker registration without changing production
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
 
 ## Directory
 
@@ -638,4 +638,40 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
 Reason: Publish reviewed original Claude sibling create fixture and actor
 
 Origins: DRV-6.20 · Intention i-f57335e7 · 2026-11-23
+
+## BrokerRegistration
+
+Reason: Capture actual source-bound broker registration without changing production
+
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+
+## BrokerRegistrationCapture
+
+Reason: Capture actual source-bound broker registration without changing production
+
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+
+## BrokerRegistrationCapture.__enter__
+
+Reason: Capture actual source-bound broker registration without changing production
+
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+
+## BrokerRegistrationCapture.__exit__
+
+Reason: Capture actual source-bound broker registration without changing production
+
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+
+## BrokerRegistrationCapture.__init__
+
+Reason: Capture actual source-bound broker registration without changing production
+
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
+
+## BrokerRegistrationCapture._profile
+
+Reason: Capture actual source-bound broker registration without changing production
+
+Origins: DRV-6.21 · Intention i-a3f0dc3d · 2026-11-23
 
