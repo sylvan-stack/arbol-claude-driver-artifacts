@@ -53,15 +53,15 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before LocalIdentityTests>
 
-Reason: Prepare real Claude Chat Session completion lifetime counterexample
+Reason: Retain actual Claude create actor ACK and owner receipts
 
-Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
+Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
 
 ## LocalIdentityTests
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Retain actual Claude create actor ACK and owner receipts
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
 
 ## LocalIdentityTests._concurrent_capture
 
@@ -191,9 +191,9 @@ Removed by Intention i-38693af2 · 2026-11-23
 
 ## LocalIdentityTests._create_publication_window
 
-Reason: Author independent Claude five-window create parent cases
+Reason: Retain actual Claude create actor ACK and owner receipts
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f02721 · 2026-11-23
+Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
 
 ## LocalIdentityTests.test_create_publication_five_real_fsync_windows
 
@@ -236,4 +236,16 @@ Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
 Reason: Prepare real Claude Chat Session completion lifetime counterexample
 
 Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-94350135 · 2026-11-23
+
+## LocalIdentityTests.bind_create_witness
+
+Reason: Retain actual Claude create actor ACK and owner receipts
+
+Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
+
+## LocalIdentityTests.unbind_create_witness
+
+Reason: Retain actual Claude create actor ACK and owner receipts
+
+Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
 
