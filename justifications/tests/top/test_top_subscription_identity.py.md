@@ -165,3 +165,27 @@ Reason: Prepare matching and displaced Claude conditional record save case
 
 Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
 
+## LocalIdentityTests._duplicate_local_create
+
+Reason: Prepare duplicate create refusal and explicitly historical create-journal settlement
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-9e6fe9c1 · 2026-11-23
+
+## LocalIdentityTests._historical_create_settlement
+
+Reason: Prepare duplicate create refusal and explicitly historical create-journal settlement
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-9e6fe9c1 · 2026-11-23
+
+## LocalIdentityTests.test_duplicate_local_create_refuses_without_changing_proof
+
+Reason: Prepare duplicate create refusal and explicitly historical create-journal settlement
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-9e6fe9c1 · 2026-11-23
+
+## LocalIdentityTests.test_historical_prepared_create_settles_only_its_recorded_witness
+
+Reason: Prepare duplicate create refusal and explicitly historical create-journal settlement
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-9e6fe9c1 · 2026-11-23
+
