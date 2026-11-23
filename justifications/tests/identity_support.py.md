@@ -491,9 +491,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 
 ## <before ClaudeWholeUnitPhase>
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Stage only authored Claude case identities and refuse incomplete required bodies
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2000bbaa · 2026-11-23
 
 ## ClaudeWholeUnitPhase
 
@@ -503,9 +503,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitPhase.__enter__
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Stage only authored Claude case identities and refuse incomplete required bodies
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2000bbaa · 2026-11-23
 
 ## ClaudeWholeUnitPhase.__exit__
 
