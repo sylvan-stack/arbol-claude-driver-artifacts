@@ -53,9 +53,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before LocalIdentityTests>
 
-Reason: Qualify Claude proof publication under concurrent ordinary capture and preserve legacy state and retired selector behavior.
+Reason: Prepare matching and displaced Claude conditional record save case
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-942cbe14 · 2026-11-16
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
 
 ## LocalIdentityTests
 
@@ -146,4 +146,22 @@ Origins: DRV-1.29, DRV-1.30, CLD-1.22 · Intention i-995ce6b7 · 2026-11-23
 Reason: Author Claude native and alias refusal with local retirement preservation
 
 Origins: DRV-1.29, DRV-1.30, CLD-1.22 · Intention i-995ce6b7 · 2026-11-23
+
+## LifetimeRaceTests
+
+Reason: Prepare matching and displaced Claude conditional record save case
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
+
+## LifetimeRaceTests._conditional_record_save
+
+Reason: Prepare matching and displaced Claude conditional record save case
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
+
+## LifetimeRaceTests.test_matching_and_displaced_record_save
+
+Reason: Prepare matching and displaced Claude conditional record save case
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-3777704b · 2026-11-23
 
