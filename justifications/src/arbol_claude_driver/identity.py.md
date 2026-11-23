@@ -35,9 +35,9 @@ Origins: DRV-6.1, DRV-6.2, DRV-6.3, DRV-6.17, DRV-6.18, CLD-1.22 · Intention i-
 
 ## IdentityState.open
 
-Reason: Expose exact local Subscription identity capture and expected-proof comparison with final guard custody and no vendor discovery
+Reason: Require format 2 in normal Claude Driver state admission while preserving exclusive conversion.
 
-Origins: DRV-0.17, DRV-1.28, DRV-1.30, DRV-6.17, CLD-1.22 · Intention i-08a314d8 · 2026-11-14
+Origins: DRV-6.17, DRV-6.18 · Intention i-a26dd92c · 2026-11-23
 
 ## IdentityState.publish_sidecar
 
