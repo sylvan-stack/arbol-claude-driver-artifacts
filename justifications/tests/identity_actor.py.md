@@ -71,9 +71,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## _bootstrap
 
-Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
+Reason: Prepare fixed create-stop actor over real Claude publication fsync boundaries
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-2140c00c · 2026-11-23
 
 ## _inside
 
@@ -95,9 +95,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before _preterminal_diagnostic>
 
-Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
+Reason: Prepare fixed create-stop actor over real Claude publication fsync boundaries
 
-Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-2140c00c · 2026-11-23
 
 ## _preterminal_diagnostic
 
@@ -116,4 +116,10 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-
 Reason: Guard every actor diagnostic and footer after real finish may begin, preserving failed exit and original custody without postterminal output or repeat finish.
 
 Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-11-15
+
+## _create_stop
+
+Reason: Prepare fixed create-stop actor over real Claude publication fsync boundaries
+
+Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-2140c00c · 2026-11-23
 
