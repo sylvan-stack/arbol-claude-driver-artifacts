@@ -119,7 +119,7 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-fe115f18 · 2026-
 
 ## _create_stop
 
-Reason: Prepare fixed create-stop actor over real Claude publication fsync boundaries
+Reason: Publish reviewed original Claude sibling create fixture and actor
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-2140c00c · 2026-11-23
+Origins: DRV-6.20 · Intention i-f57335e7 · 2026-11-23
 

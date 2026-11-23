@@ -633,3 +633,9 @@ Reason: Reconcile Claude authored case schedule and result callbacks
 
 Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
 
+## Fixture.create_publication
+
+Reason: Publish reviewed original Claude sibling create fixture and actor
+
+Origins: DRV-6.20 · Intention i-f57335e7 · 2026-11-23
+
