@@ -491,9 +491,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 
 ## <before ClaudeWholeUnitPhase>
 
-Reason: Stage authored Claude chat and broker source case identities
+Reason: Reconcile Claude authored case schedule and result callbacks
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-e2f3ace0 · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
 
 ## ClaudeWholeUnitPhase
 
@@ -503,9 +503,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitPhase.__enter__
 
-Reason: Stage only authored Claude case identities and refuse incomplete required bodies
+Reason: Reconcile Claude authored case schedule and result callbacks
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2000bbaa · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
 
 ## ClaudeWholeUnitPhase.__exit__
 
@@ -515,9 +515,9 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 
 ## ClaudeWholeUnitPhase.__init__
 
-Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+Reason: Reconcile Claude authored case schedule and result callbacks
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
 
 ## ClaudeWholeUnitPhase._cleanup
 
@@ -620,4 +620,16 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-1
 Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
 
 Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase.record_create_helper
+
+Reason: Reconcile Claude authored case schedule and result callbacks
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
+
+## ClaudeWholeUnitPhase.terminal_helpers
+
+Reason: Reconcile Claude authored case schedule and result callbacks
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22 · Intention i-198a761a · 2026-11-23
 
