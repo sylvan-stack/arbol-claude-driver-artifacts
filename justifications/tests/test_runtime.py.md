@@ -5,7 +5,19 @@ role: authored
 
 ## <before CompatibilityTests>
 
-Reason: Remove fabricated login state from Claude qualification while preserving local identity and transport evidence.
+Reason: Bind retained Claude State fixture to actual checker Admission and close its guard
 
-Origins: CLD-1.8, CLD-1.10, CLD-1.22, OG-5 · Intention i-8f7e9abd · 2026-11-21
+Origins: DRV-5.11, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d131325f · 2026-11-23
+
+## StateTests.asyncSetUp
+
+Reason: Bind retained Claude State fixture to actual checker Admission and close its guard
+
+Origins: DRV-5.11, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-d131325f · 2026-11-23
+
+## StateTests.asyncTearDown
+
+Removed: Bind retained Claude State fixture to actual checker Admission and close its guard
+
+Removed by Intention i-d131325f · 2026-11-23
 
