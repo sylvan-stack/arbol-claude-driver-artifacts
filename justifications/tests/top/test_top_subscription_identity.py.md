@@ -191,9 +191,9 @@ Removed by Intention i-38693af2 · 2026-11-23
 
 ## LocalIdentityTests._create_publication_window
 
-Reason: Publish reviewed original Claude sibling create fixture and actor
+Reason: Retain original create case State and guard physical identities
 
-Origins: DRV-6.20 · Intention i-f57335e7 · 2026-11-23
+Origins: DRV-6.20 · Intention i-f8718bc3 · 2026-11-23
 
 ## LocalIdentityTests.test_create_publication_five_real_fsync_windows
 
@@ -248,4 +248,10 @@ Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
 Reason: Retain actual Claude create actor ACK and owner receipts
 
 Origins: DRV-5.11, DRV-6.17, DRV-6.20 · Intention i-2ec8176d · 2026-11-23
+
+## _create_physical
+
+Reason: Retain original create case State and guard physical identities
+
+Origins: DRV-6.20 · Intention i-f8718bc3 · 2026-11-23
 
