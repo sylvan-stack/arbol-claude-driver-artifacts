@@ -15,3 +15,9 @@ Reason: Keep the ordinary live inference oracle on the existing native Claude Su
 
 Origins: CLD-1.2, CLD-1.8, CLD-1.12, BLD-0.5 · Intention i-1aa84b68 · 2026-11-21
 
+## observe_native_retention
+
+Reason: Publish independently reviewed native retention observer source
+
+Origins: DRV-1.28, CLD-1.22 · Intention i-971d5f40 · 2026-11-23
+
