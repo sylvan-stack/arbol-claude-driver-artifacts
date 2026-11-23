@@ -53,9 +53,9 @@ Origins: DRV-5.11, DRV-6.20, DRV-6.21, CLD-1.22 · Intention i-16991f32 · 2026-
 
 ## <before LocalIdentityTests>
 
-Reason: Author independent Claude five-window create parent cases
+Reason: Prepare Claude matching and stale run write counterexample
 
-Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f02721 · 2026-11-23
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-81f21ad1 · 2026-11-23
 
 ## LocalIdentityTests
 
@@ -200,4 +200,16 @@ Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f0272
 Reason: Author independent Claude five-window create parent cases
 
 Origins: DRV-1.29, DRV-6.17, DRV-6.20, DRV-5.11, CLD-1.22 · Intention i-b9f02721 · 2026-11-23
+
+## LifetimeRaceTests._conditional_run_save
+
+Reason: Prepare Claude matching and stale run write counterexample
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-81f21ad1 · 2026-11-23
+
+## LifetimeRaceTests.test_matching_and_displaced_run_save
+
+Reason: Prepare Claude matching and stale run write counterexample
+
+Origins: DRV-1.29, DRV-6.20, CLD-1.22 · Intention i-81f21ad1 · 2026-11-23
 
