@@ -5,9 +5,9 @@ role: authored
 
 ## <before SpanFailure>
 
-Reason: Preserve actual Claude provider child custody across interrupted local requests
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
 
-Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
 
 ## Directory
 
@@ -488,4 +488,136 @@ Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-1
 Reason: Preserve actual Claude provider child custody across interrupted local requests
 
 Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2181a04f · 2026-11-23
+
+## <before ClaudeWholeUnitPhase>
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase.__enter__
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase.__exit__
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase.__init__
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase._cleanup
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase.continue_h1
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitPhase.terminal_scope
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.__init__
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addError
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addExpectedFailure
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addFailure
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addSkip
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addSubTest
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addSuccess
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.addUnexpectedSuccess
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.after_h1
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.case_id
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.complete
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.startTest
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
+
+## ClaudeWholeUnitResult.stopTest
+
+Reason: Prepare Claude whole-unit post-admission callbacks and H1 coordination
+
+Origins: DRV-5.11, DRV-6.21, CLD-1.22, BLD-0.5 · Intention i-2c5fa146 · 2026-11-23
 
