@@ -95,9 +95,9 @@ Origins: CLD-1.8, CLD-1.12, CLD-1.22 · Intention i-e88eec74 · 2026-11-21
 
 ## Subscriptions.environment
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Use Claude Code native defaults and permit only explicit per-run selections so its Chat Session behavior follows the provider.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: OG-8 · Intention i-7e7f7fe1 · 2026-11-25
 
 ## Subscriptions.run_report
 
@@ -143,9 +143,9 @@ Removed by Intention i-4cc028b9 · 2026-11-21
 
 ## Authentication.models
 
-Reason: Use only the existing default Claude profile for live operations and refuse additional routes before tool startup.
+Reason: Use Claude Code native defaults and permit only explicit per-run selections so its Chat Session behavior follows the provider.
 
-Origins: CLD-1.2, CLD-1.19, DRV-1.11, OG-5 · Intention i-004ce942 · 2026-11-21
+Origins: OG-8 · Intention i-7e7f7fe1 · 2026-11-25
 
 ## Authentication.usage
 

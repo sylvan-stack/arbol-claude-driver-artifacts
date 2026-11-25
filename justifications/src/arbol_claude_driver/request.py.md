@@ -5,9 +5,9 @@ role: authored
 
 ## read_request
 
-Reason: Pass Steady Cue Cards to Claude’s current turn
+Reason: Use Claude Code native defaults and permit only explicit per-run selections so its Chat Session behavior follows the provider.
 
-Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
+Origins: OG-8 · Intention i-7e7f7fe1 · 2026-11-25
 
 ## user_record
 
@@ -17,7 +17,7 @@ Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
 
 ## run_arguments
 
-Reason: Pass long system instructions without using the process argument budget
+Reason: Use Claude Code native defaults and permit only explicit per-run selections so its Chat Session behavior follows the provider.
 
-Origins: CLD-2.5, STE-0.22 · Intention i-53c50a95 · 2026-11-19
+Origins: OG-8 · Intention i-7e7f7fe1 · 2026-11-25
 
