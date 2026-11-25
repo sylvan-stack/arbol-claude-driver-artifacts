@@ -5,9 +5,9 @@ role: authored
 
 ## read_request
 
-Reason: Use Claude Code native defaults and permit only explicit per-run selections so its Chat Session behavior follows the provider.
+Reason: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: OG-8 · Intention i-7e7f7fe1 · 2026-11-25
+Origins: OG-8 · Intention i-8fabe42c · 2026-11-25
 
 ## user_record
 
@@ -17,7 +17,7 @@ Origins: STE-0.21 · Intention i-50087189 · 2026-11-19
 
 ## run_arguments
 
-Reason: Use Claude Code native defaults and permit only explicit per-run selections so its Chat Session behavior follows the provider.
+Reason: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: OG-8 · Intention i-7e7f7fe1 · 2026-11-25
+Origins: OG-8 · Intention i-8fabe42c · 2026-11-25
 
