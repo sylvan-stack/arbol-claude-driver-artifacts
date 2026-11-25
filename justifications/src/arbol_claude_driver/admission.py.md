@@ -179,9 +179,9 @@ Removed by Intention i-047dae3d · 2026-11-14
 
 ## verify_acceptance
 
-Reason: Resolve the exact committed Claude and arbol CLI packages in their installed locations
+Reason: Validate the exact provider in the replacement producer cohort and independently verify its original immutable registration.
 
-Origins: DRV-6.22 · Intention i-0a85232a · 2026-11-23
+Origins: DRV-6.21, DRV-6.24 · Intention i-b11cb9c2 · 2026-11-25
 
 ## without_authority
 
