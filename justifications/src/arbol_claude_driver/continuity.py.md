@@ -5,21 +5,21 @@ role: authored
 
 ## <before same_reservation>
 
-Reason: Carry captured lifetime through run reservation, conditional chat settlement and independently preserved old process cleanup
+Reason: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-11-15
+Origins: OG-8 · Intention i-8fabe42c · 2026-11-25
 
 ## Chats.prepare
 
-Reason: Carry captured lifetime through run reservation, conditional chat settlement and independently preserved old process cleanup
+Removed: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-11-15
+Removed by Intention i-8fabe42c · 2026-11-25
 
 ## Chats.reserve
 
-Reason: Carry captured lifetime through run reservation, conditional chat settlement and independently preserved old process cleanup
+Reason: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-11-15
+Origins: OG-8 · Intention i-8fabe42c · 2026-11-25
 
 ## Chats.settle
 
@@ -65,15 +65,15 @@ Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-
 
 ## Chats._prepare
 
-Reason: Carry captured lifetime through run reservation, conditional chat settlement and independently preserved old process cleanup
+Removed: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-11-15
+Removed by Intention i-8fabe42c · 2026-11-25
 
 ## Chats.discard_synthetic
 
-Reason: Carry captured lifetime through run reservation, conditional chat settlement and independently preserved old process cleanup
+Removed: Let Claude Code save and resume its own files, with ordinary labelled prompt context when native history is unavailable.
 
-Origins: DRV-6.10, DRV-6.17, DRV-6.20, CLD-1.22 · Intention i-46c065a1 · 2026-11-15
+Removed by Intention i-8fabe42c · 2026-11-25
 
 ## Runs.owns
 
