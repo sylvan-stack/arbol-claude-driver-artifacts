@@ -5,6 +5,16 @@ status: accepted
 ---
 # Claude Driver · 02 Inference
 
+## Native provider behavior · 25 November 2026
+
+[OG-7](/Users/msix/Artifacts/goals/OG-7.md) and [OG-8](/Users/msix/Artifacts/goals/OG-8.md) govern the Claude Code Driver. The Driver uses the normal `~/.claude` home. Claude Code selects its shell, permission mode, memory, retry and timeout settings, prompt snapshot behavior, and persistence from its native configuration. The Driver supplies the streaming transport, explicitly requested model and effort, prompt and directory arguments, and the requested tool restriction. With no requested working directory it uses the current working directory. Account catalogue discovery uses the same native settings. On the control stream, a native permission request that needs a person is declined unless the caller can provide that approval. The existing AskUserQuestion transport remains available.
+
+Native resume uses Claude Code's own file when available. For a new or rebuilt Chat Session, Claude Code saves its own file. Earlier Arbol messages in a rebuild become labelled prompt context. The Driver does not create, replace, or delete files under `~/.claude/projects`. This supersedes the old synthetic history, no-persistence, shell injection and forced permission conventions in CLD-2 and CLD-3. The ordinary native run group and the earlier recorded process-group identities remain eligible for verified cleanup.
+
+| ID | Claude Code Driver must | Origin |
+|---|---|---|
+| CLD-2.27 | Preserve the native launch settings and provider-owned Chat Session files, and recover missing native continuity with labelled request history | OG-7, OG-8 |
+
 How the Claude Driver meets [DRV-2](../../arbol/driver-contract/02-inference.md) with the `claude` command-line tool. Every run is one `claude` process, started in the tool's default home, `~/.claude`, given one message over the tool's stream format, and ended when the tool has written its result. It matters because the installed tool behaves in ways version 1 never met: a new config folder starts in a mode of its own, closing the input does not stop a run, and commands the agent put in the background survive the tool.
 
 Everything stated here about the installed tool was observed on 5 October 2026 with `claude` 2.1.289 and is recorded in the [probe record](../research/tool-probes-2026-10-05.md).
