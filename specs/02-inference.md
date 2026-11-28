@@ -15,6 +15,13 @@ Native resume uses Claude Code's own file when available. For a new or rebuilt C
 |---|---|---|
 | CLD-2.27 | Preserve the native launch settings and provider-owned Chat Session files, and recover missing native continuity with labelled request history | OG-7, OG-8 |
 
+## Single-database amendment
+
+For [ARC-4](../../arbol/architecture/04-single-database.md), CLD-2.26 follows the new DRV-2 chat identity shape. Accept a canonical lowercase UUID as `chatSessionId` with `arbolChat: true` and add only `ARBOL_CHAT` to that run after the clean allow-list. Reject legacy `rootId`, other marker values and invalid marked UUIDs before Claude starts. Strip inherited Arbol variables from every run. An unmarked request keeps opaque continuity and no Arbol environment; the existing Claude session map and resume/rebuild rules remain.
+
+This amendment applies to the release governed by ARC-4 upon its acceptance. The prior text, IDs, Decisions and qualification below retain their original scope.
+
+
 How the Claude Driver meets [DRV-2](../../arbol/driver-contract/02-inference.md) with the `claude` command-line tool. Every run is one `claude` process, started in the tool's default home, `~/.claude`, given one message over the tool's stream format, and ended when the tool has written its result. It matters because the installed tool behaves in ways version 1 never met: a new config folder starts in a mode of its own, closing the input does not stop a run, and commands the agent put in the background survive the tool.
 
 Everything stated here about the installed tool was observed on 5 October 2026 with `claude` 2.1.289 and is recorded in the [probe record](../research/tool-probes-2026-10-05.md).
